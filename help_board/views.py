@@ -6,5 +6,6 @@ from .models import Query
 
 
 class QueryList(generic.ListView):
-    queryset = Query.objects.filter(status=1).order_by("created_on")
-    template_name = "qna_list.html"
+    queryset = Query.objects.all().order_by("created_on")
+    template_name = "qna_board/index.html"
+    paginate_by = 3
