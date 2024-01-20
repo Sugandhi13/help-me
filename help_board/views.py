@@ -1,6 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Query
 
 # Create your views here.
-def lets_help(request):
-    return HttpResponse("Let's help each other!")
+
+
+class QueryList(generic.ListView):
+    queryset = Query.objects.all()
+    template_name = "qna_list.html"
+
+
