@@ -15,3 +15,15 @@ class Query(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+
+class Answer(models.Model):
+    query = models.ForeignKey(
+        Query, on_delete=models.CASCADE, related_name="query_asked"
+    )
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="answered_by"
+    )
+    query_answer = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
