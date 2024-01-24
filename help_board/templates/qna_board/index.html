@@ -18,7 +18,7 @@
                                     <p class="author">Author: {{ query.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="query-link">
+                            <a href="{% url 'query_detail' query.slug %}" class="query-link">
                                 <h2 class="card-title">{{ query.title }}</h2>
                                 <p class="card-text">{{ query.excerpt }}</p>
                             </a>
