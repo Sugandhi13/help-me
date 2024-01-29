@@ -27,9 +27,16 @@ def query_detail(request, slug):
 
     queryset = Query.objects.filter(status=1)
     query = get_object_or_404(queryset, slug=slug)
+    answers = query.query_asked.all().order_by("-created_on")
+    answer_count = query.query_asked.filter(approved=True).count()
 
     return render(
         request,
         "qna_board/query_detail.html",
-        {"query": query},
+        {
+            "query": query,
+            "answers": answers,
+            "answer_count": answer_count,
+        },
+        
     )

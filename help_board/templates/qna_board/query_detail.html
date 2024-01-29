@@ -29,6 +29,48 @@
             </div>
         </div>
     </div>
+    <!-- Displaying count of answers -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="far fa-answers"></i> {{ answer_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+    <!-- Displaying answers -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Answers:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags
+              to iterate through each answer in answers -->
+                {% for answer in answers %}
+                <div class="p-2 answers
+              {% if not answer.approved and answer.author == user %}
+              faded{% elif not answer.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ answer.author }}
+                        <span class="font-weight-normal">
+                            {{ answer.created_on }}
+                        </span> wrote:
+                    </p>
+                    <div id="answer{{ answer.id }}">
+                        {{ answer.query_answer | linebreaks }}
+                    </div>
+                    {% if not answer.approved and answer.author == user %}
+                    <p class="approval">
+                        This answer is awaiting approval
+                    </p>
+                    {% endif %}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
