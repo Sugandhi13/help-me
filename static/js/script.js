@@ -1,1 +1,0 @@
-console.log("This is javascript file under static directory.")

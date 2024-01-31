@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import Query
+from django.http import HttpResponseRedirect
+from .models import Query, Answer
 from .forms import AnswerForm
 
 # Create your views here.
@@ -57,3 +58,45 @@ def query_detail(request, slug):
         },
 
     )
+
+
+def answer_edit(request, slug, answer_id):
+    """
+    view to edit Answers
+    """
+    if request.method == "POST":
+
+        queryset = Query.objects.filter(status=1)
+        query = get_object_or_404(queryset, slug=slug)
+        answer = get_object_or_404(Answer, pk=answer_id)
+        answer_form = AnswerForm(data=request.POST, instance=answer)
+
+        if answer_form.is_valid() and answer.author == request.user:
+            answer = answer_form.save(commit=False)
+            answer.query = query
+            answer.approved = False
+            answer.save()
+            messages.add_message(request, messages.SUCCESS, 'Answer Updated!')
+        else:
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating Answer!')
+
+    return HttpResponseRedirect(reverse('query_detail', args=[slug]))
+
+
+def answer_delete(request, slug, answer_id):
+    """
+    view to delete answer
+    """
+    queryset = Query.objects.filter(status=1)
+    query = get_object_or_404(queryset, slug=slug)
+    answer = get_object_or_404(Answer, pk=answer_id)
+
+    if answer.author == request.user:
+        answer.delete()
+        messages.add_message(request, messages.SUCCESS, 'Answer deleted!')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own answers!')
+
+    return HttpResponseRedirect(reverse('query_detail', args=[slug]))
