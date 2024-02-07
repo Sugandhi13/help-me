@@ -54,8 +54,8 @@
               to iterate through each answer in answers -->
                 {% for answer in answers %}
                 <div class="p-2 answers
-              {% if not answer.approved and answer.author == user %}
-              faded{% elif not answer.approved %} d-none{% endif %}">
+                    {% if not answer.approved and answer.author == user %}
+                    faded{% elif not answer.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ answer.author }}
                         <span class="font-weight-normal">

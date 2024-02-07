@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import Query, Answer
 from django_summernote.admin import SummernoteModelAdmin
 
+# Register your models here.
+
 
 @admin.register(Query)
 class QueryAdmin(SummernoteModelAdmin):
@@ -13,5 +15,10 @@ class QueryAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
 
-# Register your models here.
-admin.site.register(Answer)
+@admin.register(Answer)
+class AnswerAdmin(SummernoteModelAdmin):
+
+    list_display = ('query_answer', 'author', 'created_on')
+    search_fields = ['query_answer', 'author']
+    list_filter = ('author', 'created_on')
+    summernote_fields = ('query_answer',)
