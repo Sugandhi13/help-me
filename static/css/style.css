@@ -4,9 +4,9 @@ body {
 
 .brand {
     font-family: Lato, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #e32b16;
 }
 
 .red-o {
@@ -162,4 +162,26 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/* Footer elements */
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Style each social media icon */
+.social-icons i {
+    font-size: 24px;
+    color: #E84610;
 }
