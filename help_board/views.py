@@ -2,16 +2,52 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Query, Answer
+from .models import Query, Answer, Category
 from .forms import AnswerForm
 
 # Create your views here.
 
 
-class QueryList(generic.ListView):
-    queryset = Query.objects.all().order_by("created_on")
+class CategoryList(generic.ListView):
+    queryset = Category.objects.all().order_by("title")
     template_name = "qna_board/index.html"
-    paginate_by = 3
+
+
+# class QueryList(generic.ListView):
+#    queryset = Query.objects.all().order_by("created_on")
+#    template_name = "qna_board/queries.html"
+#    paginate_by = 3
+
+
+def queries(request, slug):
+    """
+    Display an individual :model:`help_board.Query`.
+
+    **Context**
+
+    ``Query``
+        An instance of :model:`help_board.Query`.
+
+    **Template:**
+
+    :template:`qna_board/queries.html`
+    """
+
+    queryset = Category.objects.all()
+    category = get_object_or_404(queryset, slug=slug)
+    queries = category.query_category.all().order_by("-created_on")
+    queries_count = category.query_category.all().count()
+
+    return render(
+        request,
+        "qna_board/queries.html",
+        {
+            "category": category,
+            "queries": queries,
+            "queries_count": queries_count
+        },
+
+    )
 
 
 def query_detail(request, slug):

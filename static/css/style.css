@@ -41,9 +41,9 @@ body {
 .image-flash {
     position: absolute;
     bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
+    min-width: 70%;
+    left: 5px;
+    background-color: #e3f2fd;
 }
 
 .scale {
@@ -55,6 +55,7 @@ body {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .masthead {
@@ -97,12 +98,12 @@ body {
 
 .query-link {
     text-decoration: none;
-    color: #445261;
+    color: #E84610;
 }
 
 .query-link:hover,
 .page-link {
-    color: #E84610;
+    color: darkmagenta;
 }
 
 .query-title {

@@ -7,13 +7,31 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Create your models here.
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
+    featured_image = CloudinaryField('image', default='placeholder')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="hm_categories"
+    )
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.title}"
+
+
 class Query(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hm_queries"
     )
-    featured_image = CloudinaryField('image', default='placeholder')
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="query_category"
+    )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -24,7 +42,7 @@ class Query(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"{self.title} | written by {self.author}"
+        return f"{self.title}"
 
 
 class Answer(models.Model):
@@ -42,4 +60,4 @@ class Answer(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Answer {self.query_answer} by {self.author}"
+        return f"{self.query_answer}"
