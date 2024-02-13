@@ -17,6 +17,24 @@ def about_me(request):
 
     aboutset = About.objects.all().order_by('-updated_on').first()
 
+    return render(
+        request,
+        "about/about.html",
+        {
+            "about": aboutset
+        },
+    )
+
+
+def contact(request):
+    """
+    Renders the About page
+
+    **Template:**
+
+    :template:`about/contact.html`
+    """
+
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
         if collaborate_form.is_valid():
@@ -30,9 +48,8 @@ def about_me(request):
 
     return render(
         request,
-        "about/about.html",
+        "about/contact.html",
         {
-            "about": aboutset,
             "collaborate_form": collaborate_form
         },
     )

@@ -1,5 +1,11 @@
-from .models import Answer
 from django import forms
+from .models import Query, Answer
+
+
+class QueryForm(forms.ModelForm):
+    class Meta:
+        model = Query
+        fields = ('title', 'category', 'content')
 
 
 class AnswerForm(forms.ModelForm):

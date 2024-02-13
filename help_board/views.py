@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Query, Answer, Category
-from .forms import AnswerForm
+from .forms import QueryForm, AnswerForm
 
 # Create your views here.
 
@@ -47,6 +47,42 @@ def queries(request, slug):
             "category": category,
             "queries": queries,
             "queries_count": queries_count
+        },
+    )
+
+
+def ask_query(request):
+    """
+    Display an individual :model:`help_board.Query`.
+
+    **Context**
+
+    ``Query``
+        An instance of :model:`help_board.Query`.
+
+    **Template:**
+
+    :template:`qna_board/query_detail.html`
+    """
+
+    if request.method == "POST":
+        query_form = QueryForm(data=request.POST)
+        if query_form.is_valid():
+            query = query_form.save(commit=False)
+            query.author = request.user
+            query.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Query submitted and awaiting approval'
+            )
+
+    query_form = QueryForm()
+
+    return render(
+        request,
+        "qna_board/ask_query.html",
+        {
+            "query_form": query_form
         },
     )
 
