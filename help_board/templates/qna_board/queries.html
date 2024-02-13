@@ -2,54 +2,94 @@
 {% load static %}
 {% block content %}
 
-<!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+<!-- query.html content starts here -->
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-12 masthead-text">
+                <!-- Category title goes in these h1 tags -->
+                <h1 class="query-title">{{ category.title }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <!-- Displaying answers -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            {% for query in queries %}
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags
+                  to iterate through each answer in answers -->
+                <blockquote class="blockquote mb-0">
+                    <a href="{% url 'query_detail' query.slug %}" class="query-link">
+                        <p>{{ query.title }}</p>
+                    </a>
+                    <footer class="blockquote-footer">Asked by
+                        <cite title="Source Title">
+                            {{ query.author }} ( {{ query.created_on }} )
+                        </cite>
+                    </footer>
+                    <hr>
+                </blockquote>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Posting New Answers -->
+        <div class="col-md-4 card mb-4 mt-3">
+            <h3>All Categories</h3>
+            <div class="container">
+                <div class="row g-2">
+                    {% for category in categories %}
+                    <div class="col-md-4">
+                            <a href="{% url 'queries' category.slug %}">
+                                <button class="btn btn-edit mb-4 mt-3">
+                                    {{ category.title }}
+                                </button>
+                            </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--
+<div class="container">
+    <div class="row">
+        <!-- Queries Entries Column 
+        <div class="col-md-8 card mb-4  mt-3 ">
             <div class="row">
                 {% for query in queries %}
                 <div class="card">
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
-                            <a href="{% url 'query_detail' query.slug %}" class="query-link">
+                            <a href="{% url 'query_detail' query.slug %}" 
+                                class="query-link">
                                 <p>{{ query.title }}</p>
                             </a>
-                            <footer class="blockquote-footer">Asked by <cite title="Source Title">{{ query.author }}</cite></footer>
+                            <footer class="blockquote-footer">Asked by 
+                                <cite title="Source Title">
+                                    {{ query.author }} ( {{ query.created_on }} )
+                                </cite>
+                            </footer>
                             <hr>
                         </blockquote>
                     </div>
-                </div> <!--
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in query.featured_image.url %}
-                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
-                                {% else %}
-                                    <img class="card-img-top" src=" {{ query.featured_image.url }}" alt="{{ query.title }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ query.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'query_detail' query.slug %}" class="query-link">
-                                <h2 class="card-title">{{ query.title }}</h2>
-                                <p class="card-text">{{ query.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ query.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                </div>-->
+                </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
+            </div>
+        </div>
+        <div class="col-md-4 card mb-4 mt-3">
+            <div class="card-body">
+                {% for category in category_list %}
+                <h2 class="author query-link">{{ category.title }}</h2>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -65,7 +105,7 @@
         </ul>
     </nav>
     {% endif %}
-</div>
+</div>-->
 
 <!-- index.html content ends here -->
 {% endblock %}

@@ -34,6 +34,7 @@ def queries(request, slug):
     """
 
     queryset = Category.objects.all()
+    categories = queryset.values("title", "slug")
     category = get_object_or_404(queryset, slug=slug)
     queries = category.query_category.all().order_by("-created_on")
     queries_count = category.query_category.all().count()
@@ -42,6 +43,7 @@ def queries(request, slug):
         request,
         "qna_board/queries.html",
         {
+            "categories": categories,
             "category": category,
             "queries": queries,
             "queries_count": queries_count
