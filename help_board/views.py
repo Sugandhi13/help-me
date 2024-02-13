@@ -46,7 +46,6 @@ def queries(request, slug):
             "queries": queries,
             "queries_count": queries_count
         },
-
     )
 
 
@@ -92,7 +91,6 @@ def query_detail(request, slug):
             "answer_count": answer_count,
             "answer_form": answer_form
         },
-
     )
 
 
@@ -100,6 +98,7 @@ def answer_edit(request, slug, answer_id):
     """
     view to edit Answers
     """
+
     if request.method == "POST":
 
         queryset = Query.objects.filter(status=1)
@@ -116,7 +115,7 @@ def answer_edit(request, slug, answer_id):
         else:
             messages.add_message(request, messages.ERROR,
                                  'Error updating Answer!')
-
+    
     return HttpResponseRedirect(reverse('query_detail', args=[slug]))
 
 
