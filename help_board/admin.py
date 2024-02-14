@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Query, Answer, Category
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Category, Query, Answer
 
 # Register your models here.
 
@@ -8,7 +8,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Category)
 class CategoryAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'author', 'created_on')
+    list_display = ('id', 'title', 'author', 'created_on')
     search_fields = ['title', 'author']
     list_filter = ('author', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
@@ -17,9 +17,9 @@ class CategoryAdmin(SummernoteModelAdmin):
 @admin.register(Query)
 class QueryAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
-    list_filter = ('status', 'created_on')
+    list_display = ('id', 'title', 'category', 'status', 'created_on')
+    search_fields = ['title', 'category']
+    list_filter = ('status', 'category', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
@@ -27,7 +27,7 @@ class QueryAdmin(SummernoteModelAdmin):
 @admin.register(Answer)
 class AnswerAdmin(SummernoteModelAdmin):
 
-    list_display = ('query_answer', 'author', 'created_on')
-    search_fields = ['query_answer', 'author']
+    list_display = ('id', 'content', 'author', 'created_on')
+    search_fields = ['content', 'author']
     list_filter = ('author', 'created_on')
-    summernote_fields = ('query_answer',)
+    summernote_fields = ('content',)

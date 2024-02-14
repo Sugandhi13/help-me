@@ -14,15 +14,28 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <a href="{% url 'queries' category.slug %}">
+                                <a href="{% url 'queries' category.slug %}"><!--
                                     {% if "placeholder" in category.featured_image.url %}
                                         <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                                     {% else %}
                                         <img class="card-img-top" src=" {{ category.featured_image.url }}" alt="{{ category.title }}">
                                     {% endif %}
-                                    <div class="image-flash">
+                                    <div class="image-flash">-->
+                                        {% if category.title == "Travel" %}
+                                            <i class='fas fa-map-marked-alt' style='font-size:200px;color:red'></i>  
+                                        {% elif category.title == "Finance" %}
+                                            <i class='far fa-money-bill-alt' style='font-size:200px;color:red'></i> 
+                                        {% elif category.title == "Politics" %}
+                                            <i class='fas fa-globe' style='font-size:200px;color:red'></i> 
+                                        {% elif category.title == "Entertainment" %}
+                                            <i class='fas fa-film' style='font-size:200px;color:red'></i> 
+                                        {% elif category.title == "Sports" %}
+                                            <i class='far fa-futbol' style='font-size:200px;color:red'></i> 
+                                        {% elif category.title == "Personal" %}
+                                            <i class='far fa-address-book' style='font-size:200px;color:red'></i> 
+                                        {% endif %}
                                         <h2 class="author query-link">{{ category.title }}</h2>
-                                    </div>
+                                    
                                 </a>
                             </div>
                         </div>

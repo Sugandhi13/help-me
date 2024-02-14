@@ -56,7 +56,7 @@
                         </span> wrote:
                     </p>
                     <div id="answer{{ answer.id }}">
-                        {{ answer.query_answer | linebreaks }}
+                        {{ answer.content | linebreaks }}
                     </div>
                     {% if not answer.approved and answer.author == user %}
                     <p class="approval">

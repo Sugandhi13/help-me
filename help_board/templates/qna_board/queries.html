@@ -16,6 +16,17 @@
     </div>
 </div>
 <div class="container">
+    <!-- Displaying count of queries -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="fas fa-bullhorn"></i> {{ queries_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
     <!-- Displaying answers -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
@@ -44,68 +55,29 @@
                 <div class="row g-2">
                     {% for category in categories %}
                     <div class="col-md-4">
-                            <a href="{% url 'queries' category.slug %}">
-                                <button class="btn btn-edit mb-4 mt-3">
-                                    {{ category.title }}
-                                </button>
-                            </a>
+                        <a href="{% url 'queries' category.slug %}">
+                            <button class="btn btn-edit mb-4 mt-3">
+                                {% if category.title == "Travel" %}
+                                    <i class='fas fa-map-marked-alt'></i>  
+                                {% elif category.title == "Finance" %}
+                                    <i class='far fa-money-bill-alt'></i> 
+                                {% elif category.title == "Politics" %}
+                                    <i class='fas fa-globe'></i> 
+                                {% elif category.title == "Entertainment" %}
+                                    <i class='fas fa-film'></i> 
+                                {% elif category.title == "Sports" %}
+                                    <i class='far fa-futbol'></i> 
+                                {% elif category.title == "Personal" %}
+                                    <i class='far fa-address-book'></i> 
+                                {% endif %}
+                                <p>{{ category.title }}</p>
+                            </button>
+                        </a>
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-</div><!--
-<div class="container">
-    <div class="row">
-        <!-- Queries Entries Column 
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <div class="row">
-                {% for query in queries %}
-                <div class="card">
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <a href="{% url 'query_detail' query.slug %}" 
-                                class="query-link">
-                                <p>{{ query.title }}</p>
-                            </a>
-                            <footer class="blockquote-footer">Asked by 
-                                <cite title="Source Title">
-                                    {{ query.author }} ( {{ query.created_on }} )
-                                </cite>
-                            </footer>
-                            <hr>
-                        </blockquote>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
-                {% for category in category_list %}
-                <h2 class="author query-link">{{ category.title }}</h2>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>-->
-
-<!-- index.html content ends here -->
+</div>
 {% endblock %}
