@@ -7,7 +7,7 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
+        <div class="row g-0 mt-5">
             <div class="col-md-12 masthead-text">
                 <!-- Category title goes in these h1 tags -->
                 <h1 class="query-title">{{ category.title }}</h1>
@@ -52,7 +52,7 @@
         <div class="col-md-4 card mb-4 mt-3">
             <h3>All Categories</h3>
             <div class="container">
-                <div class="row g-2">
+                <div class="row g-2 mb-5">
                     {% for category in categories %}
                     <div class="col-md-4">
                         <a href="{% url 'queries' category.slug %}">

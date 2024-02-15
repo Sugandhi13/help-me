@@ -58,6 +58,13 @@ body {
     text-align: center;
 }
 
+.title {
+    color: 445261;
+    margin: 4px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -165,5 +172,11 @@ body {
 /* Style each social media icon */
 .social-icons i {
     font-size: 24px;
+    color: #E84610;
+}
+
+/* Style each favicon icon */
+.favicon-icons i {
+    font-size: 100px;
     color: #E84610;
 }
