@@ -1,16 +1,20 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #e3f2fd;
+}
+
+button p h1 h2 h3 h4 h5 h6 a{
+    font-family: Lato, sans-serif;
 }
 
 .brand {
     font-family: Lato, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #fff;
 }
 
-.red-o {
-    color: #E84610;
+.white-o {
+    color: #fff;
 }
 
 .thin {
@@ -25,13 +29,22 @@ body {
     background-color: #445261;
 }
 
+.test-bg {
+    background-color: yellow;
+}
+
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #e3f2fd;
 }
 
 .card {
-    border: none;
+    border: 1px;
     background-color: transparent;
+}
+
+.answers {
+    border: 3px;
+    background-color: #e3f2fd;
 }
 
 .image-container {
@@ -41,9 +54,9 @@ body {
 .image-flash {
     position: absolute;
     bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
+    min-width: 70%;
+    left: 5px;
+    background-color: #e3f2fd;
 }
 
 .scale {
@@ -55,40 +68,33 @@ body {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    text-align: center;
+}
+
+.title {
+    color: #445261;
+    margin: 4px;
+    text-transform: lowercase;
+    text-align: center;
 }
 
 .masthead {
-    margin-top: 10px;
+    margin-top: 5px;
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 30vh;
     width: 100%;
 }
 
 .masthead-text {
     background-color: #445261;
-    color: white;
+    color: #e3f2fd;
     position: relative;
 }
 
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
+.profile-image {
+    width: 75%
 }
 
 .query-link {
@@ -108,36 +114,28 @@ body {
 
 .query-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: e3f2fd;
 }
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #445261;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-like {
+    background-color: #445200;
     color: #E84610;
+}
+
+.btn-category {
+    color: #e3f2fd;
     border: none;
-    background: transparent;
+    background: #445261;
+    margin: 2px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .btn-delete {
@@ -145,10 +143,10 @@ body {
     background: #E84610;
 }
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
+.btn-category:hover,
+.btn-category:active {
+    color: #e3f2fd;
+    background: #0d6efd;
     border: none;
 }
 
@@ -159,3 +157,44 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/* Footer elements */
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    color:#fff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color:#fff;
+}
+
+/* Style each social media icon */
+.social-icons i {
+    font-size: 24px;
+    color: #fff;;
+}
+
+/* Style each favicon icon */
+.favicon-icons i {
+    font-size: 100px;
+    color: #445261;
+}
+
+.favicon-icons-small {
+    font-size: 50px;
+    color: #445261;
+}
+
+.text-category {
+    color: #445261;
+}
+
+
