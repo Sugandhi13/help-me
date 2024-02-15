@@ -43,24 +43,21 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <span class="brand">
                     <i class="fa-brands fa-hire-a-helper"></i>
-                    <span class="red-o">Help Me<span class="thin">!
+                    <span>Help Me<span class="thin">!
                     </span>
                 </span> 
-                <span>
-
-                </span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
                             href="{% url 'home' %}">Home</a>
@@ -93,11 +90,11 @@
                         </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
+                <span class="navbar-text">
                     {% if user.is_authenticated %}
-                        <p class="text-end m-3 fst-italic">Hi! <span class="red-o">{{ user }}</span></p>
+                        <p class="text-end m-3 fst-italic white-o">Hi! <span>{{ user }}</span></p>
                     {% else %}
-                        <p class="text-end m-3">You are not logged in</p>
+                        <p class="text-end m-3 white-o">You are not logged in</p>
                     {% endif %}
                 </span>
             </div>
@@ -128,9 +125,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-1 fixed-bottom" style="background-color: #e3f2fd;">
-        <p class="m-0 text-center">Help Me! &copy; 2024<span id="copyright"></span></p>
-        <div class="social-icons text-center"> 
+    <footer class="footer mt-auto py-1 fixed-bottom bg-primary">
+        <p class="m-0">Help Me! &copy; 2024<span id="copyright"></span></p>
+        <div class="social-icons"> 
             <a href="https://www.facebook.com/" target="_blank" rel="noopener">
                 <i class="fab fa-facebook-square ms-3"></i>
             </a>

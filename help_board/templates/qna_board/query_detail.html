@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 <div class="masthead">
-    <div class="container">
+    <div class="container answers">
         <div class="row g-0 mt-5">
             <div class="col-md-12 masthead-text">
                 <!-- Query title goes in these h1 tags -->
@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container answers">
     <div class="row">
         <div class="col card mb-4 left  top">
             <div class="card-body">
@@ -40,15 +40,18 @@
     </div>
     <!-- Displaying answers -->
     <div class="row">
-        <div class="col-md-8 card mb-5  mt-3 ">
+        <div class="col-md-8 card mb-5 mt-3">
             <h3>Answers:</h3>
             <div class="card-body mb-3">
                 <!-- We want a for loop inside the empty control tags
               to iterate through each answer in answers -->
                 {% for answer in answers %}
-                <div class="p-2 answers
+                <div class="p-2
                     {% if not answer.approved and answer.author == user %}
-                    faded{% elif not answer.approved %} d-none{% endif %}">
+                        faded
+                    {% elif not answer.approved %} 
+                        d-none
+                    {% endif %}">
                     <p class="font-weight-bold">
                         {{ answer.author }}
                         <span class="font-weight-normal">

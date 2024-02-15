@@ -1,16 +1,16 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #e3f2fd;
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.7rem;
     font-weight: 700;
-    color: #e32b16;
+    color: #fff;
 }
 
-.red-o {
-    color: #E84610;
+.white-o {
+    color: #fff;
 }
 
 .thin {
@@ -26,12 +26,17 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #e3f2fd;
 }
 
 .card {
-    border: none;
+    border: 1px;
     background-color: transparent;
+}
+
+.answers {
+    border: 3px;
+    background-color: #e3f2fd;
 }
 
 .image-container {
@@ -59,14 +64,14 @@ body {
 }
 
 .title {
-    color: 445261;
+    color: #445261;
     margin: 4px;
     text-transform: uppercase;
     text-align: center;
 }
 
 .masthead {
-    margin-top: 10px;
+    margin-top: 5px;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -75,8 +80,8 @@ body {
 }
 
 .masthead-text {
-    background-color: #E84610;
-    color: white;
+    background-color: #445261;
+    color: #e3f2fd;
     position: relative;
 }
 
@@ -86,12 +91,12 @@ body {
 
 .query-link {
     text-decoration: none;
-    color: #E84610;
+    color: #445261;
 }
 
 .query-link:hover,
 .page-link {
-    color: darkmagenta;
+    color: #E84610;
 }
 
 .query-title {
@@ -106,25 +111,14 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #445261;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
+    background-color: #445200;
+    color: #E84610;
 }
 
 .btn-like {
@@ -160,6 +154,7 @@ body {
     width: 100%;
     text-align: center;
     bottom: 0;
+    color:#fff;
 }
 
 .social-icons {
@@ -167,16 +162,17 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    color:#fff;
 }
 
 /* Style each social media icon */
 .social-icons i {
     font-size: 24px;
-    color: #E84610;
+    color: #fff;;
 }
 
 /* Style each favicon icon */
 .favicon-icons i {
     font-size: 100px;
-    color: #E84610;
+    color: #445261;
 }
