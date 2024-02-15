@@ -2,6 +2,10 @@ body {
     background-color: #e3f2fd;
 }
 
+button p h1 h2 h3 h4 h5 h6 a{
+    font-family: Lato, sans-serif;
+}
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.7rem;
@@ -23,6 +27,10 @@ body {
 
 .dark-bg {
     background-color: #445261;
+}
+
+.test-bg {
+    background-color: yellow;
 }
 
 .main-bg {
@@ -66,7 +74,7 @@ body {
 .title {
     color: #445261;
     margin: 4px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     text-align: center;
 }
 
@@ -106,7 +114,7 @@ body {
 
 .query-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: e3f2fd;
 }
 
 .btn-signup,
@@ -121,10 +129,13 @@ body {
     color: #E84610;
 }
 
-.btn-like {
-    color: #E84610;
+.btn-category {
+    color: #e3f2fd;
     border: none;
-    background: transparent;
+    background: #445261;
+    margin: 2px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .btn-delete {
@@ -132,10 +143,10 @@ body {
     background: #E84610;
 }
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
+.btn-category:hover,
+.btn-category:active {
+    color: #e3f2fd;
+    background: #0d6efd;
     border: none;
 }
 
@@ -176,3 +187,14 @@ body {
     font-size: 100px;
     color: #445261;
 }
+
+.favicon-icons-small {
+    font-size: 50px;
+    color: #445261;
+}
+
+.text-category {
+    color: #445261;
+}
+
+

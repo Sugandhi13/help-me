@@ -34,7 +34,7 @@ def queries(request, slug):
     """
 
     queryset = Category.objects.all()
-    categories = queryset.values("title", "slug")
+    categories = queryset.values("title", "slug", "fontawesome_icon").order_by("title")
     category = get_object_or_404(queryset, slug=slug)
     queries = category.query_category.all().order_by("-created_on")
     queries_count = category.query_category.filter(status=1).count()

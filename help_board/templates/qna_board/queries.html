@@ -10,7 +10,7 @@
         <div class="row g-0 mt-5">
             <div class="col-md-12 masthead-text">
                 <!-- Category title goes in these h1 tags -->
-                <h1 class="query-title">{{ category.title }}</h1>
+                <h1 class="query-title"><i class="{{ category.fontawesome_icon }}"></i> {{ category.title }}</h1>
             </div>
         </div>
     </div>
@@ -48,34 +48,19 @@
             </div>
             {% endfor %}
         </div>
-        <!-- Posting New Answers -->
+        <!-- Categories block -->
         <div class="col-md-4 card mb-4 mt-3">
             <h3>All Categories</h3>
-            <div class="container">
-                <div class="row g-2 mb-5">
-                    {% for category in categories %}
-                    <div class="col-md-4">
-                        <a href="{% url 'queries' category.slug %}">
-                            <button class="btn btn-edit mb-4 mt-3">
-                                {% if category.title == "Travel" %}
-                                    <i class='fas fa-map-marked-alt'></i>  
-                                {% elif category.title == "Finance" %}
-                                    <i class='far fa-money-bill-alt'></i> 
-                                {% elif category.title == "Politics" %}
-                                    <i class='fas fa-globe'></i> 
-                                {% elif category.title == "Entertainment" %}
-                                    <i class='fas fa-film'></i> 
-                                {% elif category.title == "Sports" %}
-                                    <i class='far fa-futbol'></i> 
-                                {% elif category.title == "Personal" %}
-                                    <i class='far fa-address-book'></i> 
-                                {% endif %}
-                                <p>{{ category.title }}</p>
-                            </button>
-                        </a>
-                    </div>
-                    {% endfor %}
+            <div class="row row-cols-3 g-2 mb-5">
+                {% for category in categories %}
+                <div class="col-md-4 my-3 text-center">
+                    <a href="{% url 'queries' category.slug %}">           
+                        <i class="{{ category.fontawesome_icon }} favicon-icons-small"></i> 
+                        <p class="text-category">{{ category.title }}</p>
+                    </a>
+                    
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
