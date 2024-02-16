@@ -17,12 +17,29 @@ button p h1 h2 h3 h4 h5 h6 a{
     color: #fff;
 }
 
+.red-o {
+    color: red;
+}
+
 .thin {
     font-weight: 300;
 }
 
 .light-bg {
     background-color: #fff;
+}
+
+.head-bg {
+    background-color: #445261;
+    border-radius: 10px;
+    color:#fff;
+    padding: 0.5rem 0rem;
+    text-align: center;
+}
+
+.answer-bg {
+    background-color: #daebf8;
+    border-radius: 15px;
 }
 
 .dark-bg {
@@ -35,6 +52,12 @@ button p h1 h2 h3 h4 h5 h6 a{
 
 .main-bg {
     background-color: #e3f2fd;
+}
+
+.user-login {
+    color: yellow;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .card {
@@ -123,10 +146,16 @@ button p h1 h2 h3 h4 h5 h6 a{
     color: #fff;
 }
 
+.btn-edit:hover,
+.btn-edit:active{
+    background-color: #445261;
+    color: yellow;
+}
+
 .btn-signup:hover,
-.btn-signup:active {
-    background-color: #445200;
-    color: #E84610;
+.btn-signup:active{
+    background-color: #0d6efd;
+    color: #e3f2fd;
 }
 
 .btn-category {
@@ -147,7 +176,6 @@ button p h1 h2 h3 h4 h5 h6 a{
 .btn-category:active {
     color: #e3f2fd;
     background: #0d6efd;
-    border: none;
 }
 
 .faded {
@@ -193,8 +221,6 @@ button p h1 h2 h3 h4 h5 h6 a{
     color: #445261;
 }
 
-.text-category {
-    color: #445261;
-}
+
 
 

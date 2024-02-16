@@ -18,9 +18,16 @@
 <div class="container">
     <!-- Displaying count of queries -->
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <strong class="text-secondary">
                 <i class="fas fa-bullhorn"></i> {{ queries_count }}
+            </strong>
+        </div>
+        <div class="col-6 text-end">
+            <strong class="text-secondary">
+                <a href="{% url 'home' %}" class="text-category">           
+                    <i class="fas fa-caret-square-left"></i>Home
+                </a>
             </strong>
         </div>
         <div class="col-12">
@@ -50,7 +57,7 @@
         </div>
         <!-- Categories block -->
         <div class="col-md-4 card mb-4 mt-3">
-            <h3>All Categories</h3>
+            <h3 class="head-bg">Categories</h3>
             <div class="row row-cols-3 g-2 mb-5">
                 {% for category in categories %}
                 <div class="col-md-4 my-3 text-center">
@@ -58,7 +65,6 @@
                         <i class="{{ category.fontawesome_icon }} favicon-icons-small"></i> 
                         <p class="text-category">{{ category.title }}</p>
                     </a>
-                    
                 </div>
                 {% endfor %}
             </div>

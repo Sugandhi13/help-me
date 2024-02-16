@@ -21,7 +21,7 @@
             <div class="card-body">
                 <!-- The query content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <article class="card-text">
+                <article class="card-text lead">
                     {{ query.content | safe }}
                 </article>
             </div>
@@ -29,9 +29,16 @@
     </div>
     <!-- Displaying count of answers -->
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <strong class="text-secondary">
                 <i class="far fa-comments"></i> {{ answer_count }}
+            </strong>
+        </div>
+        <div class="col-6 text-end">
+            <strong class="text-secondary"> 
+                <a href="{% url 'queries' query.category.slug %}" class="text-category">           
+                    <i class="fas fa-caret-square-left"></i>{{ query.category }}
+                </a>
             </strong>
         </div>
         <div class="col-12">
@@ -41,25 +48,24 @@
     <!-- Displaying answers -->
     <div class="row">
         <div class="col-md-8 card mb-5 mt-3">
-            <h3>Answers:</h3>
             <div class="card-body mb-3">
                 <!-- We want a for loop inside the empty control tags
               to iterate through each answer in answers -->
                 {% for answer in answers %}
-                <div class="p-2
+                <div class="p-2 answer-bg mb-2
                     {% if not answer.approved and answer.author == user %}
                         faded
                     {% elif not answer.approved %} 
                         d-none
                     {% endif %}">
-                    <p class="font-weight-bold">
-                        {{ answer.author }}
-                        <span class="font-weight-normal">
-                            {{ answer.created_on }}
-                        </span> wrote:
-                    </p>
                     <div id="answer{{ answer.id }}">
                         {{ answer.content | linebreaks }}
+                    </div>
+                    <hr>
+                    <div class="py-1 px-3 mb-2 text-end">
+                        <cite title="Source Title">
+                            <strong>Answered by - {{ answer.author }} on {{ answer.created_on }}</strong>
+                        </cite>
                     </div>
                     {% if not answer.approved and answer.author == user %}
                     <p class="approval">
@@ -81,10 +87,10 @@
                 {% if user.is_authenticated %}
                 <h3>Leave an answer:</h3>
                 <p>Answering as: {{ user.username }}</p>
-                <form id="answerForm" method="post" style="margin-top: 1.3em;">
+                <form id="answerForm" method="post" class="answer-bg" style="margin-top: 1.3em;">
                     {{ answer_form | crispy }}
                     {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
                 </form>
                 {% else %}
                 <p><a href="{{ login_url }}">Log in</a> to leave an answer</p>
