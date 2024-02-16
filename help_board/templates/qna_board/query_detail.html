@@ -45,26 +45,60 @@
             <hr>
         </div>
     </div>
-    <!-- Displaying answers -->
+    <!-- Displaying alert message -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+                    fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-md-8 card mb-5 mt-3">
+        <!-- Posting New Answers -->
+        <div class="col-md-12 card mb-5 mt-3">
+            <div class="card-body my-2">
+                <div class="p-3 answer-bg mb-2">
+                    {% if user.is_authenticated %}
+                    <h5>Write an answer:</h5>
+                    <form id="answerForm" method="post" class="" style="margin-top: 1.3em;">
+                        {{ answer_form | crispy }}
+                        {% csrf_token %}
+                        <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
+                    </form>
+                    {% else %}
+                    <p class="text-center">
+                        <strong>
+                            <a href="{{ login_url }}">Log in</a> to leave an answer.
+                        </strong>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            <hr>
+            <!-- displaying Django messages -->
             <div class="card-body mb-3">
                 <!-- We want a for loop inside the empty control tags
               to iterate through each answer in answers -->
                 {% for answer in answers %}
-                <div class="p-2 answer-bg mb-2
+                <div class="p-3 answer-bg mb-2 text-end
                     {% if not answer.approved and answer.author == user %}
                         faded
                     {% elif not answer.approved %} 
                         d-none
                     {% endif %}">
-                    <div id="answer{{ answer.id }}">
+                    <div id="answer{{ answer.id }}" class="text-start">
                         {{ answer.content | linebreaks }}
                     </div>
                     <hr>
-                    <div class="py-1 px-3 mb-2 text-end">
+                    <div class="py-1 px-3 mb-2">
                         <cite title="Source Title">
-                            <strong>Answered by - {{ answer.author }} on {{ answer.created_on }}</strong>
+                            <strong>{{ answer.author }} | {{ answer.created_on }}</strong>
                         </cite>
                     </div>
                     {% if not answer.approved and answer.author == user %}
@@ -79,22 +113,6 @@
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
-            </div>
-        </div>
-        <!-- Posting New Answers -->
-        <div class="col-md-4 card mb-5 mt-3">
-            <div class="card-body mb-3">
-                {% if user.is_authenticated %}
-                <h3>Leave an answer:</h3>
-                <p>Answering as: {{ user.username }}</p>
-                <form id="answerForm" method="post" class="answer-bg" style="margin-top: 1.3em;">
-                    {{ answer_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
-                </form>
-                {% else %}
-                <p><a href="{{ login_url }}">Log in</a> to leave an answer</p>
-                {% endif %}
             </div>
         </div>
     </div>
