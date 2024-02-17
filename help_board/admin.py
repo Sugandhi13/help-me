@@ -17,7 +17,7 @@ class CategoryAdmin(SummernoteModelAdmin):
 @admin.register(Query)
 class QueryAdmin(SummernoteModelAdmin):
 
-    list_display = ('id', 'title', 'category', 'status', 'created_on')
+    list_display = ('id', 'content', 'category', 'status', 'created_on')
     search_fields = ['title', 'category']
     list_filter = ('status', 'category', 'created_on')
     prepopulated_fields = {'slug': ('title',)}

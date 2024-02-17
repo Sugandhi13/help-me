@@ -41,7 +41,7 @@
 </head>
 <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <span class="brand">
@@ -102,6 +102,20 @@
             </div>
         </div>
     </nav>
+    <!-- Displaying alert message -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+                    fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     <main class="flex-shrink-0 main-bg">
         
         {% block content %}
@@ -113,7 +127,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-1 fixed-bottom bg-primary">
+    <footer class="footer mt-auto py-1 bg-primary">
         <p class="m-0">Help Me! &copy; 2024<span id="copyright"></span></p>
         <div class="social-icons"> 
             <a href="https://www.facebook.com/" target="_blank" rel="noopener">
@@ -133,9 +147,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
-        {% block extras %}
-        {% endblock %}
+    </script>
+    
+    {% block extras %}
+        
+    {% endblock %}
+    
 </body>
 
 </html>

@@ -38,9 +38,38 @@
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             {% for query in queries %}
-            <div class="card-body">
+            <div class="p-3 answer-bg mb-2 text-end
+                {% if not query.status and query.author == user %}
+                    faded
+                {% elif not query.status %} 
+                    d-none
+                {% endif %}">
+                <a href="{% url 'query_detail' query.slug %}" class="query-link">
+                    <div id="query{{ query.id }}" class="text-start">
+                        <blockquote class="blockquote mb-0">
+                            {{ query.title | linebreaks }}
+                        </blockquote>
+                    </div>
+                </a>
+                <hr>
+                <div class="py-1 px-3 mb-2">
+                    <cite title="Source Title">
+                        <strong>{{ query.author }} | {{ query.created_on }}</strong>
+                    </cite>
+                </div>
+                {% if not query.status and query.author == user %}
+                <p class="approval">
+                    This query is awaiting approval
+                </p>
+                {% endif %}
+                {% if user.is_authenticated and query.author == user and not query.status %}
+                    <button class="btn btn-delete" query_id="{{ query.id }}">Delete</button>
+                    <button class="btn btn-edit" query_id="{{ query.id }}">Edit</button>
+                {% endif %}
+            </div><!--
+            <div class="card-body">-->
                 <!-- We want a for loop inside the empty control tags
-                  to iterate through each answer in answers -->
+                  to iterate through each answer in answers --><!--
                 <blockquote class="blockquote mb-0">
                     <a href="{% url 'query_detail' query.slug %}" class="query-link">
                         <p>{{ query.title }}</p>
@@ -52,7 +81,7 @@
                     </footer>
                     <hr>
                 </blockquote>
-            </div>
+            </div>-->
             {% endfor %}
         </div>
         <!-- Categories block -->

@@ -6,6 +6,9 @@ from .models import About, CollaborateRequest
 @admin.register(About)
 class AboutAdmin(SummernoteModelAdmin):
 
+    list_display = ('title', 'content', 'updated_on')
+    search_fields = ['title']
+    list_filter = ('updated_on',)
     summernote_fields = ('content',)
 
 
@@ -20,4 +23,6 @@ class AboutAdmin(SummernoteModelAdmin):
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
 
-    list_display = ('message', 'read',)
+    list_display = ('name', 'email', 'message', 'read', 'created_on')
+    search_fields = ['name']
+    list_filter = ('created_on',)
