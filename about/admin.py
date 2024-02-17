@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import About, CollaborateRequest
+from .models import About, Contact, UserProfile
 
 
 @admin.register(About)
@@ -20,9 +20,18 @@ class AboutAdmin(SummernoteModelAdmin):
 #       own projects, then inherit from admin.ModelAdmin like
 #       we do below.
 
-@admin.register(CollaborateRequest)
-class CollaborateRequestAdmin(admin.ModelAdmin):
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'email', 'message', 'read', 'created_on')
     search_fields = ['name']
     list_filter = ('created_on',)
+
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+
+    list_display = ('first_name', 'last_name', 'email', 'username', 'describe_yourself', 'updated_on')
+    search_fields = ['first_name', 'last_name', 'email']
+    list_filter = ('username', 'updated_on',)
+    summernote_fields = ('describe_yourself',)

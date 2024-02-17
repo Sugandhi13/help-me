@@ -18,7 +18,7 @@
 
             <!-- Posting New Collaboration -->
             <form method="post">
-                {{ collaborate_form | crispy }}
+                {{ contact_form | crispy }}
                 {% csrf_token %}
                 <button id="submitButton" class="btn btn-signup" type="submit">Submit</button>
             </form>
