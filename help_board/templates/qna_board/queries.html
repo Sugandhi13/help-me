@@ -62,26 +62,7 @@
                     This query is awaiting approval
                 </p>
                 {% endif %}
-                {% if user.is_authenticated and query.author == user and not query.status %}
-                    <button class="btn btn-delete" query_id="{{ query.id }}">Delete</button>
-                    <button class="btn btn-edit" query_id="{{ query.id }}">Edit</button>
-                {% endif %}
-            </div><!--
-            <div class="card-body">-->
-                <!-- We want a for loop inside the empty control tags
-                  to iterate through each answer in answers --><!--
-                <blockquote class="blockquote mb-0">
-                    <a href="{% url 'query_detail' query.slug %}" class="query-link">
-                        <p>{{ query.title }}</p>
-                    </a>
-                    <footer class="blockquote-footer">Asked by
-                        <cite title="Source Title">
-                            {{ query.author }} ( {{ query.created_on }} )
-                        </cite>
-                    </footer>
-                    <hr>
-                </blockquote>
-            </div>-->
+            </div>
             {% endfor %}
         </div>
         <!-- Categories block -->

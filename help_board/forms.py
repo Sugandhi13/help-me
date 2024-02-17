@@ -5,7 +5,7 @@ from .models import Query, Answer
 class QueryForm(forms.ModelForm):
     class Meta:
         model = Query
-        fields = ('title', 'slug', 'category', 'content')
+        fields = ('title', 'category', 'content')
 
 
 class AnswerForm(forms.ModelForm):

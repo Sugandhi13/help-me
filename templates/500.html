@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<!--Box shown for 500 error  -->
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 mt-5">
+            <h1 class="head-bg">500 Error!</h1>
+            <div class="answer-bg text-center py-3">
+                <h3 class="mt-3">Internal Server Error  &#128577; </h3>
+                <br>
+                <p>
+                    <strong>Help me!</strong> is currently unable to handle this request.<br>
+                    Click on the button below to return to home page.
+                </p>
+                <a href="{% url 'home' %}" class="btn btn-category">Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

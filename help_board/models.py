@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
@@ -25,7 +26,7 @@ class Category(models.Model):
 
 class Query(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, null=False, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hm_queries"
     )
@@ -42,6 +43,11 @@ class Query(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 
 class Answer(models.Model):
