@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import About
+from .models import About, UserProfile
 from .forms import ContactForm, UserProfileForm
 
 # Create your views here.
@@ -67,16 +68,16 @@ def add_profile(request):
     if request.method == "POST":
         user_profile_form = UserProfileForm(data=request.POST)
         if user_profile_form.is_valid():
-            user_profile = user_profile_form.save(commit=False)
-            user_profile.username = request.user
-            user_profile.save()
+            profile = user_profile_form.save(commit=False)
+            profile.username = request.user
+            profile.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Your user profile added successfully!'
+                "Nice, your profile added successfully! <a href='../view_profile'>Click here</a> tab to view your information."
             )
-
-    user_profile_form = UserProfileForm()
-
+    else:
+        user_profile_form = UserProfileForm()
+    
     return render(
         request,
         "about/add_profile.html",
@@ -84,3 +85,24 @@ def add_profile(request):
             "user_profile_form": user_profile_form
         },
     )
+
+def view_profile(request):
+    """
+    Renders the About page
+
+    **Template:**
+
+    :template:`about/view_profile.html`
+    """
+
+    queryset = UserProfile.objects.filter(username=request.user)
+    user_profile = get_object_or_404(queryset)
+    
+    return render(
+        request,
+        "about/view_profile.html",
+        {
+            "user_profile": user_profile
+        },
+    )
+

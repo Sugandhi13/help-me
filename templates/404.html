@@ -8,6 +8,15 @@
         <div class="col-md-6 mt-5">
             <h1 class="head-bg">404 Error!</h1>
             <div class="answer-bg text-center py-3">
+                {% if request.path == view_profile_url %}
+                <h3 class="mt-3">Profile Not found &#128577; </h3>
+                <br>
+                <p>
+                    Looks like your profile doesn't exist.<br>
+                    Click on the button below to create your profile.
+                </p>
+                <a href="{% url 'add_profile' %}" class="btn btn-category">Create Profile</a>
+                {% else %}
                 <h3 class="mt-3">Page Not found &#128577; </h3>
                 <br>
                 <p>
@@ -15,6 +24,7 @@
                     Click on the button below to return to home page.
                 </p>
                 <a href="{% url 'home' %}" class="btn btn-category">Home</a>
+                {% endif %}
             </div>
         </div>
     </div>

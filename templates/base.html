@@ -3,7 +3,7 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'contact' as contact_url %}
-{% url 'add_profile' as add_profile_url %}
+{% url 'view_profile' as view_profile_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -75,8 +75,8 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == add_profile_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'add_profile' %}">Profile</a>
+                            <a class="nav-link {% if request.path == view_profile_url %}active" aria-current="page{% endif %}"
+                                href="{% url 'view_profile' %}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
