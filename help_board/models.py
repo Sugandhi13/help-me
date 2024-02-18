@@ -36,7 +36,6 @@ class Query(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -44,7 +43,7 @@ class Query(models.Model):
     def __str__(self):
         return f"{self.title}"
 
-    def save(self, *args, **kwargs):  # new
+    def save(self, *args, **kwargs): 
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)

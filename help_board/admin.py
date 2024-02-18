@@ -8,26 +8,27 @@ from .models import Category, Query, Answer
 @admin.register(Category)
 class CategoryAdmin(SummernoteModelAdmin):
 
-    list_display = ('id', 'title', 'author', 'created_on')
+    list_display = ('title', 'author', 'created_on')
     search_fields = ['title', 'author']
     list_filter = ('author', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
+    readonly_fields = ['id']
 
 
 @admin.register(Query)
 class QueryAdmin(SummernoteModelAdmin):
 
-    list_display = ('id', 'content', 'category', 'status', 'created_on')
+    list_display = ('title', 'category', 'status', 'author', 'created_on')
     search_fields = ['title', 'category']
-    list_filter = ('status', 'category', 'created_on')
+    list_filter = ('status', 'author', 'category', 'created_on')
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content',)
+    readonly_fields = ['id', 'category', 'content', 'author', 'created_on']
 
 
 @admin.register(Answer)
 class AnswerAdmin(SummernoteModelAdmin):
 
-    list_display = ('id', 'content', 'author', 'created_on')
-    search_fields = ['content', 'author']
+    list_display = ('content', 'author', 'created_on')
+    search_fields = ['query', 'content', 'author']
     list_filter = ('author', 'created_on')
-    summernote_fields = ('content',)
+    readonly_fields = ['id', 'query', 'content', 'author', 'created_on']

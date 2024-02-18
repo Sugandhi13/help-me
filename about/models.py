@@ -12,7 +12,7 @@ class About(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return f"{self.title}"
 
 
 class Contact(models.Model):
@@ -23,7 +23,7 @@ class Contact(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Collaboration request from {self.name}"
+        return f"{self.name}"
 
 class UserProfile(models.Model):
     first_name = models.CharField(max_length=100)
@@ -37,4 +37,4 @@ class UserProfile(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"User: {self.first_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"

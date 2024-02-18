@@ -10,6 +10,7 @@ class AboutAdmin(SummernoteModelAdmin):
     search_fields = ['title']
     list_filter = ('updated_on',)
     summernote_fields = ('content',)
+    readonly_fields = ['id', 'updated_on']
 
 
 # Register your models here.
@@ -24,8 +25,9 @@ class AboutAdmin(SummernoteModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'email', 'message', 'read', 'created_on')
-    search_fields = ['name']
-    list_filter = ('created_on',)
+    search_fields = ['name', 'email']
+    list_filter = ('read', 'created_on', 'name')
+    readonly_fields = ['id', 'name', 'email', 'message', 'created_on']
 
 
 @admin.register(UserProfile)
@@ -34,4 +36,4 @@ class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'username', 'describe_yourself', 'updated_on')
     search_fields = ['first_name', 'last_name', 'email']
     list_filter = ('username', 'updated_on',)
-    summernote_fields = ('describe_yourself',)
+    readonly_fields = ['id', 'username', 'updated_on']
