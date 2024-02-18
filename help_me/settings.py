@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     '8000-sugandhi13-help-me-t9c7y7j8ck.us2.codeanyapp.com',
     '8000-sugandhi13-helpme-pdj22k2oryl.ws-eu108.gitpod.io',
     '8000-sugandhi13-helpme-9ia7ns7gvjy.ws-eu108.gitpod.io',
+    '8000-sugandhi13-helpme-gi078jym3an.ws-eu108.gitpod.io',
     '.herokuapp.com'
 ]
 

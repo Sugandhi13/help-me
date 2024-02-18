@@ -13,12 +13,6 @@ class CategoryList(generic.ListView):
     template_name = "qna_board/index.html"
 
 
-# class QueryList(generic.ListView):
-#    queryset = Query.objects.all().order_by("created_on")
-#    template_name = "qna_board/queries.html"
-#    paginate_by = 3
-
-
 def queries(request, slug):
     """
     Display an individual :model:`help_board.Query`.

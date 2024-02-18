@@ -11,7 +11,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Category(models.Model):
     title = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
-    fontawesome_icon = models.CharField()
+    fontawesome_icon = models.CharField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hm_categories"
     )

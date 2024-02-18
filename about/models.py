@@ -17,7 +17,7 @@ class About(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=200)
-    email = models.EmailField()
+    email = models.EmailField(max_length=100,blank=True,unique=True)
     message = models.TextField()
     read = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -28,7 +28,7 @@ class Contact(models.Model):
 class UserProfile(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(max_length=100,blank=True,unique=True)
     profile_image = CloudinaryField('image', default='placeholder')
     username = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hm_user"

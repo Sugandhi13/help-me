@@ -73,7 +73,7 @@ def add_profile(request):
             profile.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                "Nice, your profile added successfully! <a href='../view_profile'>Click here</a> tab to view your information."
+                "Nice, your profile added successfully! <a href='../view_profile'>Click here</a> to view your information."
             )
     else:
         user_profile_form = UserProfileForm()
