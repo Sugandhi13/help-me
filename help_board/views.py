@@ -173,3 +173,21 @@ def answer_delete(request, slug, answer_id):
                              'You can only delete your own answers!')
 
     return HttpResponseRedirect(reverse('query_detail', args=[slug]))
+
+
+def query_delete(request, slug, query_id):
+    """
+    view to delete query
+    """
+    queryset = Category.objects.all()
+    category = get_object_or_404(queryset, slug=slug)
+    query = get_object_or_404(Query, pk=query_id)
+
+    if query.author == request.user:
+        query.delete()
+        messages.add_message(request, messages.SUCCESS, 'Query deleted!')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own queries!')
+
+    return HttpResponseRedirect(reverse('queries', args=[slug]))

@@ -8,4 +8,5 @@ urlpatterns = [
     path('<slug:slug>/queries', views.query_detail, name='query_detail'),
     path('<slug:slug>/edit_answer/<int:answer_id>', views.answer_edit, name='answer_edit'),
     path('<slug:slug>/delete_answer/<int:answer_id>', views.answer_delete, name='answer_delete'),
+    path('<slug:slug>/delete_query/<int:query_id>', views.query_delete, name='query_delete'),
 ]
