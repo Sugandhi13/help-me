@@ -18,7 +18,7 @@
             <cite><strong>Email-id:</strong> {{ user_profile.email }}
                 <br><strong>Username:</strong> {{ user_profile.username }}
             </cite><hr>
-            <blockquote>{{ user_profile.describe_yourself | safe }}</blockquote>
+            <blockquote>{{ user_profile.describe_yourself | linebreaks }}</blockquote>
         </div>
     </div>
     <div class="row">
