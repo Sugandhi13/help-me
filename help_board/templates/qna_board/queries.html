@@ -6,7 +6,7 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0 mt-5">
+        <div class="row g-0 mt-2 pe-2">
             <div class="col-md-12 masthead-text">
                 <!-- Category title goes in these h1 tags -->
                 <h1 class="query-title"><i class="{{ category.fontawesome_icon }}"></i> {{ category.title }}</h1>
@@ -62,7 +62,7 @@
                 </p>
                 {% endif %}
                 {% if user.is_authenticated and query.author == user %}
-                    <button class="btn btn-delete" query_id="{{ query.id }}">Delete</button>
+                    <button class="btn btn-query-delete" query_id="{{ query.id }}">Delete</button>
                 {% endif %}
             </div>
             {% endfor %}

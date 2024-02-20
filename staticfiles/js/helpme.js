@@ -4,7 +4,8 @@ const answerForm = document.getElementById("answerForm");
 const submitButton = document.getElementById("submitButton");
 
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
+const deleteAnswerButtons = document.getElementsByClassName("btn-answer-delete");
+const deleteQueryButtons = document.getElementsByClassName("btn-query-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
 /**
@@ -38,7 +39,7 @@ for (let button of editButtons) {
 * the user for confirmation before deletion.
 */
 
-for (let button of deleteButtons) {
+for (let button of deleteAnswerButtons) {
   button.addEventListener("click", (e) => {
       let answerId = e.target.getAttribute("answer_id");
       deleteConfirm.href = `delete_answer/${answerId}`;
@@ -46,7 +47,7 @@ for (let button of deleteButtons) {
   });
 }
 
-for (let button of deleteButtons) {
+for (let button of deleteQueryButtons) {
     button.addEventListener("click", (e) => {
         let queryId = e.target.getAttribute("query_id");
         deleteConfirm.href = `delete_query/${queryId}`;

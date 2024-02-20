@@ -5,7 +5,7 @@
 
 <div class="masthead">
     <div class="container answers">
-        <div class="row g-0 mt-2">
+        <div class="row g-0 mt-2 pe-2">
             <div class="col-md-12 masthead-text">
                 <!-- Query title goes in these h1 tags -->
                 <h1 class="query-title">{{ query.title }}</h1>
@@ -94,7 +94,7 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and answer.author == user %}
-                        <button class="btn btn-delete" answer_id="{{ answer.id }}">Delete</button>
+                        <button class="btn btn-answer-delete" answer_id="{{ answer.id }}">Delete</button>
                         <button class="btn btn-edit" answer_id="{{ answer.id }}">Edit</button>
                     {% endif %}
                 </div>
