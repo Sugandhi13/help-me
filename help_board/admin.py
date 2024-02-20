@@ -28,7 +28,7 @@ class QueryAdmin(SummernoteModelAdmin):
 @admin.register(Answer)
 class AnswerAdmin(SummernoteModelAdmin):
 
-    list_display = ('content', 'author', 'created_on')
+    list_display = ('content', 'author', 'approved', 'created_on')
     search_fields = ['query', 'content', 'author']
     list_filter = ('author', 'created_on')
     readonly_fields = ['id', 'query', 'content', 'author', 'created_on']
