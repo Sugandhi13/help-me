@@ -3,14 +3,19 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import About, UserProfile
+from .models import About, Contact, UserProfile
 from .forms import ContactForm, UserProfileForm
 
 
 # Created about_me view that renders all info of about model
 def about_me(request):
     """
-    Renders the About page
+    Display an individual :model:`about.About`.
+
+    **Context**
+
+    ``Query``
+        An instance of :model:`about.About`.
 
     **Template:**
 
@@ -31,13 +36,18 @@ def about_me(request):
 # Created contact view that renders all info of contact form and update contact model
 def contact(request):
     """
-    Renders the About page
+    Display an individual :Form:`about.forms.ContactForm`
+    and insert record in Contact model.
+
+    **Context**
+
+    ``Query``
+        An instance of :model:`about.Contact`.
 
     **Template:**
 
     :template:`about/contact.html`
     """
-
     if request.method == "POST":
         contact_form = ContactForm(data=request.POST)
         if contact_form.is_valid():
@@ -61,7 +71,13 @@ def contact(request):
 # Created add_profile view that renders all info of add profile form and update user profile model
 def add_profile(request):
     """
-    Renders the About page
+    Display an individual :Form:`about.forms.UserProfileForm`
+    and insert record in UserProfile model.
+
+    **Context**
+
+    ``Query``
+        An instance of :model:`about.UserProfile`.
 
     **Template:**
 
@@ -93,7 +109,13 @@ def add_profile(request):
 # Created view_profile view that renders all info of view user profile form from user profile model
 def view_profile(request):
     """
-    Renders the About page
+    Display an individual :Form:`about.forms.UserProfileForm`
+    and displays a record of logged in user from UserProfile model.
+
+    **Context**
+
+    ``Query``
+        An instance of :model:`about.UserProfile`.
 
     **Template:**
 

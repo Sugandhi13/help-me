@@ -62,6 +62,7 @@
                     This query is awaiting approval
                 </p>
                 {% endif %}
+                <!-- Query delete button -->
                 {% if user.is_authenticated and query.author == user %}
                     <button class="btn btn-query-delete" query_id="{{ query.id }}">Delete</button>
                 {% endif %}
@@ -108,5 +109,6 @@
 {% endblock %}
 
 {% block extras %}
+    <!-- Javascript file link  -->
     <script src="{% static 'js/helpme.js' %}"></script>
 {% endblock %}

@@ -3,13 +3,15 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!-- Query details page  -->
+
 <div class="masthead">
     <div class="container answers">
         <div class="row g-0 mt-2 pe-2">
             <div class="col-md-12 masthead-text">
-                <!-- Query title goes in these h1 tags -->
+                <!-- Query title -->
                 <h1 class="query-title">{{ query.title }}</h1>
-                <!-- Query author goes before the | the queries created date goes after -->
+                <!-- Query author and created date -->
                 <p class="query-subtitle">{{ query.author }} | {{ query.created_on }}</p>
             </div>
         </div>
@@ -20,7 +22,7 @@
     <div class="row">
         <div class="col card mb-4 left  top">
             <div class="card-body">
-                <!-- The query content goes inside the card-text. -->
+                <!-- The query content goes inside the card-text -->
                 <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text lead">
                     {{ query.content | safe }}
@@ -28,15 +30,16 @@
             </div>
         </div>
     </div>
-    <!-- Displaying count of answers -->
     <div class="row">
         <div class="col-6">
             <strong class="text-secondary">
+                <!-- Displaying count of answers -->
                 <i class="far fa-comments"></i> {{ answer_count }}
             </strong>
         </div>
         <div class="col-6 text-end">
             <strong class="text-secondary"> 
+                <!-- Displaying queries page link with name of queries category -->
                 <a href="{% url 'queries' query.category.slug %}" class="text-category">           
                     <i class="fas fa-caret-square-left"></i>{{ query.category }}
                 </a>
@@ -51,6 +54,7 @@
         <div class="col-md-12 card mb-5 mt-3">
             <div class="card-body my-2">
                 <div class="p-3 answer-bg mb-2">
+                    <!-- If user is logged in showing write answer box -->
                     {% if user.is_authenticated %}
                     <h5>Write an answer:</h5>
                     <form id="answerForm" method="post" class="" style="margin-top: 1.3em;">
@@ -59,6 +63,7 @@
                         <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
                     </form>
                     {% else %}
+                    <!-- If user is not logged in the showing login page link -->
                     <p class="text-center">
                         <strong>
                             <a href="{{ login_url }}">Log in</a> to leave an answer.
@@ -68,10 +73,8 @@
                 </div>
             </div>
             <hr>
-            <!-- displaying Django messages -->
             <div class="card-body mb-3">
-                <!-- We want a for loop inside the empty control tags
-              to iterate through each answer in answers -->
+                <!-- A for loop to display all answers -->
                 {% for answer in answers %}
                 <div class="p-3 answer-bg mb-2 text-end
                     {% if not answer.approved and answer.author == user %}
@@ -88,17 +91,18 @@
                             <strong>{{ answer.author }} | {{ answer.created_on }}</strong>
                         </cite>
                     </div>
+                    <!-- Displaying message that answer is waiting approval -->
                     {% if not answer.approved and answer.author == user %}
                     <p class="approval">
                         This answer is awaiting approval
                     </p>
                     {% endif %}
+                    <!-- Displaying delete and edit button to edit or delete answer -->
                     {% if user.is_authenticated and answer.author == user %}
                         <button class="btn btn-answer-delete" answer_id="{{ answer.id }}">Delete</button>
                         <button class="btn btn-edit" answer_id="{{ answer.id }}">Edit</button>
                     {% endif %}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
@@ -128,5 +132,6 @@
 {% endblock content %}
 
 {% block extras %}
+    <!-- Javascript file link  -->
     <script src="{% static 'js/helpme.js' %}"></script>
 {% endblock %}

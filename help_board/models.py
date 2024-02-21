@@ -1,13 +1,15 @@
+# Importing libraries required to build models
+
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+# Defining constant variable status
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
 
-
+# Create Category model
 class Category(models.Model):
     title = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
@@ -24,6 +26,7 @@ class Category(models.Model):
         return f"{self.title}"
 
 
+# Create Query model
 class Query(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, null=False, unique=True)
@@ -43,12 +46,14 @@ class Query(models.Model):
     def __str__(self):
         return f"{self.title}"
 
+    # Create query slug using title input from the user
     def save(self, *args, **kwargs): 
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
 
+# Create Answer model
 class Answer(models.Model):
     query = models.ForeignKey(
         Query, on_delete=models.CASCADE, related_name="query_asked"

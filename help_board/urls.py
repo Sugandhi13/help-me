@@ -1,5 +1,9 @@
+# Importing libraries required to build url patterns for views to work with html pages
+
 from . import views
 from django.urls import path
+
+# url configuration for help_board app
 
 urlpatterns = [
     path('', views.CategoryList.as_view(), name='home'),

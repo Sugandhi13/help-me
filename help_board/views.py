@@ -1,3 +1,5 @@
+# Importing libraries required to build views
+
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
@@ -5,14 +7,14 @@ from django.http import HttpResponseRedirect
 from .models import Query, Answer, Category
 from .forms import QueryForm, AnswerForm
 
-# Create your views here.
 
-
+# Created CategoryList generic view that renders all info of category model
 class CategoryList(generic.ListView):
     queryset = Category.objects.all().order_by("title")
     template_name = "qna_board/index.html"
 
 
+# Created queries view that renders all info from category and query model
 def queries(request, slug):
     """
     Display an individual :model:`help_board.Query`.
@@ -45,9 +47,10 @@ def queries(request, slug):
     )
 
 
+# Created ask_query view that renders all info of query model
 def ask_query(request):
     """
-    Display an individual :model:`help_board.Query`.
+    Input info to model:`help_board.Query`.
 
     **Context**
 
@@ -56,7 +59,7 @@ def ask_query(request):
 
     **Template:**
 
-    :template:`qna_board/query_detail.html`
+    :template:`qna_board/ask_query.html`
     """
 
     if request.method == "POST":
@@ -81,14 +84,15 @@ def ask_query(request):
     )
 
 
+# Created query_detail view that renders all info from query and answer model
 def query_detail(request, slug):
     """
-    Display an individual :model:`help_board.Query`.
+    Display's multiple models:`help_board.Query` & `help_board.Answer`.
 
     **Context**
 
     ``Query``
-        An instance of :model:`help_board.Query`.
+        An instance of models:`help_board.Query` & `help_board.Answer`.
 
     **Template:**
 
@@ -126,9 +130,15 @@ def query_detail(request, slug):
     )
 
 
+# Created answer_edit view that renders info of answer model and helps edit the existing answer
 def answer_edit(request, slug, answer_id):
     """
-    view to edit Answers
+    View to edit records of a model.
+
+    **Context**
+
+    ``Query``
+        An instance of models: `help_board.Answer`.
     """
 
     if request.method == "POST":
@@ -151,9 +161,15 @@ def answer_edit(request, slug, answer_id):
     return HttpResponseRedirect(reverse('query_detail', args=[slug]))
 
 
+# Created answer_delete view that renders info of answer model and helps delete the existing answer
 def answer_delete(request, slug, answer_id):
     """
-    view to delete answer
+    View to delete records in a model.
+
+    **Context**
+
+    ``Query``
+        An instance of models: `help_board.Answer`.
     """
     queryset = Query.objects.filter(status=1)
     query = get_object_or_404(queryset, slug=slug)
@@ -169,9 +185,15 @@ def answer_delete(request, slug, answer_id):
     return HttpResponseRedirect(reverse('query_detail', args=[slug]))
 
 
+# Created query_delete view that renders info of query model and helps delete the existing query
 def query_delete(request, slug, query_id):
     """
-    view to delete query
+    View to delete records in a model.
+
+    **Context**
+
+    ``Query``
+        An instance of models: `help_board.Query`.
     """
     queryset = Category.objects.all()
     category = get_object_or_404(queryset, slug=slug)

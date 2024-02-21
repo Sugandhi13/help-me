@@ -1,11 +1,14 @@
+# Importing libraries required to publish data on django admin panel
+
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Category, Query, Answer
 
-# Register your models here.
 
-
+# Register Category model
 @admin.register(Category)
+
+# Using summernote to customize display about info on category page
 class CategoryAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'author', 'created_on')
@@ -15,7 +18,10 @@ class CategoryAdmin(SummernoteModelAdmin):
     readonly_fields = ['id']
 
 
+# Register Query model
 @admin.register(Query)
+
+# Using summernote to customize display about info on query page
 class QueryAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'category', 'status', 'author', 'created_on')
@@ -25,7 +31,10 @@ class QueryAdmin(SummernoteModelAdmin):
     readonly_fields = ['id', 'category', 'content', 'author', 'created_on']
 
 
+# Register Answer model
 @admin.register(Answer)
+
+# Using summernote to customize display about info on answer page
 class AnswerAdmin(SummernoteModelAdmin):
 
     list_display = ('content', 'author', 'approved', 'created_on')
