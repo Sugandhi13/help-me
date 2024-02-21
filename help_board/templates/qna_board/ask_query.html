@@ -4,9 +4,12 @@
 
 {% block content %}
 
+<!-- Ask query page  -->
+
 <div class="container my-3 py-3">
     <div class="row justify-content-center mx-1">
         <div class="col-12 col-md-6 my-3 p-3 answer-bg">
+            <!-- Check if valid user is logged in, if yes then display ask query form  -->
             {% if user.is_authenticated %}
             <h3></h3>
             <h2 class="head-bg">Ask a Query!</h2>
@@ -15,12 +18,14 @@
                     Asking as: <strong>{{ user.username }}</strong>
                 </cite>
             </div>
+            <!-- Ask query form  -->
             <form id="queryForm" method="post" style="margin-top: 1.3em;">
                 {{ query_form | crispy }}
                 {% csrf_token %}
                 <button id="submitButton" type="submit" class="btn btn-signup">Submit</button>
             </form>
             {% else %}
+            <!-- If user is not logged in then disply login button and ask user to login  -->
             <p class="red-o text-center">
                 <strong>
                     To ask a query, please <a href="{{ login_url }}">Login</a> first.

@@ -3,16 +3,18 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-
+<!-- About us page  -->
 <div class="container my-3 py-3">
     <div class="row answer-bg mx-1">
         <div class="col-12 col-md-4 text-center my-5">
+            <!-- About us profile image -->
             {% if "placeholder" in about.profile_image.url %}
                 <img src="{% static 'images/nobody.jpg' %}" class="profile-image">
             {% else %}
                 <img src="{{ about.profile_image.url }}" class="profile-image" alt="{{ about.title }}">
             {% endif %}
         </div>
+        <!-- About us page title with content -->
         <div class="col-12 col-md-8 mb-5 mt-5">
             <h2 class="head-bg">{{ about.title }}</h2>
             {{ about.content | safe }}
@@ -20,9 +22,10 @@
     </div>
     <div class="row">
         <div class="col text-right mb-3">
-            <!-- Updated on field goes in here -->
+            <!-- About us page last Updated -->
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
 </div>
+
 {% endblock content %}

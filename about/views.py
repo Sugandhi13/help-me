@@ -1,12 +1,13 @@
+# Importing libraries required to build views
+
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import About, UserProfile
 from .forms import ContactForm, UserProfileForm
 
-# Create your views here.
 
-
+# Created about_me view that renders all info of about model
 def about_me(request):
     """
     Renders the About page
@@ -27,6 +28,7 @@ def about_me(request):
     )
 
 
+# Created contact view that renders all info of contact form and update contact model
 def contact(request):
     """
     Renders the About page
@@ -56,6 +58,7 @@ def contact(request):
     )
 
 
+# Created add_profile view that renders all info of add profile form and update user profile model
 def add_profile(request):
     """
     Renders the About page
@@ -86,6 +89,8 @@ def add_profile(request):
         },
     )
 
+
+# Created view_profile view that renders all info of view user profile form from user profile model
 def view_profile(request):
     """
     Renders the About page

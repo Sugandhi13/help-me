@@ -4,26 +4,30 @@
 
 {% block content %}
 
+<!-- Display user profile page  -->
 <div class="container my-3 py-3">
     <div class="row answer-bg mx-1">
         <div class="col-12 col-md-4 text-center my-5">    
+            <!-- Display user profile image  -->
             {% if "placeholder" in user_profile.profile_image.url %}
                 <img src="{% static 'images/nobody.jpg' %}" class="profile-image">
             {% else %}
                 <img src="{{ user_profile.profile_image.url }}" class="profile-image" alt="{{ user_profile.title }}">
             {% endif %}
         </div>
+        <!-- Display user profile info  -->
         <div class="col-12 col-md-8 mb-5 mt-5">
             <h2 class="head-bg">{{ user_profile.first_name }} {{ user_profile.last_name }}</h2>
             <cite><strong>Email-id:</strong> {{ user_profile.email }}
                 <br><strong>Username:</strong> {{ user_profile.username }}
             </cite><hr>
+            <!-- Display about user info  -->
             <blockquote>{{ user_profile.describe_yourself | linebreaks }}</blockquote>
         </div>
     </div>
     <div class="row">
         <div class="col text-right mb-3">
-            <!-- Updated on field goes in here -->
+            <!-- Display user profile last updated on -->
             <p class="text-end"><em>Updated on: {{ user_profile.updated_on }}</em></p>
         </div>
     </div>

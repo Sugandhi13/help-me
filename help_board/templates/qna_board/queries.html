@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<!-- query.html content starts here -->
+<!-- Query page  -->
 
 <div class="masthead">
     <div class="container">
@@ -15,13 +15,14 @@
     </div>
 </div>
 <div class="container">
-    <!-- Displaying count of queries -->
     <div class="row">
+        <!-- Displaying count of queries -->
         <div class="col-6">
             <strong class="text-secondary">
                 <i class="fas fa-bullhorn"></i> {{ queries_count }}
             </strong>
         </div>
+        <!-- Displaying home page link -->
         <div class="col-6 text-end">
             <strong class="text-secondary">
                 <a href="{% url 'home' %}" class="text-category">           

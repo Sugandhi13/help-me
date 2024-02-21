@@ -1,10 +1,11 @@
+# Importing required libraries required to build models
+
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 
-
+# Create About model
 class About(models.Model):
     title = models.CharField(max_length=200, unique=True)
     profile_image = CloudinaryField('image', default='placeholder')
@@ -15,6 +16,7 @@ class About(models.Model):
         return f"{self.title}"
 
 
+# Create Contact model
 class Contact(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(max_length=100,blank=True,unique=True)
@@ -25,6 +27,8 @@ class Contact(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+
+# Create UserProfile model
 class UserProfile(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

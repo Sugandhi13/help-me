@@ -1,9 +1,13 @@
+# Importing required libraries to register the models
+
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import About, Contact, UserProfile
 
-
+# Register About model
 @admin.register(About)
+
+# Using summernote to customize display about info on admin page
 class AboutAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'content', 'updated_on')
@@ -13,15 +17,10 @@ class AboutAdmin(SummernoteModelAdmin):
     readonly_fields = ['id', 'updated_on']
 
 
-# Register your models here.
-# Note: admin.ModelAdmin is the standard way of registering
-#       our model with the admin panel. We do it differently
-#       above because we are supplying Summernote fields.
-#       If you want to customise the admin panel view in your
-#       own projects, then inherit from admin.ModelAdmin like
-#       we do below.
-
+# Register Contact model
 @admin.register(Contact)
+
+# Using summernote to customize display contact info on admin page
 class ContactAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'email', 'message', 'read', 'created_on')
@@ -30,7 +29,10 @@ class ContactAdmin(admin.ModelAdmin):
     readonly_fields = ['id', 'name', 'email', 'message', 'created_on']
 
 
+# Register UserProfile model
 @admin.register(UserProfile)
+
+# Using summernote to customize display user profile info on admin page
 class UserProfileAdmin(admin.ModelAdmin):
 
     list_display = ('first_name', 'last_name', 'email', 'username', 'describe_yourself', 'updated_on')
