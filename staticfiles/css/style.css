@@ -1,3 +1,4 @@
+/* Default style for different html tags */
 body {
     background-color: #e3f2fd;
 }
@@ -6,6 +7,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     font-family: Lato, sans-serif;
 }
 
+/* Styel brand icon */
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.7rem;
@@ -13,6 +15,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     color: #fff;
 }
 
+/* Style different texts */
 .white-o {
     color: #fff;
 }
@@ -25,10 +28,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #fff;
-}
-
+/* Style for different backgrounds */
 .head-bg {
     background-color: #445261;
     border-radius: 10px;
@@ -50,6 +50,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     background-color: #e3f2fd;
 }
 
+/* Sytle others areas */
 .user-login {
     color: yellow;
     font-weight: bold;
@@ -63,18 +64,6 @@ button p h1 h2 h3 h4 h5 h6 a{
 
 .answers {
     border: 3px;
-    background-color: #e3f2fd;
-}
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 70%;
-    left: 5px;
     background-color: #e3f2fd;
 }
 
@@ -97,6 +86,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     text-align: center;
 }
 
+/* Style master head area and text */
 .masthead {
     margin-top: 5px;
     overflow: hidden;
@@ -112,10 +102,12 @@ button p h1 h2 h3 h4 h5 h6 a{
     position: relative;
 }
 
+/* Style profile image */
 .profile-image {
     width: 75%
 }
 
+/* Style Query text and links */
 .query-link {
     text-decoration: none;
     color: #445261;
@@ -136,6 +128,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     color: #e3f2fd;
 }
 
+/* Style for different buttons */
 .btn-signup,
 .btn-edit {
     background-color: #445261;
@@ -174,6 +167,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     background: #0d6efd;
 }
 
+/* Text waiting for approval */
 .faded {
     color: rgb(172, 175, 175);
 }
@@ -192,6 +186,7 @@ button p h1 h2 h3 h4 h5 h6 a{
     color:#fff;
 }
 
+/* Social icons */
 .social-icons {
     display: flex;
     justify-content: center;

@@ -1,3 +1,4 @@
+/* Declarion of constant variables */
 const editButtons = document.getElementsByClassName("btn-edit");
 const answerText = document.getElementById("id_content");
 const answerForm = document.getElementById("answerForm");
@@ -18,6 +19,8 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 * - Updates the submit button's text to "Update".
 * - Sets the form's action attribute to the `edit_answer/{answerId}` endpoint.
 */
+
+/* Answer edit button */
 for (let button of editButtons) {
     button.addEventListener("click", (e) => {
         let answerId = e.target.getAttribute("answer_id");
@@ -39,6 +42,7 @@ for (let button of editButtons) {
 * the user for confirmation before deletion.
 */
 
+/* Answer delete button */
 for (let button of deleteAnswerButtons) {
   button.addEventListener("click", (e) => {
       let answerId = e.target.getAttribute("answer_id");
@@ -47,6 +51,7 @@ for (let button of deleteAnswerButtons) {
   });
 }
 
+/* Query delete button */
 for (let button of deleteQueryButtons) {
     button.addEventListener("click", (e) => {
         let queryId = e.target.getAttribute("query_id");
