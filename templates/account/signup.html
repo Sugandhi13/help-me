@@ -6,17 +6,19 @@
 
 {% block content %}
 
-
+<!-- Signup page -->
 <div class="container my-3 py-3">
     <div class="row mx-1">
         <div class="col-md-6 offset-md-3 mt-5 p-3 text-start answer-bg">
             <h3 class="head-bg">{% trans "Sign Up" %}</h3>
+            <!-- Message to check if user already have an account and show login page link -->
             {% blocktrans %}
                 <p>
                     Do you already have an account?
                     Please <a href="{{ login_url }}">Login</a>.
                 </p> 
             {% endblocktrans %}
+            <!-- Signup form and register user on the website -->
             <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
             {{ form.as_p }}

@@ -6,14 +6,17 @@
 
 {% block content %}
 
+<!-- Logout page -->
 <div class="container my-3 py-3">
     <div class="row mx-1">
         <div class="col-md-6 offset-md-3 my-5 p-3 text-center answer-bg">
+            <!-- Reconfirm message to double check if user really wants to logout -->
             <h5 class="red-o mb-3">
                 <strong>
                     {% trans 'Are you sure, you want to sign out?' %}
                 </strong>
             </h5>
+            <!-- Logout the user and redirection to specified location -->
             <form method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}
                 {% if redirect_field_value %}
