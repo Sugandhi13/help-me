@@ -2,9 +2,11 @@
 
 Help Me is website, where you can ask any query and get responses from other users who have knowledge or experience in that domain. Whether you want to learn something new, get advice, share your opinions or just have fun, this is the place for you.
 
-![responsive_test]()
+## AmIResponsive
 
-Help Me ! is live, to access it [click here.]()
+![responsive_test](static/images/readme_images/amiresponsive.png)
+
+Help Me ! is live, to access it [click here.](https://help-me-038cd18040fa.herokuapp.com/)
 
 ## Table of contents
 
@@ -19,54 +21,49 @@ Help Me ! is live, to access it [click here.]()
 ## UX
 
 ### Site Purpose
-Help Me is website, where you can ask any query and get responses from other users who have knowledge or experience in that domain. Whether you want to learn something new, get advice, share your opinions or just have fun, this is the place for you.
 
 Our mission is to create a community of curious and helpful people who can learn from each other and exchange information on various topics. We believe that everyone has something valuable to offer and that by asking and answering questions, we can enrich our knowledge and understanding of the world.
 
 ### Audience
 
-Help me  for  everyone who need any kind of help regarding Travel, Finance, Sports, Education, Politics, Entertainment, Food, Health user can ask any kind of question regarding these topics. 
+Help me is for everyone who have any query or would like to help other users, those have asked queries in different categories like,
+
+- Education
+- Entertainment
+- Finance
+- Food
+- Health
+- Politics
+- Sports 
+- Travel  
 
 ### Current User Goals
 
-- Learn about the community
-- Send questions to the community administrators
-- Create posts related to their topic  
-- See posts
-- Edit posts
-- Delete posts
-- Filter exisitng posts
-- Comment on posts
-- Edit their profile
-- Delete their profile
+- Ask query
+- Respond on a query
+- Delete query
+- Delete or edit responses
+- Add user profile
+- Contact admin for suggestion, thoughts
 
 ### Future User Goals
 
-- Learn about the community
-- Send questions to the community administrators
-- Create posts related to their topic 
-- See posts
-- Edit posts
-- Delete posts
-- Filter exisitng posts
-- Comment on posts
-- Create their profile
-- Edit their profile
-- Delete their profile
+- Like, disklike or upvote different queries or response given by other users
+- See all users profile
+- See all queries asked or response given in a page
+- Option to add new categories
+- Filter queries or responses
+- Upload image in add profile page
 
 ## Design
 
 ### Color scheme
 
-![color_palette]()
+![color_palette](static/images/readme_images/colorpallete.png)
 
 ### Typography
 
-The body of the elements on the website utilized the font Quicksand, while the headings were complemented by Montserrat. This careful selection of fonts enhances the professional appearance of the engineering site.
-
-### Imagery
-
-The six hero images were obtained from a free stock photo platform to capture attention regarding the main purpose of the web application: travel.
+Lato font is the major font used in this website for all kind of text with fallback option to sans-serif if the browser don't support the preffered color Lato.
 
 ### Agile methodology
 
@@ -75,42 +72,109 @@ Agile project management principles guided the development of this project, leve
 ### Wireframes
 
 - The separate documetns for the wireframes can be found here:
-    - [Desktop Wireframes](/docs/WIREFRAMES.md)
-    - [Mobile Wireframes](/docs/WIREFRAMES_mobile.md)
+    - [Desktop Wireframes]()
+    - [Mobile Wireframes]()
 
 ### Database schema
 
-The database schema is composed by four models: user profile, post, comment and contact information. 
+The database schema is composed by 6 models: Category, Query, Answer, About, User Profile and Contact information. 
 
-When a new user signs up on the website, a user profile instance is automatically generated, utilizing a One-to-One Field with the username. Subsequently, the user is seamlessly redirected to the 'create profile' form to finalize the profile details. Upon completion, the 'complete profile' boolean is set to true, triggering a redirection to the user's completed profile.
+![database_schema](static/images/readme_images/erdiagram.png)
 
-The Post model contains the author as a foreign key, representing the username of the user who created the posts, followed by other Character and Text fields. On the other hand, the likes field is a Many-to-Many Field, reflecting the fact that many users can like a single post.
+#### Category
 
-The comment model also includes the author as a foreign key, along with the remaining Text and Character fields. Finally, the contact info model serves as a basic information repository where the app collects names, email addresses, phone numbers, and message information. This model is designed for users to communicate with the administrators of the page; therefore, it does not have any relationships with the other models.
+This model consist of different categories available on website for which a user can ask or respond to queries. Only admin have access to this model and access to create a new categories. This model have following fields:
 
-![database_schema](static/images/readme_images/database_diagram.png)
+- Id: Unique id for each category and it works as primary key for the model.
+- Title: A character field that handles category name.
+- Slug: A character field and autogenerated with the help of summernotes. This helps in creating the urls and route user to a page where all queries for respective category can be seen.
+- Fontawesome_Icon: A character field that handle the fontawesome icons text taken from w3c bootstrap website and fits for visualisation purpose of each category.
+- Author: A character field that handle the username, who is adding the category. In current case, its only admin. But, in future goals, I would like to give oppurtunities to site user to add the categories if not exists already. Its a Forigen key to the django User model.
+- Created_On: A Datetime field used to store the category creation datetime.
+
+#### Query
+
+This model consist of all queries that any user asks with Foriegn key link to Category model to handle display only queries for respective categories at front end. Site user have access to ask new queries in this model and admin have access to approve the queries to display asked queries to all users. This model have following fields:
+
+- Id: Unique id for each query and it works as primary key for the model.
+- Title: A character field that handles query title.
+- Slug: A character field and autogenerated with the help of summernotes. This helps in creating the urls and route user to a page where all answer for respective query can be seen.
+- Author: A character field that handle the username, who is asking the question based upon the session logged in. Its a Forigen key to the django User model.
+- Category: A character field that handle the category for which the query has been asked and aligned to. Its a Forigen key to the Category model.
+- Content: A Text field that handle the details view of the query. It has no words limit.
+- Created_On: A Datetime field used to store the query creation datetime.
+- Status: Its an integer field that is used to set status of the query. The default value is 0 that means Draft and admin can set this value to 1 that means Published and only after the status is set to 1 (Published) by the admin the query asked will be visible to all.
+
+#### Answer
+
+This model consist of all answer that any user writes with Foriegn key link to Query model to handle display only answer for respective query at front end. Site user have access to write answers in this model and admin have access to approve the answer to display answer written to all users. This model have following fields:
+
+- Id: Unique id for each query and it works as primary key for the model.
+- Query: A character field that handle the query for which the answer has been given. Its a Forigen key to the Query model.
+- Author: A character field that handle the username, who is writing the answer based upon the session logged in. Its a Forigen key to the django User model.
+- Content: A Text field that handle the details view of the answer. It has no words limit.
+- Approved: Its an boolean field that is used to approve the answer. The default is not approved and admin mark it as approved by clicking the checkbox option on answer from on admin site. Once the answer is approved only after that it will be visible to all.
+- Created_On: A Datetime field used to store the answer creation datetime.
+
+#### UserProfile
+
+This model consist of all user profiles that any logged in user create for itself. The user has been identify with the help of django user model to display the correct profile at front end. Site user have access to write information about its profile in this model and admin have access to upload the image for user profile. This model have following fields:
+
+- Id: Unique id for each query and it works as primary key for the model.
+- First_Name: A character field that handle the first name of the user.
+- Last_Name: A character field that handle the last name of the user.
+- Email: An email field that handle the email address of the user.
+- Profile_Image: A Cloudinary field that handles the image uploaded by the admin for the user.
+- Username: A character field that handle the username, who is writing its profile based upon the session logged in. Its a Forigen key to the django User model.
+- Describe_Yourself: A Text field that handle the details view of the description the user write about itself. It has no words limit.
+- Updated_On: A Datetime field used to store the last updated datetime.
+
+#### About
+
+This model consist of all about us information of this website. Only admin can update this model. This model have following fields:
+
+- Id: Unique id for each query and it works as primary key for the model.
+- Title: A character field that handle the Title for the about us page.
+- Profile_Image: A Cloudinary field that handles the image uploaded by the admin for about us page.
+- Content: A Text field that handle the details view of the description the admin writes about the website. It has no words limit and summernotes are used to store the data in rich text format.
+- Updated_On: A Datetime field used to store the last updated datetime.
+
+#### Contact
+
+This model consist of all contact us information of when a site user writes to the admin. Any site user can update this model regardless of the user is logged in or not. This model have following fields:
+
+- Id: Unique id for each query and it works as primary key for the model.
+- Name: A character field that handle the name of the user who is trying to contact the admin.
+- Email: An email field that handle the email address of the user.
+- Message: A Text field that handle the details view of the message the user writes about the website admin. It has no words limit.
+- Read: Its an boolean field that is used to mark the message as read by the admin. The default is not read and admin mark it as read by clicking the checkbox option on contact from on admin site.
+- Created_On: A Datetime field used to store the contact message creation datetime.
 
 ## Features
 
-### Existing Features
+### Common Features
+
+#### Language Used
+
+- Django
+- Python
+- HTML5
+- CSS3
+- Javascript
 
 #### Navbar
 
-- On large screens, the navbar displays links to Home, About Us, Board, Contact, and User Options. 
+- On large screens, the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query. If user is not logged in it displays the Sign Up and Login links too. Also, on right corner a message dispalys that user is not logged in.
 
-![navbar](static/images/readme_images/navbar.png)
+![navbar](static/images/readme_images/fullscreennavbarwithoutlogin.png)
 
-- When the user is not logged in, a user icon is displayed, and the options are sign-up or login.
+- When the user is logged in apart from showing the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query the Profile and logout links are dispalyed too. Also, on right corner a Hi username message display with some stylized view.
 
-![profile_icon_logged_out](static/images/readme_images/profile_icon_logged_out.png)
+![profile_icon_logged_in](static/images/readme_images/fullscreennavbarwithlogin.png)
 
-- When the user is logged in, the first two letters of the user's username are displayed instead of the profile icon, and the options are Profile or Logout.
+- In small screens, all links are placed within a burger menu. The brand name and icon display outside the collapseable burger menu. 
 
-![profile_icon_logged_in](static/images/readme_images/profile_icon_logged_in.png)
-
-- In small screens, all links except the Home link are placed within a burger menu. Additionally, the profile dropdown options are added in the same category as the rest of the links. 
-
-![collapsed_navbar](static/images/readme_images/sm_navbar.png)
+![collapsed_navbar](static/images/readme_images/smallscreennavbarwithlogin.png)
 
 #### Footer
 
