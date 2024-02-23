@@ -75,15 +75,15 @@ The separate documetns for the wireframes can be found here:
 
 <details>
     <summary>Desktop Wireframes</summary>
--   <details>
+    - <details>
         <summary>Home Page (without login)</summary>
             <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png" alt="home_page_without_login"/>
     </details>
--   <details>
+    - <details>
         <summary>Home Page (with login)</summary>
         <IMG src="static/images/readme_images/wireframe/homewithlogin_wf.png" alt="home_page_with_login"/>
     </details>
--   <details>
+    - <details>
         <summary>Ask A Query Page</summary>
         <IMG src="static/images/readme_images/wireframe/askaquery_wf.png" alt="ask_query_page"/>
     </details>
