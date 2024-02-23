@@ -373,14 +373,14 @@ This model consist of all contact us information of when a site user writes to t
 - If the user is logged in then a query form will appear that the user can fill to ask a query. If any required input is not give then the error will displays. 
 
 <details>
-    <summary>Ask a Query Page (With user login)</summary>
+    <summary>Ask a Query Error</summary>
     <IMG src="static/images/readme_images/testing/query_error.png" alt="askaquery_page_error"/>
 </details>
 
 - If all requried data is filled and user select a valid category as well then upon submission the a success message will appear just below the top navbar.
 
 <details>
-    <summary>Ask a Query Page (With user login)</summary>
+    <summary>Ask a Query Success</summary>
     <IMG src="static/images/readme_images/testing/queryaskedsuccessfullmessage.png" alt="askaquery_page_success"/>
 </details>
 
@@ -391,7 +391,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/webpagewithuserlogin/querypagewithunapprovedquerydisplay.png" alt="queries_asked_view"/>
 </details>
 
-- If the user press the delete button then a popup will appear to re-confirm the users choice to delete the query asked. An authonticated user can delete any old queries asked by him as well. But, the user can not delete any query asked by the other users.
+- If the user press the delete button then a popup will appear to re-confirm the users choice to delete the query asked. An authonticated user can delete any old queries asked by them as well. But, the user can not delete any query asked by the other users.
 
 <details>
     <summary>Query Delete Popup</summary>
@@ -417,6 +417,78 @@ This model consist of all contact us information of when a site user writes to t
 <details>
     <summary>Queries Model - Admin</summary>
     <IMG src="static/images/readme_images/adminpage/querymodeladminview.png" alt="queries_model_view_admin"/>
+</details>
+
+#### Write an Answer 
+
+- A user should be logged in to write an answer on the webstie. If user is not yet logged in then a message with login button link will displays to the user. 
+
+<details>
+    <summary>Write an Answer Page (Without user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithoutuserlogin/answerspagewithoutlogin.png" alt="answer_page_without_user_login"/>
+</details>
+
+- If the user is logged in then answer form will appear that the user can fill about the asked query. If required input is not give then the error will displays. 
+
+<details>
+    <summary>Write an Answer Error</summary>
+    <IMG src="static/images/readme_images/testing/answer_error.png" alt="answer_page_error"/>
+</details>
+
+- If all requried data is filled then upon submission the a success message will appear just below the top navbar.
+
+<details>
+    <summary>Write an Answer Success</summary>
+    <IMG src="static/images/readme_images/testing/answersubmittedsuccessmessage.png" alt="answer_page_success"/>
+</details>
+
+- After successfully submitting the answer. The user can see the answer at top of other queries and below the write an answer box. Though, until the answer is approved by the admin the answer will only be visible to the authorized user only along with option of edit and delete button to edit or delete the answer. Once the answer is approved then the answer is visible for all other users to see.
+
+<details>
+    <summary>Answer Written View</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/answersubmittedandwaitingforapproval.png" alt="answer_written_view"/>
+</details>
+
+- If the user press the edit button then the existing answer written by the user will re-appear in the write an answer box. An authonticated user further edit/update the old answer written by them as well.
+
+<details>
+    <summary>Answer Edit</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/answereditedbyuser.png" alt="answer_delete"/>
+</details>
+
+- Once the answer is update by the user then the user can click on submit button again and the answer will be re-submitted and will show to authunticated user only with message of waiting for approval.
+
+<details>
+    <summary>Answer Edit Success</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/answerupdatedsuccessmessage.png" alt="answer_edit_success"/>
+</details>
+
+- If the user press the delete button then a popup will appear to re-confirm the users choice to delete the answer wrote. An authonticated user can delete any old answer written by them as well. But, the user can not delete any answer written by the other users.
+
+<details>
+    <summary>Answer Delete Popup</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/deleteanswerpopoup.png" alt="answer_delete_reconfirm"/>
+</details>
+
+- If the users clicks on close button then nothing happen. But, if the users clicks on delete button again and confirms that he wants to delete the answer written. The delete success message will appear and the answer will be delete from the database.
+
+<details>
+    <summary>Answer Delete Success</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/answerdeletedsuccessmessage.png" alt="answer_delete_success"/>
+</details>
+
+- Once the users posts an answer and it goes to admin for approval. Admin gets a view of all the answers written by different users. I have used summernotes admin functionality to display the customized details to admin and he has option to filter or sort the answer based upon time, users etc.,
+
+<details>
+    <summary>Answer View - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/answersadminview.png" alt="answer_view_admin"/>
+</details>
+
+- Admin can click on any answer, specifically the un-approved ones and go into the answer model view to approve it. After ticking the checkbox 'Approved' the answer will be start displaying for all the users.
+
+<details>
+    <summary>Answer Model - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/answermodeladminview.png" alt="answer_model_view_admin"/>
 </details>
 
 #### Registration (Authentication)
