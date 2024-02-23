@@ -491,89 +491,115 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/answermodeladminview.png" alt="answer_model_view_admin"/>
 </details>
 
-#### Registration (Authentication)
+#### Sign Up
 
 - When not authenticated, users can create an account using a unique username and password.
 
-![signup_form](static/images/readme_images/signup_form.png)
+<details>
+    <summary>Signup Page</summary>
+    <IMG src="static/images/readme_images/webpagewithoutuserlogin/signuppage.png" alt="signup_page"/>
+</details>
 
 - When the user attempts to create an account with an existing username, a password that does not fulfill the requirements, or if the passwords do not match, an error is displayed in the form.
 
-![signup_form_error](static/images/readme_images/signup_form_error.png)
+<details>
+    <summary>Signup Error</summary>
+    <IMG src="static/images/readme_images/testing/signup_error.png" alt="signup_error"/>
+</details>
+
+- When users fill all details as per required criteria and submit the form. Signup successfull message will appear and user will logged into the website and redirected to Home page.
+
+<details>
+    <summary>Signup Form Example</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/testusersignup.png" alt="signup_form"/>
+</details>
+
+<details>
+    <summary>Signup Success</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/signupsuccessmessage.png" alt="signup_success"/>
+</details>
+
+- The admin can see all the user who has created their account on website from the User model on django admin page.
+
+<details>
+    <summary>User Model View</summary>
+    <IMG src="static/images/readme_images/adminpage/useradminview.png" alt="user_model_view"/>
+</details>
+
+#### Log In
 
 - Login Page: A user can log in to the application by inputting their username and correct password.
 
-![login_form](static/images/readme_images/login_form.png)
+<details>
+    <summary>Login Page</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/loginpageuserlogin.png" alt="login_page"/>
+</details>
 
 - If, when logging in, the user inputs an incorrect username or password, the form will display the error.
 
-![login_form_error](static/images/readme_images/login_form_error.png)
+<details>
+    <summary>Login Error</summary>
+    <IMG src="static/images/readme_images/testing/login_error.png" alt="login_error"/>
+</details>
+
+#### Log Out
+
 
 - Logout Page: Here, the application asks the user for confirmation before logging out. 
 
-![logout_form](static/images/readme_images/logout_form.png)
+<details>
+    <summary>Logout Page</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/logoutpage.png" alt="logout_page"/>
+</details>
 
-#### Create profile 
+#### Profile 
 
-- After a user signs in for the first time, they are redirected to the create profile page. This page does not contain navigation links, as its purpose is to encourage the user to complete their profile.
+- After a user signs in the user has option to add its profile page. This page open up first with error with a button that is linked to add a profile, when the user clicks on Profile link from the navbar menu and if the user doesn't have an existing profile.
 
-![create_profile_form](static/images/readme_images/create_profile_form.png)
+<details>
+    <summary>Profile Not Found</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/errorwhennewuserclickonprofilepage.png" alt="profile_not_found"/>
+</details>
 
-- The create profile form has form validation features and displays errors if a field is left blank or filled incorrectly.
+- Then the user can create its profile by filling the information like the firstname, lastname, email id, profile image and writing few lines about itself under describe yourself text box.
 
-![create_profile_form_error](static/images/readme_images/create_profile_form_error.png)
+<details>
+    <summary>Profile Form</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/createprofilepage.png" alt="profile_form"/>
+</details>
 
-- If the form is valid, the user is redirected to their user profile page, where they see a success message stating that their profile has been created. 
+- If any incorrect information is filled then the user wil face error.
 
-![create_profile_success](static/images/readme_images/create_profile_success.png)
+<details>
+    <summary>Profile Form Error</summary>
+    <IMG src="static/images/readme_images/testing/addprofile_error.png" alt="profile_form_error"/>
+</details>
 
-- If the user chooses not to complete their profile creation and navigates elsewhere within the app using the URL bar, their profile will not be accessible to either themselves or other users.
+- If the form is valid, a success message stating that their profile has been created populate just below the navbar with a link to view the profile. The user can click on that link or from top navbar Profile menu can route to user profile page view. 
 
-    - If the user attempts to access their profile without having completed it, a card will display explanatory information and include a link directing them to the profile creation form.
+<details>
+    <summary>Profile Form Success</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/profilecreatesuccessmessagewithlinkofprofileviewpage.png" alt="profile_form_success"/>
+</details>
 
-    ![profile_not_created_same_user](/static/images/readme_images/profile_not_created_user.png)
+<details>
+    <summary>Profile View</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/profilepageofloggedinuserifusercreateditsprofile.png" alt="profile_form_success"/>
+</details>
 
-    - In the event that another user attempts to access the profile, a card will appear, providing an explanation of the situation and offering links to either the community board or the user profile.
+- The admin can view all the profiles created from the UserProfile view on the django admin dashboard. The user of summernotes helps here to customize the look of admin page as per admin need and also has various filter and sorting options.
 
-    ![profile_not_created_other_user](/static/images/readme_images/profile_not_created_other_user.png)
+<details>
+    <summary>User Profile View - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/usersprofileadminview.png" alt="user_profile_view_admin"/>
+</details>
 
-    - If an unauthenticated user attempts to access a profile, a card will be displayed, offering a similar explanation. However, instead of providing an option to visit the profile, it will feature a button prompting the user to sign up.
+- The admin can edit a little like upload the profile photo on behalf of the user if the user writes to admin. As the upload photo functionality is not yet working on the website and it an open bug.
 
-    ![profile_not_created_other_user](/static/images/readme_images/profile_not_created_other_user_not_auth.png)
-
-#### User profile
-
-- The main difference between the user profile and the posts board is that there is no possibility of filtering posts; all displayed posts belong to the user, and a card with the user's profile information is visible. 
-- When the authenticated user is on their profile, they can create posts and also edit their profile by clicking the 'Edit Profile' button. 
-
-![user_profile](static/images/readme_images/user_profile_general.png)
-
-- If the user does not have any posts, a message will be displayed stating that the user has no posts
-- When the authenticated user is on another user's profile, they are not able to edit that user's profile, as the 'Edit Profile' button is not displayed. Additionally, they cannot create posts. An explanation is provided with links to the board page or their own profile. 
-
-![user_profile_no_posts](static/images/readme_images/user_profile_no_posts.png)
-
-- When a non-authenticated user is on a user's profile, they cannot see the user's profile information and cannot create a post either.
-
-![user_profile_no_authentication](static/images/readme_images/user_profile_unauthenticated.png)
-
-- Edit Profile: When the user wants to edit their profile, a modal is opened, and all the fields are pre-filled with the existing profile information.
-
-![edit_profile_modal](static/images/readme_images/edit_profile_modal.png)
-
-- If the edit profile form is successfully submitted, a success message is displayed, stating that the profile has been updated.
-
-![edit_profile_success](static/images/readme_images/edit_profile_success.png)
-
-- In the edit profile modal, there is also a delete profile button. This button will open another modal that will ask for confirmation from the user about deleting their profile.
-
-![delete_profile_modal](static/images/readme_images/delete_profile_modal.png)
-
-- If the user decides to delete their profile, they will be logged out, and their posts, comments, user profile information, and login credentials will be permanently deleted from the application.
-
-![delete_profile_success](static/images/readme_images/delete_profile_success.png)
-
-- The posts and post buttons have the same functionality as described in the [board section](#board).
+<details>
+    <summary>User Profile Model - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/userprofilemodeladminview.png" alt="user_profile_model_admin"/>
+</details>
 
 ### Future Features
 
