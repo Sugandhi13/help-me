@@ -59,7 +59,7 @@ Help me is for everyone who have any query or would like to help other users, th
 
 ### Color scheme
 
-![color_palette](static/images/readme_images/colorpallete.png)
+![color_palette](static/images/readme_images/colorpalette.png)
 
 ### Typography
 
@@ -72,8 +72,55 @@ Agile project management principles guided the development of this project, leve
 ### Wireframes
 
 - The separate documetns for the wireframes can be found here:
-    - [Desktop Wireframes]()
-    - [Mobile Wireframes]()
+    <details>
+        <summary>Desktop Wireframes</summary>
+        <details>
+            ![home_page_without_login](static/images/readme_images/wireframe/homewithoutlogin_wf.png)
+        </details>
+        <details>
+            ![home_page_with_login](static/images/readme_images/wireframe/homewithlogin_wf.png)
+        </details>
+        <details>
+            ![ask_query_page](static/images/readme_images/wireframe/askaquery_wf.png)
+        </details>
+        <details>
+            ![query_page](static/images/readme_images/wireframe/query_wf.png)
+        </details>
+        <details>
+            ![answer_page](static/images/readme_images/wireframe/answer_wf.png)
+        </details>
+        <details>
+            ![add_profile_page](static/images/readme_images/wireframe/addaprofile_wf.png)
+        </details>
+        <details>
+            ![profile_page](static/images/readme_images/wireframe/profile_wf.png)
+        </details>
+        <details>
+            ![about_us_page](static/images/readme_images/wireframe/aboutus_wf.png)
+        </details>
+        <details>
+            ![contact_us_page](static/images/readme_images/wireframe/contactus_wf.png)
+        </details>
+        <details>
+            ![sign_up_page](static/images/readme_images/wireframe/signup_wf.png)
+        </details>
+        <details>
+            ![login_page](static/images/readme_images/wireframe/login_wf.png)
+        </details>
+        <details>
+            ![logout_page](static/images/readme_images/wireframe/logout_wf.png)
+        </details>
+        <details>
+            ![error_page](static/images/readme_images/wireframe/error_wf.png)
+        </details>
+    </details>
+
+    <details>
+        <summary>Mobile Wireframes</summary>
+        <details>
+            ![home_page_mobile](static/images/readme_images/wireframe/homemobile_wf.png)
+        </details>
+    </details>
 
 ### Database schema
 
