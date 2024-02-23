@@ -255,12 +255,12 @@ This model consist of all contact us information of when a site user writes to t
 - Users have functional links to Facebook, Twitter, Instagram and YouTube. These links will open in a new tab as they are outside the web application. 
 
 <details>
-    <summary>Desktop View  (With user login) </summary>
+    <summary>Desktop View</summary>
     <IMG src="static/images/readme_images/navbar/footer.png" alt="desktop_footer"/>
 </details>
 
 <details>
-    <summary>Mobile View  (With user login) </summary>
+    <summary>Mobile View</summary>
         <IMG src="static/images/readme_images/navbar/footermobile.png" alt="mobile_footer"/>
 </details>
 
@@ -288,108 +288,136 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/webpagewithuserlogin/mobilehomepage.png" alt="mobile_homepage"/>
 </details>
 
+- Apart from the user, admin of the website additionally have the admin dashboard. From this the admin can access the different models that are used to store the data in them. Admin can take any kind of add, update, delete actions. At some places the access to admin is also restricted and that will be explained in upcoming steps. For e.g., Query or Answers content are un-editable by the admin. Though, admin still have the access to not approving them, hence not visible to all users or can delete them.
+
+<details>
+    <summary>Admin Dashboard</summary>
+    <IMG src="static/images/readme_images/adminpage/adminhomepage.png" alt="admin_dashboard"/>
+</details>
+
 #### About us 
 
-- This is an informational page that includes a brief description of the forum, explains what a user can do on the platform, and features catchy content at the end. Additionally, it provides buttons to redirect the user to the posts board and to sign up.
+- This is an informational page that includes a brief description of the website, the mission with this website the owner would like to achieve, the services the website provides and explains what a user can do on the website and different categories available to ask queries and provide responses to already asked queries. Lastly it give short details about the team and encourage the user to reachout to development team with any feedback or suggestions.
 
-![about_us](static/images/readme_images/about_us.png)
+<details>
+    <summary>About Us Page (Without user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithoutuserlogin/aboutuspagewithoutlogin.png" alt="aboutus_page_without_user_login"/>
+</details>
+
+<details>
+    <summary>About Us Page (With user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/aboutuspagewithuserloggedin.png" alt="aboutus_page_with_user_login"/>
+</details>
+
+- Only the admin of the website has authorization to update the about us page content. 
+
+<details>
+    <summary>About Us Page - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/aboutusadminview.png" alt="aboutus_page_admin"/>
+</details>
+
+<details>
+    <summary>About Us Model - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/aboutusmodeladminview.png" alt="aboutus_model_admin"/>
+</details>
 
 #### Contact
 
-- This page contains a form for a user to directly contact the admin. The fields include first name, last name, email, phone number, subject, and message. 
+- This page contains a form for a user to directly contact the admin. The fields include name, email and message. 
 
-![contact_us](static/images/readme_images/contact_us.png)
+<details>
+    <summary>Contact Us Page (Without user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithoutuserlogin/contactuspagewithoutlogin.png" alt="contactus_page_without_user_login"/>
+</details>
+
+<details>
+    <summary>Contact Us Page (With user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/contactuspagewithuserloggedin.png" alt="contactus_page_with_user_login"/>
+</details>
 
 - If the form is invalid, error messages will be displayed. 
 
-![contact_us_error](static/images/readme_images/contact_us_error.png)
+<details>
+    <summary>Contact Us Page - Error</summary>
+    <IMG src="static/images/readme_images/testing/contactus_error.png" alt="contactus_page_error"/>
+</details>
 
-- If the form is successfully submitted, it will redirect the user to a success landing page where they have buttons to go back home. If they are not authenticated, they can sign up. 
+- If the form is successfully submitted. A success message will display below the navbar.
 
-![contact_us_success](static/images/readme_images/contact_us_success.png)
+<details>
+    <summary>Contact Us Page - Success</summary>
+    <IMG src="static/images/readme_images/testing/contactus_success.png" alt="contactus_page_success"/>
+</details>
 
-#### Board 
+- The admin of the website can see the different message posted by the users using the contact us form. The admin also has the option to mark the message and read using the check-box option in the contact model. This will help the admin to track how many message he has already read and/or responded. 
 
-- Post Creation Form: This is where users can create a post. They can enter a title, country, choose from dropdowns for holiday type and world area, and provide the content of the experience.  
+<details>
+    <summary>Contact Us Page - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/contactusadminview.png" alt="contactus_page_admin"/>
+</details>
 
-![post_form](static/images/readme_images/post_form.png)
+<details>
+    <summary>Contact Us Model - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/contactusmodeladminview.png" alt="contactus_model_admin"/>
+</details>
 
-- All posts need to be approved; therefore, after a post is successfully submitted, a success message is displayed, stating that the post has been received and is awaiting approval.
+#### Ask a Query 
 
-![post_form_success](static/images/readme_images/post_form_success.png)
+- A user should be logged in to ask a query on the webstie. If user is not yet logged in then a message with login button link will displays to the user. 
 
-- When a user is not authenticated, they cannot create posts. Therefore, instead of displaying the create post form, a card is shown explaining that they need to have an account to create posts.
+<details>
+    <summary>Ask a Query Page (Without user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithoutuserlogin/askaquerypagewithoutlogin.png" alt="askaquery_page_without_user_login"/>
+</details>
 
-![post_form_logged_out](static/images/readme_images/post_form_logged_out.png)
+- If the user is logged in then a query form will appear that the user can fill to ask a query. If any required input is not give then the error will displays. 
 
-- All approved posts are displayed on the board page. A post is comprised of the user who wrote it, the time since the post was created, post title, holiday type, location, country, and content.
+<details>
+    <summary>Ask a Query Page (With user login)</summary>
+    <IMG src="static/images/readme_images/testing/query_error.png" alt="askaquery_page_error"/>
+</details>
 
-![post_sample](static/images/readme_images/post_sample.png)
+- If all requried data is filled and user select a valid category as well then upon submission the a success message will appear just below the top navbar.
 
-- Additionally, the post have 3-4 buttons: 
-    - The post author is a link that redirects the user to the author's profile. 
+<details>
+    <summary>Ask a Query Page (With user login)</summary>
+    <IMG src="static/images/readme_images/testing/queryaskedsuccessfullmessage.png" alt="askaquery_page_success"/>
+</details>
 
-    ![post_profile_button](static/images/readme_images/post_profile_btn.png)
+- After successfully submitting the query. The user can go and see the query showing in respective category. Though, until the query is approved by the admin the query will only be visible to the authorized user only along with option of delete button to delete the query. Once the query is approved then the query is visible for all other users to see and write response against it.
 
-    - The like button changes appearance; when a post is unliked, it shows an empty heart, and when liked, it displays a solid heart. Additionally, it increases or decreases the like count.
+<details>
+    <summary>Queries Asked View</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/querypagewithunapprovedquerydisplay.png" alt="queries_asked_view"/>
+</details>
 
-    ![post_unliked_button](static/images/readme_images/post_unliked_btn.png)
+- If the user press the delete button then a popup will appear to re-confirm the users choice to delete the query asked. An authonticated user can delete any old queries asked by him as well. But, the user can not delete any query asked by the other users.
 
-    ![post_liked_button](static/images/readme_images/post_liked_btn.png)
+<details>
+    <summary>Query Delete Popup</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/deletequerypopupwhenclickeddeletebuttonbyloggedinuser.png" alt="queries_delete_reconfirm"/>
+</details>
 
-    - The comment button is a toggle button that reveals a text area for users to comment on the post.
+- If the users clicks on close button then nothing happen. But, if the users clicks on delete button again and confirms that he wants to delete the query asked. The delete success message will appear and the query will be delete from the database.
 
-    ![post_comment_area](static/images/readme_images/post_comment_area.png)
+<details>
+    <summary>Query Delete Success</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/querydeletedsuccessmessage.png" alt="queries_delete_success"/>
+</details>
 
-    - When the user is not authenticated, they cannot like or comment on a post. In this case, both buttons work as toggles to display a message that the user needs to have an account to like or comment on a post.
+- Once the users posts a query and it goes to admin for approval. Admin gets a view of all the queries asked by different users. I have used summernotes admin functionality to display the customized details to admin and he has option to filter or sort the queries based upon time, users, category.
 
-    ![post_toggle_buttons](static/images/readme_images/post_toggles_logged_out.png)
+<details>
+    <summary>Queries View - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/queriesadminview.png" alt="queries_view_admin"/>
+</details>
 
-    - Options Button: This button is only displayed in posts where the authenticated user is the author of the post. The options button is a dropdown menu that presents two choices: edit post and delete post.
+- Admin can click on any query, specifically the un-approved ones that has status of 'Draft' and go into the query model view to approve it. After selecting the 'Published' option from the dropdown menu the query will be start displaying for all the users. Henceforth other users on the website can write in response to that query.
 
-    ![post_options_buttons](static/images/readme_images/post_options_btn.png)
-
-- Comment Submission: All comments need to be approved by the admin. Therefore, after a comment is submitted, a success message is displayed, indicating that the comment is awaiting approval.
-
-![comment_success_message](static/images/readme_images/comment_success.png)
-
-- Displayed Comments: After comments have been approved, they are shown below the post, indicating the author and the time since the comment was made. The username is also a link to the user's profile.
-
-![comment_display](static/images/readme_images/comments_display.png)
-
-- Edit Post: When the authenticated user wants to edit their post, a modal with the edit post form is displayed.
-
-![edit_post_modal](static/images/readme_images/edit_post_modal.png)
-
-- As the content needs to be reviewed, a success message is displayed when a post has been edited, indicating that it is awaiting approval.
-
-![edit_post_success_message](static/images/readme_images/edit_post_success.png)
-
-- After the edited post is approved, an '(edited)' text is added in italics below the main content of the post to indicate that it has been edited.
-
-![edited_post](static/images/readme_images/post_edited.png)
-
-- Delete Post: When the authenticated user clicks on the delete post option, the delete post modal is displayed, asking the user for confirmation if they want to delete the post with the specific title.
-
-![delete_post_modal](static/images/readme_images/delete_post_modal.png)
-
-- When the post is deleted, a success message is displayed, indicating that the post has been deleted.
-
-![delete_post_success](static/images/readme_images/delete_post_success.png)
-
-- Filter Posts: On large screens, the filter post card is displayed on the left-hand side and is stuck to the top of the page. The user can filter posts based on the world area or holiday type. The card includes a clear filter button to remove all selected filters and an apply filters button to activate the chosen filters, reload the page, and display only the posts with the selected filters.
-
-![filter_card_collapsed](static/images/readme_images/filter_card_collapsed.png)
-
-![filter_card_expanded](static/images/readme_images/filter_card_expanded.png)
-
-- In smaller screens, the filter card is not displayed. Instead, a small button is placed between the create post form and the posts.
-
-![filter_button](static/images/readme_images/filter_btn.png)
-
-- When clicked, the filter button will open the filter card as a modal, allowing the user to successfully filter posts on small screens.
-
-![filter_modal](static/images/readme_images/filter_modal.png)
+<details>
+    <summary>Queries Model - Admin</summary>
+    <IMG src="static/images/readme_images/adminpage/querymodeladminview.png" alt="queries_model_view_admin"/>
+</details>
 
 #### Registration (Authentication)
 
