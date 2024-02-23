@@ -6,7 +6,7 @@ Help Me is website, where you can ask any query and get responses from other use
 
 ![responsive_test](static/images/readme_images/amiresponsive.png)
 
-Help Me ! is live, to access it [click here.](https://help-me-038cd18040fa.herokuapp.com/)
+Help Me ! is live, to access it <a href="https://help-me-038cd18040fa.herokuapp.com/" target="_blank">click here.</a>
 
 ## Table of contents
 
@@ -75,15 +75,15 @@ The separate documetns for the wireframes can be found here:
 
 <details>
     <summary>Desktop Wireframes</summary>
-    - <details>
+    <details>
         <summary>Home Page (without login)</summary>
             <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png" alt="home_page_without_login"/>
     </details>
-    - <details>
+    <details>
         <summary>Home Page (with login)</summary>
         <IMG src="static/images/readme_images/wireframe/homewithlogin_wf.png" alt="home_page_with_login"/>
     </details>
-    - <details>
+    <details>
         <summary>Ask A Query Page</summary>
         <IMG src="static/images/readme_images/wireframe/askaquery_wf.png" alt="ask_query_page"/>
     </details>
@@ -266,22 +266,27 @@ This model consist of all contact us information of when a site user writes to t
 
 #### Index
 
-- Three carousel images are displayed on the home page. 
-- Due to the size of the different screens, landscape images were used for large screens while portrait images were used for small screens.
-- The initial page contains catchy titles and functional links to the posts board and About Us pages.
+- The landing page of the website display different categories a user can access or choose to ask queries or write answer for queries asked by other users.
+- If user is not logged in then a message displays in the top right corner on navbar that the user is not logged in. Also, Signup and Login links show in navbar menu. Whereas the add or view profile buttons doesn't appear in navbar menu.
 
-![home_slide_1](static/images/readme_images/home_slide1.png)
-![home_slide_1_mobile](/static/images/readme_images/home_slide1_mobile.png)
+<details>
+    <summary>Home Page - Desktop View (Without user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithoutuserlogin/homepagewithoutlogin.png" alt="homepage_without_user_login"/>
+</details>
 
-- The second page encourages users to create an account and provides links to sign-up or login.
+- If user is logged in then a greetings to the user as 'Hi! USERNAME' displays in the top right corner on navbar. Also, Signup and Login links disappear, whereas the profile and logout buttons become visible in navbar menu.
 
-![home_slide_2](/static/images/readme_images/home_slide2.png)
-![home_slide_2_mobile](/static/images/readme_images/home_slide2_mobile.png)
+<details>
+    <summary>Home Page - Desktop View (With user login)</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/homepageafteruserloginwithloginmessage.png" alt="homepage_with_user_login"/>
+</details>
 
-- The third page provides a brief background about the application and offers a link to "Learn More," redirecting to the About Us page. Additionally, there is a "Contact Us" link that directs users to the contact form. 
+- On mobile, the navbar displays with collapseble burger menu icon. By default its collapsed. On first click over burger menu it expands and show all navbar menu links as per same criteria that applied in desktop view.
 
-![home_slide_3](/static/images/readme_images/home_slide3.png)
-![home_slide_3_mobile](/static/images/readme_images/home_slide3_mobile.png)
+<details>
+    <summary>Home Page - Mobile View</summary>
+    <IMG src="static/images/readme_images/webpagewithuserlogin/mobilehomepage.png" alt="mobile_homepage"/>
+</details>
 
 #### About us 
 
