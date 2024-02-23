@@ -76,54 +76,63 @@ Agile project management principles guided the development of this project, leve
         <summary>Desktop Wireframes</summary>
         <details>
             <summary>Home Page (without login)</summary>
-                ![home_page_without_login](static/images/readme_images/wireframe/homewithoutlogin_wf.png)
-                <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png"  alt="home_page_without_login"/>
+                <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png" alt="home_page_without_login"/>
         </details>
         <details>
             <summary>Home Page (with login)</summary>
-            
-            ![home_page_with_login](static/images/readme_images/wireframe/homewithlogin_wf.png)
-        
+            <IMG src="static/images/readme_images/wireframe/homewithlogin_wf.png" alt="home_page_with_login"/>
         </details>
         <details>
-            ![ask_query_page](static/images/readme_images/wireframe/askaquery_wf.png)
+            <summary>Ask A Query Page</summary>
+            <IMG src="static/images/readme_images/wireframe/askaquery_wf.png" alt="ask_query_page"/>
         </details>
         <details>
-            ![query_page](static/images/readme_images/wireframe/query_wf.png)
+            <summary>Query Page</summary>
+            <IMG src="static/images/readme_images/wireframe/query_wf.png" alt="query_page"/>
         </details>
         <details>
-            ![answer_page](static/images/readme_images/wireframe/answer_wf.png)
+            <summary>Answer Page</summary>
+            <IMG src="static/images/readme_images/wireframe/answer_wf.png" alt="answer_page"/>
         </details>
         <details>
-            ![add_profile_page](static/images/readme_images/wireframe/addaprofile_wf.png)
+            <summary>Add Profile Page</summary>
+            <IMG src="static/images/readme_images/wireframe/addaprofile_wf.png" alt="add_profile_page"/>
         </details>
         <details>
-            ![profile_page](static/images/readme_images/wireframe/profile_wf.png)
+            <summary>Profile Page</summary>
+            <IMG src="static/images/readme_images/wireframe/profile_wf.png" alt="profile_page"/>
         </details>
         <details>
-            ![about_us_page](static/images/readme_images/wireframe/aboutus_wf.png)
+            <summary>About Us Page</summary>
+            <IMG src="static/images/readme_images/wireframe/aboutus_wf.png" alt="about_us_page"/>
         </details>
         <details>
-            ![contact_us_page](static/images/readme_images/wireframe/contactus_wf.png)
+            <summary>Contact Us Page</summary>
+            <IMG src="static/images/readme_images/wireframe/contactus_wf.png" alt="contact_us_page"/>
         </details>
         <details>
-            ![sign_up_page](static/images/readme_images/wireframe/signup_wf.png)
+            <summary>Signup Page</summary>
+            <IMG src="static/images/readme_images/wireframe/signup_wf.png" alt="sign_up_page"/>
         </details>
         <details>
-            ![login_page](static/images/readme_images/wireframe/login_wf.png)
+            <summary>Login Page</summary>
+            <IMG src="static/images/readme_images/wireframe/login_wf.png" alt="login_page"/>
         </details>
         <details>
-            ![logout_page](static/images/readme_images/wireframe/logout_wf.png)
+            <summary>Logout Page</summary>
+            <IMG src="static/images/readme_images/wireframe/logout_wf.png" alt="logout_page"/>
         </details>
         <details>
-            ![error_page](static/images/readme_images/wireframe/error_wf.png)
+            <summary>Error Page</summary>
+            <IMG src="static/images/readme_images/wireframe/error_wf.png" alt="error_page"/>
         </details>
     </details>
 
     <details>
         <summary>Mobile Wireframes</summary>
         <details>
-            ![home_page_mobile](static/images/readme_images/wireframe/homemobile_wf.png)
+            <summary>Home Page</summary>
+            <IMG src="static/images/readme_images/wireframe/homemobile_wf.png" alt="home_page_mobile"/>
         </details>
     </details>
 
