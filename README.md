@@ -75,10 +75,16 @@ Agile project management principles guided the development of this project, leve
     <details>
         <summary>Desktop Wireframes</summary>
         <details>
+            <summary>Home Page (without login)</summary>
+            
             ![home_page_without_login](static/images/readme_images/wireframe/homewithoutlogin_wf.png)
+        
         </details>
         <details>
+            <summary>Home Page (with login)</summary>
+            
             ![home_page_with_login](static/images/readme_images/wireframe/homewithlogin_wf.png)
+        
         </details>
         <details>
             ![ask_query_page](static/images/readme_images/wireframe/askaquery_wf.png)
