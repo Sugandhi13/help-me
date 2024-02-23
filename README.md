@@ -75,7 +75,6 @@ The separate documetns for the wireframes can be found here:
 
 <details>
     <summary>Desktop Wireframes</summary>
-
     <details>
         <summary>Home Page (without login)</summary>
             <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png" alt="home_page_without_login"/>
@@ -128,17 +127,14 @@ The separate documetns for the wireframes can be found here:
         <summary>Error Page</summary>
         <IMG src="static/images/readme_images/wireframe/error_wf.png" alt="error_page"/>
     </details>
-    
 </details>
 
 <details>
     <summary>Mobile Wireframes</summary>
-
     <details>
         <summary>Home Page</summary>
         <IMG src="static/images/readme_images/wireframe/homemobile_wf.png" alt="home_page_mobile"/>
     </details>
-
 </details>
 
 ### Database schema
