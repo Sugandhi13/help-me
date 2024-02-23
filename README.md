@@ -71,70 +71,75 @@ Agile project management principles guided the development of this project, leve
 
 ### Wireframes
 
-- The separate documetns for the wireframes can be found here:
-    <details>
-        <summary>Desktop Wireframes</summary>
-        <details>
-            <summary>Home Page (without login)</summary>
-                <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png" alt="home_page_without_login"/>
-        </details>
-        <details>
-            <summary>Home Page (with login)</summary>
-            <IMG src="static/images/readme_images/wireframe/homewithlogin_wf.png" alt="home_page_with_login"/>
-        </details>
-        <details>
-            <summary>Ask A Query Page</summary>
-            <IMG src="static/images/readme_images/wireframe/askaquery_wf.png" alt="ask_query_page"/>
-        </details>
-        <details>
-            <summary>Query Page</summary>
-            <IMG src="static/images/readme_images/wireframe/query_wf.png" alt="query_page"/>
-        </details>
-        <details>
-            <summary>Answer Page</summary>
-            <IMG src="static/images/readme_images/wireframe/answer_wf.png" alt="answer_page"/>
-        </details>
-        <details>
-            <summary>Add Profile Page</summary>
-            <IMG src="static/images/readme_images/wireframe/addaprofile_wf.png" alt="add_profile_page"/>
-        </details>
-        <details>
-            <summary>Profile Page</summary>
-            <IMG src="static/images/readme_images/wireframe/profile_wf.png" alt="profile_page"/>
-        </details>
-        <details>
-            <summary>About Us Page</summary>
-            <IMG src="static/images/readme_images/wireframe/aboutus_wf.png" alt="about_us_page"/>
-        </details>
-        <details>
-            <summary>Contact Us Page</summary>
-            <IMG src="static/images/readme_images/wireframe/contactus_wf.png" alt="contact_us_page"/>
-        </details>
-        <details>
-            <summary>Signup Page</summary>
-            <IMG src="static/images/readme_images/wireframe/signup_wf.png" alt="sign_up_page"/>
-        </details>
-        <details>
-            <summary>Login Page</summary>
-            <IMG src="static/images/readme_images/wireframe/login_wf.png" alt="login_page"/>
-        </details>
-        <details>
-            <summary>Logout Page</summary>
-            <IMG src="static/images/readme_images/wireframe/logout_wf.png" alt="logout_page"/>
-        </details>
-        <details>
-            <summary>Error Page</summary>
-            <IMG src="static/images/readme_images/wireframe/error_wf.png" alt="error_page"/>
-        </details>
-    </details>
+The separate documetns for the wireframes can be found here:
+
+<details>
+    <summary>Desktop Wireframes</summary>
 
     <details>
-        <summary>Mobile Wireframes</summary>
-        <details>
-            <summary>Home Page</summary>
-            <IMG src="static/images/readme_images/wireframe/homemobile_wf.png" alt="home_page_mobile"/>
-        </details>
+        <summary>Home Page (without login)</summary>
+            <IMG src="static/images/readme_images/wireframe/homewithoutlogin_wf.png" alt="home_page_without_login"/>
     </details>
+    <details>
+        <summary>Home Page (with login)</summary>
+        <IMG src="static/images/readme_images/wireframe/homewithlogin_wf.png" alt="home_page_with_login"/>
+    </details>
+    <details>
+        <summary>Ask A Query Page</summary>
+        <IMG src="static/images/readme_images/wireframe/askaquery_wf.png" alt="ask_query_page"/>
+    </details>
+    <details>
+        <summary>Query Page</summary>
+        <IMG src="static/images/readme_images/wireframe/query_wf.png" alt="query_page"/>
+    </details>
+    <details>
+        <summary>Answer Page</summary>
+        <IMG src="static/images/readme_images/wireframe/answer_wf.png" alt="answer_page"/>
+    </details>
+    <details>
+        <summary>Add Profile Page</summary>
+        <IMG src="static/images/readme_images/wireframe/addaprofile_wf.png" alt="add_profile_page"/>
+    </details>
+    <details>
+        <summary>Profile Page</summary>
+        <IMG src="static/images/readme_images/wireframe/profile_wf.png" alt="profile_page"/>
+    </details>
+    <details>
+        <summary>About Us Page</summary>
+        <IMG src="static/images/readme_images/wireframe/aboutus_wf.png" alt="about_us_page"/>
+    </details>
+    <details>
+        <summary>Contact Us Page</summary>
+        <IMG src="static/images/readme_images/wireframe/contactus_wf.png" alt="contact_us_page"/>
+    </details>
+    <details>
+        <summary>Signup Page</summary>
+        <IMG src="static/images/readme_images/wireframe/signup_wf.png" alt="sign_up_page"/>
+    </details>
+    <details>
+        <summary>Login Page</summary>
+        <IMG src="static/images/readme_images/wireframe/login_wf.png" alt="login_page"/>
+    </details>
+    <details>
+        <summary>Logout Page</summary>
+        <IMG src="static/images/readme_images/wireframe/logout_wf.png" alt="logout_page"/>
+    </details>
+    <details>
+        <summary>Error Page</summary>
+        <IMG src="static/images/readme_images/wireframe/error_wf.png" alt="error_page"/>
+    </details>
+    
+</details>
+
+<details>
+    <summary>Mobile Wireframes</summary>
+
+    <details>
+        <summary>Home Page</summary>
+        <IMG src="static/images/readme_images/wireframe/homemobile_wf.png" alt="home_page_mobile"/>
+    </details>
+
+</details>
 
 ### Database schema
 
@@ -225,23 +230,43 @@ This model consist of all contact us information of when a site user writes to t
 
 #### Navbar
 
-- On large screens, the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query. If user is not logged in it displays the Sign Up and Login links too. Also, on right corner a message dispalys that user is not logged in.
-
-![navbar](static/images/readme_images/fullscreennavbarwithoutlogin.png)
-
+- On large screens, the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query. If user is not logged in it displays the Sign Up and Login links too. Also, on right corner a message dispalys that user is not logged in. 
 - When the user is logged in apart from showing the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query the Profile and logout links are dispalyed too. Also, on right corner a Hi username message display with some stylized view.
+- In small screens, all links are placed within a burger menu. The brand name and icon display outside the collapseable burger menu.
 
-![profile_icon_logged_in](static/images/readme_images/fullscreennavbarwithlogin.png)
+<details>
+    <summary>Desktop View (Without user login) </summary>
+    <IMG src="static/images/readme_images/navbar/navbarwithoutuserlogin.png" alt="desktop_navbar_without_user_login"/>
+</details>
 
-- In small screens, all links are placed within a burger menu. The brand name and icon display outside the collapseable burger menu. 
+<details>
+    <summary>Mobile View  (Without user login) </summary>
+        <IMG src="static/images/readme_images/navbar/navbarmobilewithoutuserlogin.png" alt="mobile_navbar_without_user_login"/>
+</details>
 
-![collapsed_navbar](static/images/readme_images/smallscreennavbarwithlogin.png)
+<details>
+    <summary>Desktop View  (With user login) </summary>
+    <IMG src="static/images/readme_images/navbar/navbarwithuserlogin.png" alt="desktop_navbar_with_user_login"/>
+</details>
+
+<details>
+    <summary>Mobile View  (With user login) </summary>
+        <IMG src="static/images/readme_images/navbar/navbarmobilewithuserlogin.png" alt="mobile_navbar_with_user_login"/>
+</details>
 
 #### Footer
 
-- Users have functional links to X (Twitter), Instagram, and YouTube. These links will open in a new tab as they are outside the web application. 
+- Users have functional links to Facebook, Twitter, Instagram and YouTube. These links will open in a new tab as they are outside the web application. 
 
-![footer](static/images/readme_images/footer.png)
+<details>
+    <summary>Desktop View  (With user login) </summary>
+    <IMG src="static/images/readme_images/navbar/footer.png" alt="desktop_footer"/>
+</details>
+
+<details>
+    <summary>Mobile View  (With user login) </summary>
+        <IMG src="static/images/readme_images/navbar/footermobile.png" alt="mobile_footer"/>
+</details>
 
 #### Index
 
