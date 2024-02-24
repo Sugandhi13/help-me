@@ -7,7 +7,6 @@ from .models import Category, Query, Answer
 
 # Register Category model
 @admin.register(Category)
-
 # Using summernote to customize display about info on category page
 class CategoryAdmin(SummernoteModelAdmin):
 
@@ -20,7 +19,6 @@ class CategoryAdmin(SummernoteModelAdmin):
 
 # Register Query model
 @admin.register(Query)
-
 # Using summernote to customize display about info on query page
 class QueryAdmin(SummernoteModelAdmin):
 
@@ -33,7 +31,6 @@ class QueryAdmin(SummernoteModelAdmin):
 
 # Register Answer model
 @admin.register(Answer)
-
 # Using summernote to customize display about info on answer page
 class AnswerAdmin(SummernoteModelAdmin):
 

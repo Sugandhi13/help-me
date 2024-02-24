@@ -33,7 +33,7 @@ def about_me(request):
     )
 
 
-# Created contact view that renders all info of contact form and update contact model
+# Created contact view that renders info of contact form & update contact model
 def contact(request):
     """
     Display an individual :Form:`about.forms.ContactForm`
@@ -54,7 +54,7 @@ def contact(request):
             contact_form.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Thanks for contacting us. We will respond within 2 working days.'
+                'Thanks for contacting us. We will respond within 2 days.'
             )
 
     contact_form = ContactForm()
@@ -68,7 +68,8 @@ def contact(request):
     )
 
 
-# Created add_profile view that renders all info of add profile form and update user profile model
+# Created add_profile view that renders all info of
+# add profile form and update user profile model
 def add_profile(request):
     """
     Display an individual :Form:`about.forms.UserProfileForm`
@@ -92,11 +93,11 @@ def add_profile(request):
             profile.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                "Nice, your profile added successfully! <a href='../view_profile'>Click here</a> to view your information."
+                "Profile added! <a href='../view_profile'>View_Profile</a>"
             )
     else:
         user_profile_form = UserProfileForm()
-    
+
     return render(
         request,
         "about/add_profile.html",
@@ -106,7 +107,8 @@ def add_profile(request):
     )
 
 
-# Created view_profile view that renders all info of view user profile form from user profile model
+# Created view_profile view that renders all info of
+# view user profile form from user profile model
 def view_profile(request):
     """
     Display an individual :Form:`about.forms.UserProfileForm`
@@ -124,7 +126,7 @@ def view_profile(request):
 
     queryset = UserProfile.objects.filter(username=request.user)
     user_profile = get_object_or_404(queryset)
-    
+
     return render(
         request,
         "about/view_profile.html",
@@ -132,4 +134,3 @@ def view_profile(request):
             "user_profile": user_profile
         },
     )
-

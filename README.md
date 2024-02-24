@@ -655,7 +655,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Create query form - Form validation | Submit an incomplete form. | The browser promts validation that all fields need to be filled. | PASS |
 | Create query form - Form validation | Submit a complete query. | The query is successfully submited and a success message is displayed, stating that the query is awaiting review. | PASS |
 
-#### View Queries
+#### Queries
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -666,7 +666,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Approved query - asked by any user | Query should be visible without delete query button | When an admin publishes a query the query should be visible to all users. But delete query button should be visible to authunticated user only who post that query initially and no other user. | PASS |
 | Delete Query | As a query author click the delete query button under query options. | When the authenticated user is the author, it successfully displays the delete query modal when clicking the delete query option. On reconfirmation to delete, the query should delete permanently from the model. | PASS |
 
-#### View Answers
+#### Answers
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -699,7 +699,7 @@ Testing was an integral part of the project development, encompassing the use of
 | User login page  | Page should display the login form. | User is successfully directed to the login page and sees the login form. | PASS |
 | User login page - Form validation | Submit an incorrect username password. | Form promts that the username and/or password is not correct. | PASS |
 
-#### Log In 
+#### Log Out 
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -715,10 +715,6 @@ Testing was an integral part of the project development, encompassing the use of
 | Add profile - Form validation | Submit an incomplete form. | Browser promts that required fields need to be filled. | PASS |
 | Add profile - Form validation | Submit a valid form. | A success message is displayed with the link to redirect user to their profile. | PASS |
 | View profile - Existing profile user | Click on Profile link on navbar menu. | If you already have a profile created previously. When click on navbar menu profile link the logged in user profile should be visible | PASS |
-
-### Testing user stories from UX section 
-
-As the exisitng and new users will have the same user experience for the app besides signing up and creating their profile from scratch, these will be groupped. 
 
 ### Automatec Form Testing 
 | Form  | Test Case | Expected Outcome | Results |  
@@ -739,22 +735,38 @@ As the exisitng and new users will have the same user experience for the app bes
 | Query Form | Testing when category incorrect field is provided then form should fail | Random category is invalid, but Query form is valid | PASS |
 | Query Form | Testing when content field is missing then form should fail | Query Content can not be empty, but Query form is valid | PASS |
 
+- Automated testing results:
+
 ![automated_forms_testing](static/images/readme_images/testing/formsautomatedtestingresult.png)
 
 
 ### Validator testing 
 
-- I tested the board.html and userprofile.html files. They both get 39 and 33 errors that are related to djnago curly brackets sytnax. [W3C validator](https://validator.w3.org/#validate_by_uri) with no issues.
+#### W3C validator
 
-- style.css file passed through the [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) with no issues. 
+- Error's found:
 
-![CSS Validation](static/images/readme_images/css_test_success.png)
+![W3C_validator_error](static/images/readme_images/testing/w3cvalidation_errors.png)
 
-- script.js passsed through the [jshint validator](https://jshint.com/) by only displaying the let vs var at the moment of declaring variables. 
+- Error's Fixed:
 
-![JavaScript Validation](static/images/readme_images/js_success_testing.png)
+![W3C_validator_results](static/images/readme_images/testing/w3cvalidation.png)
 
-- The views.py file passes through the [PP8 validator](https://pep8ci.herokuapp.com/#) with no issues except by the trailing whitespaces and the continuatin line is unde-indented. 
+#### CSS validator
+
+- No error found.
+
+![W3C_CSS_validator_results](static/images/readme_images/testing/w3ccssvalidation.png)
+
+#### JavaScript (JSHint) validator
+
+- No error found.
+
+![JavaScript_validator_results](static/images/readme_images/testing/jshintjavascriptvalidation.png)
+
+#### Python (PP8) validator
+
+![PP8 validator](https://pep8ci.herokuapp.com/#) 
 
 - Page has an excellent Accessibility rating in Lighthouse. 
 

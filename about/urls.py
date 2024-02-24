@@ -1,7 +1,7 @@
-# Importing libraries required to build url patterns for views to work with html pages
+# Importing libraries required to build url patterns
 
-from . import views
 from django.urls import path
+from . import views
 
 # url configuration for about app
 

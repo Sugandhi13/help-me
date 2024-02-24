@@ -7,6 +7,9 @@ from cloudinary.models import CloudinaryField
 
 # Create About model
 class About(models.Model):
+    """
+    Stores single about us requrest.
+    """
     title = models.CharField(max_length=200, unique=True)
     profile_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
@@ -18,8 +21,11 @@ class About(models.Model):
 
 # Create Contact model
 class Contact(models.Model):
+    """
+    Stores single contact us requrest.
+    """
     name = models.CharField(max_length=200)
-    email = models.EmailField(max_length=100,blank=True,unique=True)
+    email = models.EmailField(max_length=100, blank=True, unique=True)
     message = models.TextField()
     read = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -30,9 +36,12 @@ class Contact(models.Model):
 
 # Create UserProfile model
 class UserProfile(models.Model):
+    """
+    Stores single user profile requrest :model:`auth.User`.
+    """
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100,blank=True,unique=True)
+    email = models.EmailField(max_length=100, blank=True, unique=True)
     profile_image = CloudinaryField('image', default='placeholder')
     username = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="hm_user"

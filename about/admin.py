@@ -4,9 +4,9 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import About, Contact, UserProfile
 
+
 # Register About model
 @admin.register(About)
-
 # Using summernote to customize display about info on admin page
 class AboutAdmin(SummernoteModelAdmin):
 
@@ -19,7 +19,6 @@ class AboutAdmin(SummernoteModelAdmin):
 
 # Register Contact model
 @admin.register(Contact)
-
 # Using summernote to customize display contact info on admin page
 class ContactAdmin(admin.ModelAdmin):
 
@@ -31,7 +30,6 @@ class ContactAdmin(admin.ModelAdmin):
 
 # Register UserProfile model
 @admin.register(UserProfile)
-
 # Using summernote to customize display user profile info on admin page
 class UserProfileAdmin(admin.ModelAdmin):
 

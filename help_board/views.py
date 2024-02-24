@@ -30,7 +30,9 @@ def queries(request, slug):
     """
 
     queryset = Category.objects.all()
-    categories = queryset.values("title", "slug", "fontawesome_icon").order_by("title")
+    categories = queryset.values(
+        "title", "slug", "fontawesome_icon"
+    ).order_by("title")
     category = get_object_or_404(queryset, slug=slug)
     queries = category.query_category.all().order_by("-created_on")
     queries_count = category.query_category.filter(status=1).count()
@@ -130,7 +132,8 @@ def query_detail(request, slug):
     )
 
 
-# Created answer_edit view that renders info of answer model and helps edit the existing answer
+# Created answer_edit view that renders info of
+# answer model and helps edit the existing answer
 def answer_edit(request, slug, answer_id):
     """
     View to edit records of a model.
@@ -157,11 +160,12 @@ def answer_edit(request, slug, answer_id):
         else:
             messages.add_message(request, messages.ERROR,
                                  'Error updating Answer!')
-    
+
     return HttpResponseRedirect(reverse('query_detail', args=[slug]))
 
 
-# Created answer_delete view that renders info of answer model and helps delete the existing answer
+# Created answer_delete view that renders info of
+# answer model and helps delete the existing answer
 def answer_delete(request, slug, answer_id):
     """
     View to delete records in a model.
@@ -185,7 +189,8 @@ def answer_delete(request, slug, answer_id):
     return HttpResponseRedirect(reverse('query_detail', args=[slug]))
 
 
-# Created query_delete view that renders info of query model and helps delete the existing query
+# Created query_delete view that renders info of
+# query model and helps delete the existing query
 def query_delete(request, slug, query_id):
     """
     View to delete records in a model.
