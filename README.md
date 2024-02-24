@@ -6,7 +6,8 @@ Help Me is website, where you can ask any query and get responses from other use
 
 ![responsive_test](static/images/readme_images/amiresponsive.png)
 
-Help Me ! is live, to access it <a href="https://help-me-038cd18040fa.herokuapp.com/" target="_blank">click here.</a>
+- Help Me ! is live, to access it <a href="https://help-me-038cd18040fa.herokuapp.com/" target="_blank">click here.</a>
+- Git Hub Repository [Help Me!](https://github.com/Sugandhi13/help-me.git)
 
 # Table Of Contents
 
