@@ -75,7 +75,7 @@ class TestUserProfileForm(TestCase):
         })
         self.assertFalse(form.is_valid(), msg="First name field is not valid, but the Form is valid")
 
-    # TestCase4 : Testing when lastname field is missing then form should fail
+    # TestCase3 : Testing when lastname field is missing then form should fail
     def test_form_have_invalid_lastname(self):
         """ Test for all fields"""
         form = ContactForm({
@@ -99,7 +99,7 @@ class TestUserProfileForm(TestCase):
         })
         self.assertFalse(form.is_valid(), msg="Email field is not valid, but the Form is valid")
 
-    # TestCase4 : Testing when describe yourself field is missing then form should fail
+    # TestCase5 : Testing when describe yourself field is missing then form should fail
     def test_form_have_invalid_describe(self):
         """ Test for all fields"""
         form = ContactForm({

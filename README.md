@@ -604,76 +604,84 @@ This model consist of all contact us information of when a site user writes to t
 ### Future Features
 
 - Asynchronous behaviour
-    - When a post is liked or commented on, the page is automatically reloaded. A future feature is planned to avoid reloading the page when these actions are taken by the user.
+    - When a query or answer submitted once but if the page is refreshed the same query or answer gets re-submitted. A future feature is planned to avoid resubmitting it and clear out the page when these actions are taken by the user.
 
-- Post information datamodel
-    - The idea of world areas and holiday types is good for filtering and differentiating posts, but additional details such as country and author could enhance this feature
-    - The country should be implemented as another dropdown list with the countries selected based on the chosen world area.
+- Profile image upload by the user
+    - When a user try to create its profile. Currently the profile image upload option is given but its not working and the site user is not able to load the profile image by itself. Only the admin can do it on the users behalf. Hence, in future release this bug is planned to fix.
 
 - Further relevant feedback
-    - Remove the sign-in and sign-out messages.
-    - Implement notifications to inform users when their posts or comments have been approved.
-    - Implement notifications for when another user has commented or reacted to a post.
-    - Implement notifications for when a comment is added to a post a user has commented on.
+    - Implement autohide notifications.
+    - Implement like, upvote feature on queries and answers.
+    - Implement edit query feature.
+    - Implement a user can see all its queries and answer from a single profile page too.
+    - Implement all profile page where a user can see breif profile info about other users too like how many query they have asked or answer they have given. What feilds they are expert of etc.,
 
 ## Testing
 
 ### Methodology 
 
-Testing was an integral part of the project development, encompassing the use of Django debug pages and strategically placed print statements to verify the functionality of the code at various stages. Furthermore, a comprehensive testing approach was adopted, outlined below. This involved meticulous manual testing to ensure alignment with all user stories and acceptance criteria 
+Testing was an integral part of the project development, encompassing the use of Django debug pages and strategically placed print statements to verify the functionality of the code at various stages. Furthermore, a comprehensive testing approach was adopted, outlined below. This involved meticulous manual testing to ensure alignment with all user stories and acceptance criteria as well as some automated testing using for different forms.
 
 #### Index page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
-| Navigation bar functionality (user not authenticated) | Click all available links | User is directed respectively to the home, about us, board, contact or account registration links | PASS |
+| Navigation bar functionality (user not authenticated) | Click all available links | User is directed respectively to the home, about us, contact us, ask a query or account signup links | PASS |
 | Navigation bar functionality (user authenticated) | Click all available links | User is directed respectively to the navbar links and has the correct account links (profile and logout) | PASS |
-| Footer links | Click all available links | User is directed respectively to all social media links with  | PASS |
-| Carrousel links | Click all available links | User is directed respectively to all social media links with  | PASS |
+| Footer links | Click all available social media links | User is directed respectively to all social media links with  | PASS |
+| Cateogries | Click all categories links | User is directed to queries page respected to each category and all queries belogns to that category should display on next page  | PASS |
 
 #### About us page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
-| "Start Exploring" and "Join us" buttons | Click all available links as authenticated and unauthenticated user | User is directed succesfully to the post board page and to the signup page when not authenticated. | PASS |
+| About us info | Goto about us page and see info, profile image and updated on datetime | The latest about us info displays and the correct updated on datetime is visible on the page. | PASS |
 
-#### Board
-
-| Testing  | Steps | Expected Outcome | Results |  
-| - | - | - | - |
-| Filter post functionality | Test multiple filters from a single category and both categories. Clear filters button clear all selected filters.  | Post are successfully filter depending the applied filters. The clear filter button clears all selected filters. | PASS |
-| Sign-in button display and functionality (user not authenticated) | Access as an unauthenticated user and try to login or signup with the card links.  | Card successfully displays button and the button redirects to sign-in page | PASS |
-| Like and comment buttons (user not authenticated) | As an unauthenticated user try to like or comment a post. | The buttons successfully toggle the login request message and the login link redirects to the login page. | PASS |
-| Create post form (user authenticated) | Access the main board as an authenticated user. | When user is authenticated, the create post form is successfully displayed with the correct sign-in user at the top | PASS |
-| Create post form - Form validation | Submit an empty form | The browser promts validation that all fields need to be filled. | PASS |
-| Create post form - Form validation | Submit an form with an existing title. | An error message is displayed, stating that there is already a post with that title. | PASS |
-| Create post form - Form validation | Submit an incomplete form. | The browser promts validation that all fields need to be filled. | PASS |
-| Create post form - Form validation | Submit a complete post. | The post is successfully submited and a success message is displayed, stating that the post is awaiting review. | PASS |
-| Post buttons - profile button | Click on the post author name to be redirected to the author's profile. | The button successfully redirects to the correct user profile page. | PASS |
-| Post buttons - Like button | Try to like and unlike posts. | The button successfully adds or substracts the number of likes and the heart icon changes depending on the like status for that user. | PASS |
-| Post buttons - Comment button | click the comment button in each post. | The button successfuly toggles the comment area and the submit comment button. | PASS |
-| Post buttons - Options dropdown button (user authenticated is the post author) | As the author check if the options button is displayed. | The button is successfully displayed for posts where the authenticated user is the author but is not displayed for posts where the authenticated user is not the autor. | PASS |
-| Comment form - Form validation | Submit an empty comment. | The browser promts validation that all fields need to be filled. | PASS |
-| Comment form - Form validation | Submit a comment. | The comment is successfully submited an a success message is displayed, stating that the comment is awaiting review. | PASS |
-| Post options - Edit post | As a post author click the edit post button under post options. | When the authenticated user is the author, it successfully displays the edit post modal when clicking the edit post option. | PASS |
-| Post options - Delete post | As a post author click the delete post button under post options. | When the authenticated user is the author, it successfully displays the delete post modal when clicking the delete post option. | PASS |
-| Edit post - Form validation | Submit an empty form. | An error message is displayed, stating that fields are are required. | PASS |
-| Edit post - Form validation | Submit an incomplete form. | An error message is displayed, stating that all fields are are required. | PASS |
-| Edit post - Form validation | Submit an valid form. | A success message is displayed, stating that the post was successfully received and is awating for approval. | PASS |
-| Delete post functionality | Click on delete post. | The post is successfully deleted and a success message is displayed confirming tha the post has been deleted. | PASS |
-| Edit post display | Edit a post and wait for admin approval. | The (edited) message is successfully displayed below the post content after this is edited an approved. | PASS |
-
-#### Contact 
+#### Contact Us
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
-| Contact form - Form Validation | Submit empty form | Browser promts that required fields need to be filled | PASS |
-| Contact form - Form Validation | Submit empty form (after filling and deleting the field's content) | Browser promts that required fields need to be filled | PASS |
-| Contact form - Form Validation | Submit with an invalid email address | Error message is successfully displayed | PASS |
-| Contact form - Form Validation | Submit valid form | User is redirect to success page stating that the response has been recorded | PASS |
-| Contact form success links | Test the Sign up and home links functionality | User is successfully redirected to signup or home page | PASS |
+| ContactUs form - Form Validation | Submit empty form | Browser promts that required fields need to be filled | PASS |
+| ContactUs form - Form Validation | Submit with an invalid email address | Error message is successfully displayed | PASS |
+| ContactUs form - Form Validation | Submit valid form | User is redirect to success page stating that the response has been recorded | PASS |
 
-#### Registration 
+#### Ask a Query
+
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Log-in button display and functionality (user not authenticated) | Access as an unauthenticated user and try to login using the link given. | A message successfully displays along with a button that redirects to log-in page | PASS |
+| Create query form (user authenticated) | Access the ask a query page as an authenticated user. | When user is authenticated, the ask a query form is successfully displayed with the correct sign-in user at the top | PASS |
+| Create query form - Form validation | Submit an empty form | The browser promts validation that all fields need to be filled. | PASS |
+| Create query form - Form validation | Submit an incomplete form. | The browser promts validation that all fields need to be filled. | PASS |
+| Create query form - Form validation | Submit a complete query. | The query is successfully submited and a success message is displayed, stating that the query is awaiting review. | PASS |
+
+#### View Queries
+
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Queries view page | Click on a category on index page | The new page open all queries belongs to that category asked by different users. The query count should display the number of all approved queries and a link to go back to Home page along with move to other category should display on this page. | PASS |
+| Under review query | View a query that is yet to be approved by the admin and posted by the logged in user | The query title should display in faded text with a message underneath that the query is still under review with an option of delete button. The username and query asked datetime stamp should be visible too. | PASS |
+| Approved query - asked by the logged in user | View a query that is approved and posted by the logged in user | The query title should display with normal text and delete query option button. The username and query asked datetime stamp should be visible too. | PASS |
+| Under review query - Other user | Query asked by another user that is still under reivew with admin | The query posted by a user that is still under review should not be visible to other users. | PASS |
+| Approved query - asked by any user | Query should be visible without delete query button | When an admin publishes a query the query should be visible to all users. But delete query button should be visible to authunticated user only who post that query initially and no other user. | PASS |
+| Delete Query | As a query author click the delete query button under query options. | When the authenticated user is the author, it successfully displays the delete query modal when clicking the delete query option. On reconfirmation to delete, the query should delete permanently from the model. | PASS |
+
+#### View Answers
+
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| Answer view page | Click on a query on queries page | The new page open all answers belongs to that query asked by a users. The answer count should display the number of all approved answers and a link to go back to queries page for the category that query belongs to should display on this page. | PASS |
+| Log-in button display and functionality (user not authenticated) | Access as an unauthenticated user and try to login using the link given. | A message successfully displays along with a button that redirects to log-in page | PASS |
+| Create answer form (user authenticated) | Displays write an answer text box as an authenticated user. | When user is authenticated, a write an answer text box should displayed. | PASS |
+| Under review answer | View an answer that is yet to be approved by the admin and posted by the logged in user | The answer should display in faded text with a message underneath that the answer that it is still under review with options of edit and delete button. The username and answer written datetime stamp should be visible too. | PASS |
+| Approved answer - asked by the logged in user | View an answer that is approved by admin and posted by the logged in user | The answer should display with normal text and edit / delete answer option button. The username and answer written datetime stamp should be visible too. | PASS |
+| Under review answer - Other user | Answer written by another user that is still under reivew with admin | The answer posted by a user that is still under review should not be visible to other users. | PASS |
+| Approved answer - asked by any user | Answer should be visible without edit and delete button | When an admin approves an answer the answer should be visible to all users. But edit and delete answer button should be visible to authunticated user only who wrote that answer initially and no other user. | PASS |
+| Delete answer | As an answer author click the delete answer button under answer options. | When the authenticated user is the author, it successfully displays the delete answer modal when clicking the delete answer option. On reconfirmation to delete, the answer should delete permanently from the model. | PASS |
+| Edit answer - Form validation | Submit an empty answer form. | An error message is displayed, stating that fields are are required. | PASS |
+| Edit answer - Form validation | Submit an valid answer form. | A success message is displayed, stating that the answer was successfully updated and is awating for approval. | PASS |
+
+#### Sign Up 
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -683,85 +691,56 @@ Testing was an integral part of the project development, encompassing the use of
 | User sign-up - Form validation  | Submit an invalid password. | Form promts the errors in the password. | PASS |
 | User sign-up - Form validation  | Submit non-matching invalid password. | Form promts the error. | PASS |
 | User sign-up - Form validation  | Submit an exisiting user name. | Form promts that the username is already taken error. | PASS |
+
+#### Log In 
+
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
 | User login page  | Page should display the login form. | User is successfully directed to the login page and sees the login form. | PASS |
 | User login page - Form validation | Submit an incorrect username password. | Form promts that the username and/or password is not correct. | PASS |
-| User logout page  | Page should display the logout form. | User is successfully directed to the logout page and sees the logout form. | PASS |
+
+#### Log In 
+
+| Testing  | Steps | Expected Outcome | Results |  
+| - | - | - | - |
+| User logout page  | Page should display the logout reconfirm message. | User is successfully directed to the logout page and sees the logout reconfim message with logout button. | PASS |
 | User logout page - Form validation | Click in logout. | User is successfully logged out and a display message is displayed at the top. | PASS |
 
-#### Create profile
+#### Profile
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
-| Create profile page redirection  | Create a new user (signup) and get redirected to "create profile" | A new user is successfully redirected to the create profile page that displays the create profile form. | PASS |
-| Create profile - Form validation | Submit an empty form. | Browser promts that required fields need to be filled. | PASS |
-| Create profile - Form validation | Submit an incomplete form. | Browser promts that required fields need to be filled. | PASS |
-| Create profile - Form validation | Submit letters in the countries visited field. | Browswer does not allow letters in this field. | PASS |
-| Create profile - Form validation | Submit a valid form. | User is redirected to their profile and a success message is displayed. | PASS |
-
-#### User profile
-
-| Testing  | Steps | Expected Outcome | Results |  
-| - | - | - | - |
-| Profile display - Authenticated user's profile  | Access the own profile. | The authenticated user successfully sees their profile information and the edit profile button. | PASS |
-| Profile display - Authenticated user navigating another user's profile  | Try to access another user profile with an authenticated account. | The authenticated user successfully sees other user profile and their profile information. | PASS |
-| Profile display - Non authenticated user navigates to a user profiles  | Try to access another user profile without an authenticated account. | The non-authenticated user cannot see the user information and the login link successfully redirects to the login page. | PASS |
-| Profile display - profile not created, authenticated user | Create a new user, skip the create profile form and try to access the profile. | The profile is not displayed, a card informs the user that a they need to create their profile and a link to create profile form is provided. | PASS |
-| Profile display - profile not created, other authenticated user | With another user try to access the a non-completed profile. | The profile is not displayed, a card informs the user that a they need to create their profile and a links to the main board and profile is provided. | PASS |
-| Profile display - profile not created, non-authenticated user | As a non-authenticated user try to access the a non-completed profile. | The profile is not displayed, a card informs the user that a they need to create their profile and a links to the main board and signup is provided. | PASS |
-| Edit profile button | Click the edit profile button. | When clicking the edit profile button, the edit profile modal is successfully displayed with the field's prefilled with the exisiting information. | PASS |
-| Edit profile form - Form validation | Submit an empty form. | Browser promts that required fields need to be filled. | PASS |
-| Edit profile form - Form validation | Submit an incomplete form. | Browser promts that required fields need to be filled. | PASS |
-| Edit profile form - Form validation | Submit a valid form. | The profile is successfully updated an a success message is displayed to provide feedback to the user. | PASS |
-| Delete profile | Click the delete profile button in the edit profile modal. | The delete profile modal is successfully displayed. | PASS |
-| Delete profile - Functionality | Confirm profile deletetion in delete profile modal. | The delete profile feature successfully logs out the user and deletes the user from the databse. | PASS |
-| Post form display - Authenticated user's profile | Access the own profile. | The post form is successfully displayed for the authenticated user to create a post from their profile page. | PASS |
-| Post form display - Authenticated user in another user's profile | Access another user profile as an authenticated user. | The post form is not displayed and a card with the board and profile buttons is displayed. Both the board and the user profile links are wired correctly. | PASS |
-| Post form display - Non-authenticated user in a user's profile | Access another user profile as an unauthenticated user. | The post form is not displayed. | PASS |
-| Posts display - User with existing posts | Access a user profile that contains posts. | All user posts are successfully displayed. | PASS |
-| Posts display - User with no existing posts | Access a user profile that does not contains posts. | Message is displayed succeessfuly for when an user do no have any posts. | PASS |
+| Add profile page | As a new user click on Profile link on navbar menu | An error message should display that no profile found and gives a redirect button to goto add a user profile page. | PASS |
+| Add profile - Form validation | Submit an empty form. | Browser promts that required fields need to be filled. | PASS |
+| Add profile - Form validation | Submit an incomplete form. | Browser promts that required fields need to be filled. | PASS |
+| Add profile - Form validation | Submit a valid form. | A success message is displayed with the link to redirect user to their profile. | PASS |
+| View profile - Existing profile user | Click on Profile link on navbar menu. | If you already have a profile created previously. When click on navbar menu profile link the logged in user profile should be visible | PASS |
 
 ### Testing user stories from UX section 
 
 As the exisitng and new users will have the same user experience for the app besides signing up and creating their profile from scratch, these will be groupped. 
 
-#### All users
+### Automatec Form Testing 
+| Form  | Test Case | Expected Outcome | Results |  
+| - | - | - | - |
+| Contact Form | Testing when all valid inputs were given then form works as expected | Form is valid. | PASS |
+| Contact Form | Testing when name field is missing then form should fail  | Name field is not valid, but the Form is valid | PASS |
+| Contact Form | Testing when email field is entered incorrect then form should fail | Email field is not valid, but the Form is valid | PASS |
+| Contact Form | Testing when message field is missing then form should fail | Message field is not valid, but the Form is valid | PASS |
+| User Profile Form | Testing when all valid inputs were given then form works as expected | Form is valid | PASS |
+| User Profile Form | Testing when firstname field is missing then form should fail | First name field is not valid, but the Form is valid | PASS |
+| User Profile Form | Testing when lastname field is missing then form should fail | Last name field is not valid, but the Form is valid | PASS |
+| User Profile Form | Testing when email field is missing then form should fail | Email field is not valid, but the Form is valid | PASS |
+| User Profile Form | Testing when describe yourself field is missing then form should fail | Describe yourself field is not valid, but the Form is valid | PASS |
+| Answer Form | Testing when all valid inputs were given then form works as expected | Form is valid | PASS |
+| Answer Form | Testing when content field is missing then form should fail | Answer content can not be empty but Answer form is not valid | PASS |
+| Query Form | Testing when title field is missing then form should fail | Query title can not be empty, but Query form is valid | PASS |
+| Query Form | Testing when category field is missing then form should fail | Query category can not be empty, but Query form is valid | PASS |
+| Query Form | Testing when category incorrect field is provided then form should fail | Random category is invalid, but Query form is valid | PASS |
+| Query Form | Testing when content field is missing then form should fail | Query Content can not be empty, but Query form is valid | PASS |
 
-- Learn about the community.
-    - The about us page contains all the relevant information regarding the platform, what the users can do and buttons that redirect to a signup page and the post board.
-- Send questions to the community administrators
-    - The contact page contains a form where the authenticated or no-autheticated users can send a question to the administrator. All received responses are logged into the web application database.  
-- See posts and comments
-    - All users, authenticated or no-authenticated can see approved posts and comments.
-- Filter exisitng posts
-    - All users, authenticated or no-authenticated can see filter posts.
+![automated_forms_testing](static/images/readme_images/testing/formsautomatedtestingresult.png)
 
-#### Existing and Future User Goals
-
-- Create travel posts
-    - Users can create posts and receive feedback if the post is not successfully submitted or if it is.
-- Edit posts
-    - Users can edit their own posts.
-- Delete posts
-    - Users can delete their own posts.
-- Comment on posts
-    - Users can comment on posts.
-- Like/dislike posts
-    - Users can like or dislike posts.
-- Login
-    - Users can login to the platform to access to all the web application features.
-- Logout
-    - Users can logout to restric access to their accoutns.
-- Edit their profile
-    - Users can change their profile description. 
-- Delete their profile
-    - Users can delete their profile permantly from the web application. 
-
-#### Future User Goals
-
-- Sign-up
-    - Users can create an account in the web application.
-- Create their profile
-    - Users are redirected to a create profile form just after they sign up in the web application. 
 
 ### Validator testing 
 
