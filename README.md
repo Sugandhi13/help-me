@@ -59,6 +59,8 @@ Help me is for everyone who have any query or would like to help other users, th
 
 ### Color Scheme
 
+Following color scheme has been used. I want to keep it simple yet elegent hence used the combination of sky blue, light and dark grey along with white. The exact colors codes can been seen in color palette below.
+
 ![color_palette](static/images/readme_images/colorpalette.png)
 
 ### Typography
@@ -150,6 +152,34 @@ The separate documetns for the wireframes can be found here:
         <IMG src="static/images/readme_images/wireframe/homemobile_wf.png" alt="home_page_mobile"/>
     </details>
 </details>
+
+### Project Structure
+
+The whole project follow the technique of building blocks. Which are sufficient on their own and enhance the experience when they clubbed together. 
+
+- help_me (Core Project)
+    - settings.py (contains all settings)
+    - urls.py (contains the base and other urls linked to apps)
+- help_board (App 1)
+    - template (contains index, ask query, queries and query details with answer html pages)
+    - models.py (contains the models like category, query and answer)
+    - admin.py (registers the models)
+    - forms.py (contains the forms like ask query and write answer)
+    - view.py (contains the view that will render in different html pages like view queries, view answers, edit answers, delete answer, delete query etc.,)
+    - urls.py (contains the urls for help_board apps html pages)
+- about (App 2)
+    - template (contains about, add profile, view profile and contact us html pages)
+    - models.py (contains the models like about, userprofile and contact)
+    - admin.py (registers the models)
+    - forms.py (contains the forms like contact us and add user profile)
+    - view.py (contains the view that will render in different html pages like view profile, about us, contact form, add profile form etc.,)
+    - urls.py (contains the urls for about apps html pages)
+- static (media and style library)
+    - css (css stylesheet file)
+    - js (javascript file)
+    - favicon (favicon icon file)
+    - images (all kind of images)
+- template (base and authentication template)
 
 ### Database Schema
 
@@ -806,6 +836,7 @@ Testing was an integral part of the project development, encompassing the use of
 - [Django databases](https://docs.djangoproject.com/en/5.0/ref/databases/)
 - [Django cloudinary storage](https://djangopackages.org/packages/p/django-cloudinary-storage/)
 - [Django-allauth](https://docs.allauth.org/en/latest/)
+- [ElephantSQL](https://customer.elephantsql.com/)
 - [Guinicorn](https://gunicorn.org/)
 - [Psycopg](https://www.psycopg.org/docs/)
 - [Balsamiq](https://balsamiq.com/) - For wireframes 
@@ -921,21 +952,23 @@ Additionally, the [Bootstrap 5](https://getbootstrap.com/docs/5.2/getting-starte
 
 ### Code
 
-In Django, the typical workflow for creating a view involves writing the view code first and subsequently creating the template to render the view. However, I took a slightly different approach by starting with the template to visualize the application before refining the code. During this process, I faced an issue that wasn't addressed in the [Code Institute](https://codeinstitute.net/global/) Django walkthrough projects, particularly regarding the customization of form styling.
+Honestly, if I have to admit then this was the toughest project for me till date. The more control moved out of my hand to in the hand of templates it become difficult to control initially. But day by day, gradually I started getting hold of it and have better understanding that how the things are flowing. Though, there is still a lot to learn but I would thanks first everyone who helped me during this projects journey.
 
-Initially, I applied Bootstrap classes to style the forms, but I encountered challenges to display the form fields with the desired styling. Thanks to the insights gained from [CodingEntrepreneurs Tutorial](/https://www.youtube.com/watch?v=quJzUzCs6Q0&t=623s), I was able to achieve the desired styling by implementing html attributes in the [forms.py](/postBoard/forms.py) file.
+So, out of many chanllenges I faced to handle all of them a thumb rule I kept on working is to align with Code Institute Developing with Django (I Think Therefore I Blog) and it has been the biggest help for me in the journey.
 
-Given the project's data models, a crucial requirement was to generate a new user profile data instance upon a user's signup, followed by redirecting them to a "create profile" page for further profile completion
+Apart from this I faced a challenge regarding how to generate auto slug as I was providing the authenticated site users to post the query. Hence the slug was required to generate dynamically. Here I received the help from [Learn Django](https://learndjango.com/tutorials/django-slug-tutorial) tutorial. It helped me to understand and fix the challenge.
 
-To address the first challenge, I devised two methods within [models.py](/postBoard/models.py) adorned with a receiver decorator. The initial method creates the user profile, while the subsequent method utilizes the newly generated username to populate the user profile created in the first method. This solution was inspired by insights gleaned from a relevant [Stack Overflow discussion](https://stackoverflow.com/questions/65876529/how-to-create-instance-of-model-during-user-registration-process-django). 
+Next challenge for me was to display multiple views on the same page and here I found help from [Stackoverflow](https://stackoverflow.com/questions/48729966/how-can-i-call-multiple-views-in-one-url-address-in-django) community and able to resolve the issue.
 
-For the second issue, my inclination was to avoid altering predetermined properties in django-allauth. However, consulting another insightful [Stack Overflow discussion](https://stackoverflow.com/questions/20138049/redirect-user-to-another-url-with-django-allauth-log-in-signal?newreg=b829fa7359404ec7b3765563ae9f145b) guided me towards a solution. I introduced a new redirect method in [views.py](/postBoard/views.py) to seamlessly direct the user to the "create profile" page immediately after completing the signup process.
+Thereafter another hurdle I faced is to how to make some fields readonly at the admin side. Hence, I again visited to look for some django books or material that might help me. My search ends at [Agiliq](https://books.agiliq.com/projects/django-admin-cookbook/en/latest/changeview_readonly.html).
 
-Another challenging feature I grappled with was prepopulating fields when users desired to edit a post or their profile. Initially, I attempted to utilize the get methods to extract data from the backend and populate the fields, but this approach proved ineffective. Seeking assistance, I came across a helpful [Stack Overflow discussion](https://stackoverflow.com/questions/12439180/prefill-form-with-jquery) that guided me to leverage JavaScript, specifically jQuery. This solution enabled me to retrieve the current existing data and seamlessly prefill the forms with this information.
+I also faced one big challenge during this project is my loss of database a few days back. I initially started development on Code anywhere as that was the only framework I was using till date since I started my learning. But, with Django it was not behaving well and since last month or so, it was doomed. My ship was sinking with it. But then GitPod comes to my rescue and it has been blessings as Git pod is working seamllessely with Git hub and heroku.
 
-During troubleshooting, I encountered challenges in understanding how to effectively debug activities occurring in the backend. To address this, I incorporated the [Django messages feature](https://docs.djangoproject.com/en/3.2/ref/contrib/messages/#using-messages-in-views-and-templates). This implementation allowed me to display errors occurring in the templates, providing valuable insights during the debugging process.
+But, in the meantime, my database got damaged and I have to take help from CI Tutor support to understand the reason some of my code was not working and they explained me that it was due to database damaged and then I have reset my whole database and update fresh data of users, queries and answers.
 
-In the final stages, while working on the presentation of dynamic content like post likes, post comments, and dates, I encountered limitations with certain syntax within the template. To overcome this issue, I discovered [Django custom template tags](https://docs.djangoproject.com/en/5.0/howto/custom-template-tags/). This feature proved invaluable as it enabled me to present likes, showcase comments alongside their respective posts, and exhibit dates for both posts and comments in a more user-friendly manner
+In this project I also found good help from my mentor Martina, slack communities too.
+
+In the end, I would like to mention that the queries and answers I have picked directly from [Quora](https://www.quora.com/) & [Reddit](https://www.reddit.com/) rather then creating on my own to save time. Some of the queries and answers are a bit modified as well to suite the website behavior. Apart from this I have used Microsoft Co-pilot to generate imaginary description text of About Us page as well as for different users profile.
 
 ### Media
 
