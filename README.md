@@ -2,29 +2,94 @@
 
 Help Me is website, where you can ask any query and get responses from other users who have knowledge or experience in that domain. Whether you want to learn something new, get advice, share your opinions or just have fun, this is the place for you.
 
-## AmIResponsive
+# AmIResponsive
 
 ![responsive_test](static/images/readme_images/amiresponsive.png)
 
 Help Me ! is live, to access it <a href="https://help-me-038cd18040fa.herokuapp.com/" target="_blank">click here.</a>
 
-## Table Of Contents
+# Table Of Contents
 
++ [Help Me !](#help-me)
++ [AmIResponsive](#amiresponsive)
++ [Table Of Contents](#table-of-contents)
 + [UX](#ux)
+    + [Site Purpose](#site-purpose)
+    + [Audience](#audience)
+    + [Current User Goals](#current-user-goals)
+    + [Future User Goals](#future-user-goals)
 + [Design](#design)
+    + [Color Scheme](#color-scheme)
+    + [Typography](#typography)
+    + [Agile Methodology](#agile-methodology)
+        + [Kanban Board](#kanban-board)
+        + [User Stories](#user-stories)
+        + [User Story Template](#user-story-template)
+    + [Wireframes](#wireframes)
+    + [Project Structure](#project-structure)
+    + [Database Schema](#database-schema)
+        + [Category](#category)
+        + [Query](#query)
+        + [Answer](#answer)
+        + [UserProfile](#userprofile)
+        + [About](#about)
+        + [Contact](#contact)
 + [Features](#features)
+    + [Common Features](#common-features)
+        + [Language Used](#language-used)
+        + [Navbar](#navbar)
+        + [Footer](#footer)
+        + [Index](#index)
+        + [About Us](#about-us)
+        + [Contact Us](#contact-us)
+        + [Ask a Query](#ask-a-query)
+        + [Write an Answer](#write-an-answer)
+        + [Sign Up](#sign-up)
+        + [Log In](#log-in)
+        + [Log Out](#log-out)
+        + [Profile](#profile)
+    + [Future Features](#future-features)
 + [Testing](#testing)
-+ [Technologies used](#technologies-used)
+    + [Methodology](#methodology)
+        + [Index Page](#index-page)
+        + [About Us Page](#about-us-page)
+        + [Contact Us Page](#contact-us-page)
+        + [Ask a Query Page](#ask-a-query-page)
+        + [Queries Page](#queries-page)
+        + [Answers Page](#answers-page)
+        + [Sign Up Page](#sign-up-page)
+        + [Log In Page](#log-in-page)
+        + [Log Out Page](#log-in-page)
+        + [Profile Page](#profile-page)
+    + [Automatec Form Testing](#automatec-form-testing)
+    + [Validator Testing](#validator-testing)
+        + [W3C Validator](#w3c-validator)
+        + [CSS Validator](#css-validator)
+        + [JavaScript (JSHint) Validator](#javascript-jshint-validator)
+        + [Python (PEP8) Validator](#python-pep8-validator)
+        + [Lighhouse Validator](#lighhouse-validator)
++ [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 + [Deployment](#deployment)
+    + [Forking the Github Repository](#forking-the-github-repository)
+    + [Running the Project Locally](#running-the-project-locally)
+    + [Deploying with Heroku](#deploying-with-heroku)
+        + [External Database Setup](#external-database-setup)
+        + [External Storage Setup](#external-storage-setup)
+        + [env.py File Setup](#envpy-file-setup)
+        + [Heroku Settings](#heroku-settings)
+        + [Heroku Deployment](#heroku-deployment)
 + [Credits](#credits)
+    + [Design](#design-1)
+    + [Code](#code)
+    + [Media](#media)
 
-## UX
+# UX
 
-### Site Purpose
+## Site Purpose
 
 Our mission is to create a community of curious and helpful people who can learn from each other and exchange information on various topics. We believe that everyone has something valuable to offer and that by asking and answering questions, we can enrich our knowledge and understanding of the world.
 
-### Audience
+## Audience
 
 Help me is for everyone who have any query or would like to help other users, those have asked queries in different categories like,
 
@@ -37,7 +102,7 @@ Help me is for everyone who have any query or would like to help other users, th
 - Sports 
 - Travel  
 
-### Current User Goals
+## Current User Goals
 
 - Ask query
 - Respond on a query
@@ -46,7 +111,7 @@ Help me is for everyone who have any query or would like to help other users, th
 - Add user profile
 - Contact admin for suggestion, thoughts
 
-### Future User Goals
+## Future User Goals
 
 - Like, disklike or upvote different queries or response given by other users
 - See all users profile
@@ -55,37 +120,36 @@ Help me is for everyone who have any query or would like to help other users, th
 - Filter queries or responses
 - Upload image in add profile page
 
-## Design
+# Design
 
-### Color Scheme
+## Color Scheme
 
 Following color scheme has been used. I want to keep it simple yet elegent hence used the combination of sky blue, light and dark grey along with white. The exact colors codes can been seen in color palette below.
 
 ![color_palette](static/images/readme_images/colorpalette.png)
 
-### Typography
+## Typography
 
 Lato font is the major font used in this website for all kind of text with fallback option to sans-serif if the browser don't support the preffered color Lato.
 
-### Agile Methodology
+## Agile Methodology
 
 Agile project management principles guided the development of this project, leveraging GitHub Projects as the primary software for tracking user stories. Utilizing the Kanban board task view, I crafted a comprehensive user story template that served as the foundation for all project-related narratives. Beyond capturing the core user stories, GitHub Projects played a pivotal role in efficiently monitoring and addressing bugs identified throughout the project's lifecycle. Screenshot added below to give an over all view of the board and all user stories I worked on along with the template I used to create user stories.
 
-#### Kanban Board
+### Kanban Board
 
 ![kanbanboard](static/images/readme_images/kanbanboard.png)
 
-#### User Stories
+### User Stories
 
 ![userstories1](static/images/readme_images/userstories1.png)
 ![userstories2](static/images/readme_images/userstories2.png)
 
-#### User Story Template
+### User Story Template
 
 ![userstory_template](static/images/readme_images/userstorytemplate.png)
 
-
-### Wireframes
+## Wireframes
 
 The separate documetns for the wireframes can be found here:
 
@@ -153,7 +217,7 @@ The separate documetns for the wireframes can be found here:
     </details>
 </details>
 
-### Project Structure
+## Project Structure
 
 The whole project follow the technique of building blocks. Which are sufficient on their own and enhance the experience when they clubbed together. 
 
@@ -181,13 +245,13 @@ The whole project follow the technique of building blocks. Which are sufficient 
     - images (all kind of images)
 - template (base and authentication template)
 
-### Database Schema
+## Database Schema
 
 The database schema is composed by 6 models: Category, Query, Answer, About, User Profile and Contact information. 
 
 ![database_schema](static/images/readme_images/erdiagram.png)
 
-#### Category
+### Category
 
 This model consist of different categories available on website for which a user can ask or respond to queries. Only admin have access to this model and access to create a new categories. This model have following fields:
 
@@ -198,7 +262,7 @@ This model consist of different categories available on website for which a user
 - Author: A character field that handle the username, who is adding the category. In current case, its only admin. But, in future goals, I would like to give oppurtunities to site user to add the categories if not exists already. Its a Forigen key to the django User model.
 - Created_On: A Datetime field used to store the category creation datetime.
 
-#### Query
+### Query
 
 This model consist of all queries that any user asks with Foriegn key link to Category model to handle display only queries for respective categories at front end. Site user have access to ask new queries in this model and admin have access to approve the queries to display asked queries to all users. This model have following fields:
 
@@ -211,7 +275,7 @@ This model consist of all queries that any user asks with Foriegn key link to Ca
 - Created_On: A Datetime field used to store the query creation datetime.
 - Status: Its an integer field that is used to set status of the query. The default value is 0 that means Draft and admin can set this value to 1 that means Published and only after the status is set to 1 (Published) by the admin the query asked will be visible to all.
 
-#### Answer
+### Answer
 
 This model consist of all answer that any user writes with Foriegn key link to Query model to handle display only answer for respective query at front end. Site user have access to write answers in this model and admin have access to approve the answer to display answer written to all users. This model have following fields:
 
@@ -222,7 +286,7 @@ This model consist of all answer that any user writes with Foriegn key link to Q
 - Approved: Its an boolean field that is used to approve the answer. The default is not approved and admin mark it as approved by clicking the checkbox option on answer from on admin site. Once the answer is approved only after that it will be visible to all.
 - Created_On: A Datetime field used to store the answer creation datetime.
 
-#### UserProfile
+### UserProfile
 
 This model consist of all user profiles that any logged in user create for itself. The user has been identify with the help of django user model to display the correct profile at front end. Site user have access to write information about its profile in this model and admin have access to upload the image for user profile. This model have following fields:
 
@@ -235,7 +299,7 @@ This model consist of all user profiles that any logged in user create for itsel
 - Describe_Yourself: A Text field that handle the details view of the description the user write about itself. It has no words limit.
 - Updated_On: A Datetime field used to store the last updated datetime.
 
-#### About
+### About
 
 This model consist of all about us information of this website. Only admin can update this model. This model have following fields:
 
@@ -245,7 +309,7 @@ This model consist of all about us information of this website. Only admin can u
 - Content: A Text field that handle the details view of the description the admin writes about the website. It has no words limit and summernotes are used to store the data in rich text format.
 - Updated_On: A Datetime field used to store the last updated datetime.
 
-#### Contact
+### Contact
 
 This model consist of all contact us information of when a site user writes to the admin. Any site user can update this model regardless of the user is logged in or not. This model have following fields:
 
@@ -256,11 +320,11 @@ This model consist of all contact us information of when a site user writes to t
 - Read: Its an boolean field that is used to mark the message as read by the admin. The default is not read and admin mark it as read by clicking the checkbox option on contact from on admin site.
 - Created_On: A Datetime field used to store the contact message creation datetime.
 
-## Features
+# Features
 
-### Common Features
+## Common Features
 
-#### Language Used
+### Language Used
 
 - Django
 - Python
@@ -268,7 +332,7 @@ This model consist of all contact us information of when a site user writes to t
 - CSS3
 - Javascript
 
-#### Navbar
+### Navbar
 
 - On large screens, the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query. If user is not logged in it displays the Sign Up and Login links too. Also, on right corner a message dispalys that user is not logged in. 
 - When the user is logged in apart from showing the navbar displays brand icon and name along with links to Home, About, Contact Us, Ask a query the Profile and logout links are dispalyed too. Also, on right corner a Hi username message display with some stylized view.
@@ -294,7 +358,7 @@ This model consist of all contact us information of when a site user writes to t
         <IMG src="static/images/readme_images/navbar/navbarmobilewithuserlogin.png" alt="mobile_navbar_with_user_login"/>
 </details>
 
-#### Footer
+### Footer
 
 - Users have functional links to Facebook, Twitter, Instagram and YouTube. These links will open in a new tab as they are outside the web application. 
 
@@ -308,7 +372,7 @@ This model consist of all contact us information of when a site user writes to t
         <IMG src="static/images/readme_images/navbar/footermobile.png" alt="mobile_footer"/>
 </details>
 
-#### Index
+### Index
 
 - The landing page of the website display different categories a user can access or choose to ask queries or write answer for queries asked by other users.
 - If user is not logged in then a message displays in the top right corner on navbar that the user is not logged in. Also, Signup and Login links show in navbar menu. Whereas the add or view profile buttons doesn't appear in navbar menu.
@@ -339,7 +403,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/adminhomepage.png" alt="admin_dashboard"/>
 </details>
 
-#### About Us 
+### About Us 
 
 - This is an informational page that includes a brief description of the website, the mission with this website the owner would like to achieve, the services the website provides and explains what a user can do on the website and different categories available to ask queries and provide responses to already asked queries. Lastly it give short details about the team and encourage the user to reachout to development team with any feedback or suggestions.
 
@@ -365,7 +429,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/aboutusmodeladminview.png" alt="aboutus_model_admin"/>
 </details>
 
-#### Contact Us
+### Contact Us
 
 - This page contains a form for a user to directly contact the admin. The fields include name, email and message. 
 
@@ -405,7 +469,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/contactusmodeladminview.png" alt="contactus_model_admin"/>
 </details>
 
-#### Ask a Query 
+### Ask a Query 
 
 - A user should be logged in to ask a query on the webstie. If user is not yet logged in then a message with login button link will displays to the user. 
 
@@ -463,7 +527,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/querymodeladminview.png" alt="queries_model_view_admin"/>
 </details>
 
-#### Write an Answer 
+### Write an Answer 
 
 - A user should be logged in to write an answer on the webstie. If user is not yet logged in then a message with login button link will displays to the user. 
 
@@ -535,7 +599,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/answermodeladminview.png" alt="answer_model_view_admin"/>
 </details>
 
-#### Sign Up
+### Sign Up
 
 - When not authenticated, users can create an account using a unique username and password.
 
@@ -570,7 +634,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/useradminview.png" alt="user_model_view"/>
 </details>
 
-#### Log In
+### Log In
 
 - Login Page: A user can log in to the application by inputting their username and correct password.
 
@@ -586,7 +650,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/testing/login_error.png" alt="login_error"/>
 </details>
 
-#### Log Out
+### Log Out
 
 
 - Logout Page: Here, the application asks the user for confirmation before logging out. 
@@ -596,7 +660,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/webpagewithuserlogin/logoutpage.png" alt="logout_page"/>
 </details>
 
-#### Profile 
+### Profile 
 
 - After a user signs in the user has option to add its profile page. This page open up first with error with a button that is linked to add a profile, when the user clicks on Profile link from the navbar menu and if the user doesn't have an existing profile.
 
@@ -645,7 +709,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/userprofilemodeladminview.png" alt="user_profile_model_admin"/>
 </details>
 
-### Future Features
+## Future Features
 
 - Asynchronous behaviour
     - When a query or answer submitted once but if the page is refreshed the same query or answer gets re-submitted. A future feature is planned to avoid resubmitting it and clear out the page when these actions are taken by the user.
@@ -660,13 +724,13 @@ This model consist of all contact us information of when a site user writes to t
     - Implement a user can see all its queries and answer from a single profile page too.
     - Implement all profile page where a user can see breif profile info about other users too like how many query they have asked or answer they have given. What feilds they are expert of etc.,
 
-## Testing
+# Testing
 
-### Methodology 
+## Methodology 
 
 Testing was an integral part of the project development, encompassing the use of Django debug pages and strategically placed print statements to verify the functionality of the code at various stages. Furthermore, a comprehensive testing approach was adopted, outlined below. This involved meticulous manual testing to ensure alignment with all user stories and acceptance criteria as well as some automated testing using for different forms.
 
-#### Index Page
+### Index Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -675,13 +739,13 @@ Testing was an integral part of the project development, encompassing the use of
 | Footer links | Click all available social media links | User is directed respectively to all social media links with  | PASS |
 | Cateogries | Click all categories links | User is directed to queries page respected to each category and all queries belogns to that category should display on next page  | PASS |
 
-#### About Us Page
+### About Us Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
 | About us info | Goto about us page and see info, profile image and updated on datetime | The latest about us info displays and the correct updated on datetime is visible on the page. | PASS |
 
-#### Contact Us Page
+### Contact Us Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -689,7 +753,7 @@ Testing was an integral part of the project development, encompassing the use of
 | ContactUs form - Form Validation | Submit with an invalid email address | Error message is successfully displayed | PASS |
 | ContactUs form - Form Validation | Submit valid form | User is redirect to success page stating that the response has been recorded | PASS |
 
-#### Ask a Query Page
+### Ask a Query Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -699,7 +763,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Create query form - Form validation | Submit an incomplete form. | The browser promts validation that all fields need to be filled. | PASS |
 | Create query form - Form validation | Submit a complete query. | The query is successfully submited and a success message is displayed, stating that the query is awaiting review. | PASS |
 
-#### Queries Page
+### Queries Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -710,7 +774,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Approved query - asked by any user | Query should be visible without delete query button | When an admin publishes a query the query should be visible to all users. But delete query button should be visible to authunticated user only who post that query initially and no other user. | PASS |
 | Delete Query | As a query author click the delete query button under query options. | When the authenticated user is the author, it successfully displays the delete query modal when clicking the delete query option. On reconfirmation to delete, the query should delete permanently from the model. | PASS |
 
-#### Answers Page
+### Answers Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -725,7 +789,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Edit answer - Form validation | Submit an empty answer form. | An error message is displayed, stating that fields are are required. | PASS |
 | Edit answer - Form validation | Submit an valid answer form. | A success message is displayed, stating that the answer was successfully updated and is awating for approval. | PASS |
 
-#### Sign Up Page
+### Sign Up Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -736,21 +800,21 @@ Testing was an integral part of the project development, encompassing the use of
 | User sign-up - Form validation  | Submit non-matching invalid password. | Form promts the error. | PASS |
 | User sign-up - Form validation  | Submit an exisiting user name. | Form promts that the username is already taken error. | PASS |
 
-#### Log In Page
+### Log In Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
 | User login page  | Page should display the login form. | User is successfully directed to the login page and sees the login form. | PASS |
 | User login page - Form validation | Submit an incorrect username password. | Form promts that the username and/or password is not correct. | PASS |
 
-#### Log Out Page
+### Log Out Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
 | User logout page  | Page should display the logout reconfirm message. | User is successfully directed to the logout page and sees the logout reconfim message with logout button. | PASS |
 | User logout page - Form validation | Click in logout. | User is successfully logged out and a display message is displayed at the top. | PASS |
 
-#### Profile Page
+### Profile Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -760,7 +824,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Add profile - Form validation | Submit a valid form. | A success message is displayed with the link to redirect user to their profile. | PASS |
 | View profile - Existing profile user | Click on Profile link on navbar menu. | If you already have a profile created previously. When click on navbar menu profile link the logged in user profile should be visible | PASS |
 
-### Automatec Form Testing 
+## Automatec Form Testing 
 | Form  | Test Case | Expected Outcome | Results |  
 | - | - | - | - |
 | Contact Form | Testing when all valid inputs were given then form works as expected | Form is valid. | PASS |
@@ -783,10 +847,9 @@ Testing was an integral part of the project development, encompassing the use of
 
 ![automated_forms_testing](static/images/readme_images/testing/formsautomatedtestingresult.png)
 
+## Validator Testing 
 
-### Validator Testing 
-
-#### W3C Validator
+### W3C Validator
 
 - Error's found: Verified all html pages on the website.
 
@@ -796,24 +859,24 @@ Testing was an integral part of the project development, encompassing the use of
 
 ![W3C_validator_results](static/images/readme_images/testing/w3cvalidation.png)
 
-#### CSS Validator
+### CSS Validator
 
 - No error found.
 
 ![W3C_CSS_validator_results](static/images/readme_images/testing/w3ccssvalidation.png)
 
-#### JavaScript (JSHint) Validator
+### JavaScript (JSHint) Validator
 
 - No error found.
 
 ![JavaScript_validator_results](static/images/readme_images/testing/jshintjavascriptvalidation.png)
 
-#### Python (PEP8) Validator
+### Python (PEP8) Validator
 
 - Validated all *.py pages on website and fixed the warning based upon suggestion for PEP8 tool. Mostly the warnings are related to training whitespace or length exceed. No code bug found.
 ![PP8 validator](static/images/readme_images/testing/pep8ci_pythonlinter_validation.png) 
 
-#### Lighhouse Validator
+### Lighhouse Validator
 
 - Page has an excellent rating in Lighthouse. 
 
@@ -825,7 +888,7 @@ Testing was an integral part of the project development, encompassing the use of
 
 ![mobile_lighthouse](static/images/readme_images/testing/lighthousedesktopscore.png)
 
-## Frameworks, Libraries and Programs Used
+# Frameworks, Libraries and Programs Used
 
 - [Google Fonts](https://fonts.google.com/) 
 - [Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
@@ -841,16 +904,17 @@ Testing was an integral part of the project development, encompassing the use of
 - [Psycopg](https://www.psycopg.org/docs/)
 - [Balsamiq](https://balsamiq.com/) - For wireframes 
 - [Lucidchart](https://lucid.app/users/login#/login) - For database diagram 
+- [Microsoft Copilot](https://copilot.microsoft.com/) - For generating imaginary profiles of users and about us page
 
-## Deployment
+# Deployment
 
-### Forking the Github Repository 
+## Forking the Github Repository 
 
 1. Go to [Help Me! Repository](https://github.com/Sugandhi13/help-me.git)
 2. In the top right, click the "Fork" button.
 3. There will now be a copy of the repository in your own Github account.
 
-### Running the Project Locally
+## Running the Project Locally
 
 1. Go to [Help Me! Repository](https://github.com/Sugandhi13/help-me.git)
 2. Click on the "Code" button.
@@ -862,7 +926,7 @@ Testing was an integral part of the project development, encompassing the use of
 5. Type `git clone` and paste the URL that was copied in step 3. 
 6. Press enter and the local close will be created.
 
-### Deploying with Heroku
+## Deploying with Heroku
 
 The following steps were taken from the Django "I think before I blog" walkthrough project provided by [Code Institute](https://codeinstitute.net/global/).
 
@@ -871,7 +935,7 @@ The following steps were taken from the Django "I think before I blog" walkthrou
 3. Enter a name of the project (must be unique).
 4. Select the region your are working in. 
 
-#### External Database Setup
+### External Database Setup
 
 I used [ElephantSQL](https://www.elephantsql.com/) as my database. 
 
@@ -887,7 +951,7 @@ Then click on `Select Region`.
 5. Here you will check the name, cloud provider and region where the application will be hosted. If, everything is correct, click `Create instance`.
 6. Go to dashboard and your instance will be there. Click in the name and under `Details` copy the `URL`, this will be values that will be needed for the [Heroku variables setup](#heroku-settings) and the [env.py](#envpy-file-set-up) file.
 
-#### External Storage Setup
+### External Storage Setup
 
 I used [Cloudinary](https://console.cloudinary.com/console/c-24efd5faa3f26bc4dbe6b501d1a6e8/media_library/search?q=&view_mode=mosaic) as cloud storage for this project. 
 
@@ -895,7 +959,7 @@ I used [Cloudinary](https://console.cloudinary.com/console/c-24efd5faa3f26bc4dbe
 2. Go to `Dashboard` and copy the `API Environment variable`.
 3. This URL will be required when setting up the [env.py](#envpy-file-set-up) and the [Heroku variables](#heroku-settings). 
 
-#### env.py File Setup
+### env.py File Setup
 
 1. In the root directory of your project create a new file called `env.py`.
 2. Add this `env.py` file to your `.gitignore` file so the confidential information in the file is not push to Github.
@@ -919,7 +983,7 @@ os.environ["CLOUDINARY_URL"]="<copiedCloudinaryURL>"
 
 6. Save the file.
 
-#### Heroku Settings 
+### Heroku Settings 
 
 After the application is created in Heroku. Got to your dashboard and you will see the application name, click on it and then follow the following: 
 
@@ -931,7 +995,7 @@ After the application is created in Heroku. Got to your dashboard and you will s
 
 2. After setting up the variables, go to `Buildpacks` and select `Python`.
 
-#### Heroku Deployment 
+### Heroku Deployment 
 
 1. Go to `Deploy` tab and under `Deployment method` connect to the Github repository.
 2. Then there can be two options: manual or automatic deployment. 
@@ -939,9 +1003,9 @@ After the application is created in Heroku. Got to your dashboard and you will s
     - Automatic deployment will re-deploy the application each time new code is pushed to Github. 
 3. After selecting the deployment method, under `Manual Deployment` click `Deploy branch`. 
 
-## Credits
+# Credits
 
-### Design
+## Design
 
 The site type was a mixed between a reddit and quora kind of websites. The following sites were used for instpiration: 
 
@@ -950,7 +1014,7 @@ The site type was a mixed between a reddit and quora kind of websites. The follo
 
 Additionally, the [Bootstrap 5](https://getbootstrap.com/docs/5.2/getting-started/introduction/) framework was heavily used for the front-end development.
 
-### Code
+## Code
 
 Honestly, if I have to admit then this was the toughest project for me till date. The more control moved out of my hand to in the hand of templates it become difficult to control initially. But day by day, gradually I started getting hold of it and have better understanding that how the things are flowing. Though, there is still a lot to learn but I would thanks first everyone who helped me during this projects journey.
 
@@ -970,7 +1034,7 @@ In this project I also found good help from my mentor Martina, slack communities
 
 In the end, I would like to mention that the queries and answers I have picked directly from [Quora](https://www.quora.com/) & [Reddit](https://www.reddit.com/) rather then creating on my own to save time. Some of the queries and answers are a bit modified as well to suite the website behavior. Apart from this I have used Microsoft Co-pilot to generate imaginary description text of About Us page as well as for different users profile.
 
-### Media
+## Media
 
 - All the profile images were taken from [Unsplash](https://unsplash.com/), a free image provider. 
 - All icons are generated using [w3schools/icons](https://www.w3schools.com/icons/).
