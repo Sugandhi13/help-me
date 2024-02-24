@@ -8,7 +8,7 @@ Help Me is website, where you can ask any query and get responses from other use
 
 Help Me ! is live, to access it <a href="https://help-me-038cd18040fa.herokuapp.com/" target="_blank">click here.</a>
 
-## Table of contents
+## Table Of Contents
 
 + [UX](#ux)
 + [Design](#design)
@@ -57,7 +57,7 @@ Help me is for everyone who have any query or would like to help other users, th
 
 ## Design
 
-### Color scheme
+### Color Scheme
 
 ![color_palette](static/images/readme_images/colorpalette.png)
 
@@ -65,9 +65,23 @@ Help me is for everyone who have any query or would like to help other users, th
 
 Lato font is the major font used in this website for all kind of text with fallback option to sans-serif if the browser don't support the preffered color Lato.
 
-### Agile methodology
+### Agile Methodology
 
-Agile project management principles guided the development of this project, leveraging GitHub Projects as the primary software for tracking user stories. Utilizing the Kanban board task view, I crafted a comprehensive user story template that served as the foundation for all project-related narratives. Beyond capturing the core user stories, GitHub Projects played a pivotal role in efficiently monitoring and addressing bugs identified throughout the project's lifecycle. 
+Agile project management principles guided the development of this project, leveraging GitHub Projects as the primary software for tracking user stories. Utilizing the Kanban board task view, I crafted a comprehensive user story template that served as the foundation for all project-related narratives. Beyond capturing the core user stories, GitHub Projects played a pivotal role in efficiently monitoring and addressing bugs identified throughout the project's lifecycle. Screenshot added below to give an over all view of the board and all user stories I worked on along with the template I used to create user stories.
+
+#### Kanban Board
+
+![kanbanboard](static/images/readme_images/kanbanboard.png)
+
+#### User Stories
+
+![userstories1](static/images/readme_images/userstories1.png)
+![userstories2](static/images/readme_images/userstories2.png)
+
+#### User Story Template
+
+![userstory_template](static/images/readme_images/userstorytemplate.png)
+
 
 ### Wireframes
 
@@ -137,7 +151,7 @@ The separate documetns for the wireframes can be found here:
     </details>
 </details>
 
-### Database schema
+### Database Schema
 
 The database schema is composed by 6 models: Category, Query, Answer, About, User Profile and Contact information. 
 
@@ -295,7 +309,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/adminhomepage.png" alt="admin_dashboard"/>
 </details>
 
-#### About us 
+#### About Us 
 
 - This is an informational page that includes a brief description of the website, the mission with this website the owner would like to achieve, the services the website provides and explains what a user can do on the website and different categories available to ask queries and provide responses to already asked queries. Lastly it give short details about the team and encourage the user to reachout to development team with any feedback or suggestions.
 
@@ -321,7 +335,7 @@ This model consist of all contact us information of when a site user writes to t
     <IMG src="static/images/readme_images/adminpage/aboutusmodeladminview.png" alt="aboutus_model_admin"/>
 </details>
 
-#### Contact
+#### Contact Us
 
 - This page contains a form for a user to directly contact the admin. The fields include name, email and message. 
 
@@ -622,7 +636,7 @@ This model consist of all contact us information of when a site user writes to t
 
 Testing was an integral part of the project development, encompassing the use of Django debug pages and strategically placed print statements to verify the functionality of the code at various stages. Furthermore, a comprehensive testing approach was adopted, outlined below. This involved meticulous manual testing to ensure alignment with all user stories and acceptance criteria as well as some automated testing using for different forms.
 
-#### Index page
+#### Index Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -631,13 +645,13 @@ Testing was an integral part of the project development, encompassing the use of
 | Footer links | Click all available social media links | User is directed respectively to all social media links with  | PASS |
 | Cateogries | Click all categories links | User is directed to queries page respected to each category and all queries belogns to that category should display on next page  | PASS |
 
-#### About us page
+#### About Us Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
 | About us info | Goto about us page and see info, profile image and updated on datetime | The latest about us info displays and the correct updated on datetime is visible on the page. | PASS |
 
-#### Contact Us
+#### Contact Us Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -645,7 +659,7 @@ Testing was an integral part of the project development, encompassing the use of
 | ContactUs form - Form Validation | Submit with an invalid email address | Error message is successfully displayed | PASS |
 | ContactUs form - Form Validation | Submit valid form | User is redirect to success page stating that the response has been recorded | PASS |
 
-#### Ask a Query
+#### Ask a Query Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -655,7 +669,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Create query form - Form validation | Submit an incomplete form. | The browser promts validation that all fields need to be filled. | PASS |
 | Create query form - Form validation | Submit a complete query. | The query is successfully submited and a success message is displayed, stating that the query is awaiting review. | PASS |
 
-#### Queries
+#### Queries Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -666,7 +680,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Approved query - asked by any user | Query should be visible without delete query button | When an admin publishes a query the query should be visible to all users. But delete query button should be visible to authunticated user only who post that query initially and no other user. | PASS |
 | Delete Query | As a query author click the delete query button under query options. | When the authenticated user is the author, it successfully displays the delete query modal when clicking the delete query option. On reconfirmation to delete, the query should delete permanently from the model. | PASS |
 
-#### Answers
+#### Answers Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -681,7 +695,7 @@ Testing was an integral part of the project development, encompassing the use of
 | Edit answer - Form validation | Submit an empty answer form. | An error message is displayed, stating that fields are are required. | PASS |
 | Edit answer - Form validation | Submit an valid answer form. | A success message is displayed, stating that the answer was successfully updated and is awating for approval. | PASS |
 
-#### Sign Up 
+#### Sign Up Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -692,21 +706,21 @@ Testing was an integral part of the project development, encompassing the use of
 | User sign-up - Form validation  | Submit non-matching invalid password. | Form promts the error. | PASS |
 | User sign-up - Form validation  | Submit an exisiting user name. | Form promts that the username is already taken error. | PASS |
 
-#### Log In 
+#### Log In Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
 | User login page  | Page should display the login form. | User is successfully directed to the login page and sees the login form. | PASS |
 | User login page - Form validation | Submit an incorrect username password. | Form promts that the username and/or password is not correct. | PASS |
 
-#### Log Out 
+#### Log Out Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
 | User logout page  | Page should display the logout reconfirm message. | User is successfully directed to the logout page and sees the logout reconfim message with logout button. | PASS |
 | User logout page - Form validation | Click in logout. | User is successfully logged out and a display message is displayed at the top. | PASS |
 
-#### Profile
+#### Profile Page
 
 | Testing  | Steps | Expected Outcome | Results |  
 | - | - | - | - |
@@ -740,11 +754,11 @@ Testing was an integral part of the project development, encompassing the use of
 ![automated_forms_testing](static/images/readme_images/testing/formsautomatedtestingresult.png)
 
 
-### Validator testing 
+### Validator Testing 
 
-#### W3C validator
+#### W3C Validator
 
-- Error's found:
+- Error's found: Verified all html pages on the website.
 
 ![W3C_validator_error](static/images/readme_images/testing/w3cvalidation_errors.png)
 
@@ -752,48 +766,42 @@ Testing was an integral part of the project development, encompassing the use of
 
 ![W3C_validator_results](static/images/readme_images/testing/w3cvalidation.png)
 
-#### CSS validator
+#### CSS Validator
 
 - No error found.
 
 ![W3C_CSS_validator_results](static/images/readme_images/testing/w3ccssvalidation.png)
 
-#### JavaScript (JSHint) validator
+#### JavaScript (JSHint) Validator
 
 - No error found.
 
 ![JavaScript_validator_results](static/images/readme_images/testing/jshintjavascriptvalidation.png)
 
-#### Python (PP8) validator
+#### Python (PEP8) Validator
 
-![PP8 validator](https://pep8ci.herokuapp.com/#) 
+- Validated all *.py pages on website and fixed the warning based upon suggestion for PEP8 tool. Mostly the warnings are related to training whitespace or length exceed. No code bug found.
+![PP8 validator](static/images/readme_images/testing/pep8ci_pythonlinter_validation.png) 
 
-- Page has an excellent Accessibility rating in Lighthouse. 
+#### Lighhouse Validator
 
-INPUT 
+- Page has an excellent rating in Lighthouse. 
 
-- The python file passes through the PP8 validator with no issues except by the more than 79 characters per line recomended by PEP 8.
-- Tested the site opens in Chrome, Safari and Mozilla. 
-- No broken links
+- Desktop
 
-## Technologies used
+![desktop_lighthouse](static/images/readme_images/testing/lighthousemobilescore.png) 
 
-### Programming languages
+- Mobile
 
-- HTML5
-- CSS3
-- JavaScript (jQuery)
-- Python (Django)
+![mobile_lighthouse](static/images/readme_images/testing/lighthousedesktopscore.png)
 
-### Frameworks, Libraries and programs used
+## Frameworks, Libraries and Programs Used
 
 - [Google Fonts](https://fonts.google.com/) 
 - [Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 - [Github](https://github.com/juanovt10)
-- [CodeAnywhere](https://id.codeanywhere.com/realms/default/protocol/openid-connect/auth?client_id=dashboard&redirect_uri=https%3A%2F%2Fapp.codeanywhere.com%2F&state=0ed650a0-13c7-4f57-8415-5704cc42250e&response_mode=fragment&response_type=code&scope=openid&nonce=2b3f7872-fc80-4c91-bc06-4850e0415d4b)
 - [Gitpod](https://gitpod.io/workspaces)
 - [Heroku](https://id.heroku.com/login)
-- [Realtime Colors](https://www.realtimecolors.com/?colors=e6eef8-03060a-92b3de-262376-694cc9&fonts=Poppins-Poppins)
 - [Django](https://www.djangoproject.com/)
 - [Django databases](https://docs.djangoproject.com/en/5.0/ref/databases/)
 - [Django cloudinary storage](https://djangopackages.org/packages/p/django-cloudinary-storage/)
@@ -805,21 +813,21 @@ INPUT
 
 ## Deployment
 
-### Forking the Github repository 
+### Forking the Github Repository 
 
-1. Go to [Track Tales Repository](https://github.com/juanovt10/tracktales-blog)
+1. Go to [Help Me! Repository](https://github.com/Sugandhi13/help-me.git)
 2. In the top right, click the "Fork" button.
 3. There will now be a copy of the repository in your own Github account.
 
-### Running the project locally
+### Running the Project Locally
 
-1. Go to [Track Tales Repository](https://github.com/juanovt10/tracktales-blog)
+1. Go to [Help Me! Repository](https://github.com/Sugandhi13/help-me.git)
 2. Click on the "Code" button.
 3. Choose one of the following three options and click copy.
     - HTTPS
     - SSH
     - Github CLI
-4. Open termina in your preferable IDE (cloud or local).
+4. Open terminal in your preferable IDE (cloud or local).
 5. Type `git clone` and paste the URL that was copied in step 3. 
 6. Press enter and the local close will be created.
 
@@ -832,7 +840,7 @@ The following steps were taken from the Django "I think before I blog" walkthrou
 3. Enter a name of the project (must be unique).
 4. Select the region your are working in. 
 
-#### External database set up
+#### External Database Setup
 
 I used [ElephantSQL](https://www.elephantsql.com/) as my database. 
 
@@ -842,24 +850,21 @@ I used [ElephantSQL](https://www.elephantsql.com/) as my database.
     - `Name` should be the name of the project
     - `Plan` should be the type of subscription you have with ElephantSQL, in my case I used the `Tiny Turtle (Free)` plan.
     - `Tags` can be left in blank
+Then click on `Select Region`.
 
-    Then click on `Select Region`.
-
-4. Here selecte your `Data center`. This is hosted with AWS. In my case due to my location I used `EU-West-1 (Ireland)`. Please note that you should select an AWS Availability Zone (AZ) closest where your main users will be located to reduce downtime.
-
-    Then click `Review`.
+4. Here selecte your `Data center`. This is hosted with AWS. In my case due to my location I used `EU-North-1 (Stockholm)`. Please note that you should select an AWS Availability Zone (AZ) closest where your main users will be located to reduce downtime. Then click `Review`.
 5. Here you will check the name, cloud provider and region where the application will be hosted. If, everything is correct, click `Create instance`.
 6. Go to dashboard and your instance will be there. Click in the name and under `Details` copy the `URL`, this will be values that will be needed for the [Heroku variables setup](#heroku-settings) and the [env.py](#envpy-file-set-up) file.
 
-#### External storage set up
+#### External Storage Setup
 
-I used [Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad_source=1&gclid=Cj0KCQiAm4WsBhCiARIsAEJIEzUYoKHM06ldJtPMxUmtjFK3HxOkfQI3_8G9vOXPuRsPWuCVCSFEPzsaAjiJEALw_wcB) as cloud storage for this project. 
+I used [Cloudinary](https://console.cloudinary.com/console/c-24efd5faa3f26bc4dbe6b501d1a6e8/media_library/search?q=&view_mode=mosaic) as cloud storage for this project. 
 
 1. Create and account or login. 
 2. Go to `Dashboard` and copy the `API Environment variable`.
 3. This URL will be required when setting up the [env.py](#envpy-file-set-up) and the [Heroku variables](#heroku-settings). 
 
-#### env.py file set up
+#### env.py File Setup
 
 1. In the root directory of your project create a new file called `env.py`.
 2. Add this `env.py` file to your `.gitignore` file so the confidential information in the file is not push to Github.
@@ -883,7 +888,7 @@ os.environ["CLOUDINARY_URL"]="<copiedCloudinaryURL>"
 
 6. Save the file.
 
-#### Heroku settings 
+#### Heroku Settings 
 
 After the application is created in Heroku. Got to your dashboard and you will see the application name, click on it and then follow the following: 
 
@@ -895,7 +900,7 @@ After the application is created in Heroku. Got to your dashboard and you will s
 
 2. After setting up the variables, go to `Buildpacks` and select `Python`.
 
-#### Heroku deployment 
+#### Heroku Deployment 
 
 1. Go to `Deploy` tab and under `Deployment method` connect to the Github repository.
 2. Then there can be two options: manual or automatic deployment. 
@@ -907,10 +912,9 @@ After the application is created in Heroku. Got to your dashboard and you will s
 
 ### Design
 
-The site type was a mixed between a social media and blog web application. The following sites were used for instpiration: 
+The site type was a mixed between a reddit and quora kind of websites. The following sites were used for instpiration: 
 
-- [LinkedIn](https://www.linkedin.com/)
-- [Instagram](https://www.instagram.com)
+- [Quora](https://www.quora.com/)
 - [Reddit](https://www.reddit.com/) 
 
 Additionally, the [Bootstrap 5](https://getbootstrap.com/docs/5.2/getting-started/introduction/) framework was heavily used for the front-end development.
@@ -935,11 +939,5 @@ In the final stages, while working on the presentation of dynamic content like p
 
 ### Media
 
-All the hero images were taken from [Pexels](https://www.pexels.com/), a free image stick image provider. Then they were optimized to reduced their size. 
-
-- [Hero Image Slide 1 (desktop)](https://www.pexels.com/photo/lake-and-mountain-417074/)
-- [Hero Image Slide 1 (desktop)](https://www.pexels.com/photo/city-of-istanbul-turkey-with-view-of-sultan-ahmed-mosque-during-night-time-14356751/)
-- [Hero Image Slide 3 (desktop)](https://www.pexels.com/photo/man-and-woman-near-waterfall-450441/)
-- [Hero Image Slide 1 (mobile)](https://www.pexels.com/photo/people-on-road-2104044/)
-- [Hero Image Slide 2 (mobile)](https://www.pexels.com/photo/photo-of-person-standing-on-a-famous-temple-2659475/)
-- [Hero Image Slide 3 (mobile)](https://www.pexels.com/photo/people-sitting-in-front-of-bonfire-in-desert-during-nighttime-1703314/)
+- All the profile images were taken from [Unsplash](https://unsplash.com/), a free image provider. 
+- All icons are generated using [w3schools/icons](https://www.w3schools.com/icons/).
